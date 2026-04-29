@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Market Differentiation &amp; Positioning — Cuan Hijab</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Market Differentiation &amp; Positioning — Cuan Hijab</h1>
+<p class="subtitle">Blueprint diferensiasi dan positioning Cuan Hijab Next Level berbasis framework Market Differentiation untuk eksekusi launch, messaging, dan category ownership.</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="0-snapshot-strategis-produk" href="#0-snapshot-strategis-produk">0) Snapshot Strategis Produk</a></li>
+<li><a data-target="1-purple-cow-test-apakah-cuanhijab-remarkable" href="#1-purple-cow-test-apakah-cuanhijab-remarkable">1) Purple Cow Test — Apakah CuanHijab Remarkable?</a></li>
+<li><a data-target="2-three-levers-identify-edges-pick-the-weird-design-for-extremes" href="#2-three-levers-identify-edges-pick-the-weird-design-for-extremes">2) Three Levers — Identify Edges, Pick the Weird, Design for Extremes</a></li>
+<li><a data-target="3-sva-smallest-viable-audience-bukan-semua-reseller-hijab" href="#3-sva-smallest-viable-audience-bukan-semua-reseller-hijab">3) SVA — Smallest Viable Audience (Bukan “Semua Reseller Hijab”)</a></li>
+<li><a data-target="4-brand-story-5-element-cuanhijab" href="#4-brand-story-5-element-cuanhijab">4) Brand Story 5-Element CuanHijab</a></li>
+<li><a data-target="5-positioning-statement-3-versi-formula" href="#5-positioning-statement-3-versi-formula">5) Positioning Statement — 3 Versi Formula</a></li>
+<li><a data-target="6-positioning-by-exclusion-cuanhijab-bukan-untuk-siapa" href="#6-positioning-by-exclusion-cuanhijab-bukan-untuk-siapa">6) Positioning by Exclusion — CuanHijab Bukan untuk Siapa</a></li>
+<li><a data-target="7-competitive-differentiation-map-5-kompetitor-pada-2-axis-matrix" href="#7-competitive-differentiation-map-5-kompetitor-pada-2-axis-matrix">7) Competitive Differentiation Map — 5 Kompetitor pada 2-Axis Matrix</a></li>
+<li><a data-target="8-category-creation-blueprint-operasional-hijab" href="#8-category-creation-blueprint-operasional-hijab">8) Category Creation — “Blueprint Operasional Hijab”</a></li>
+<li><a data-target="9-defensibility-test-apa-yang-sulit-dicopy-kompetitor" href="#9-defensibility-test-apa-yang-sulit-dicopy-kompetitor">9) Defensibility Test — Apa yang Sulit Dicopy Kompetitor</a></li>
+<li><a data-target="10-tribes-framework-4-pillar-komunitas-cuanhijab" href="#10-tribes-framework-4-pillar-komunitas-cuanhijab">10) Tribes Framework 4-Pillar — Komunitas CuanHijab</a></li>
+<li><a data-target="11-messaging-architecture-turunan-dari-positioning" href="#11-messaging-architecture-turunan-dari-positioning">11) Messaging Architecture Turunan dari Positioning</a></li>
+<li><a data-target="12-implementation-blueprint-30-hari-untuk-positioning-rollout" href="#12-implementation-blueprint-30-hari-untuk-positioning-rollout">12) Implementation Blueprint 30 Hari untuk Positioning Rollout</a></li>
+<li><a data-target="13-kpi-positioning-differentiation" href="#13-kpi-positioning-differentiation">13) KPI Positioning &amp; Differentiation</a></li>
+<li><a data-target="14-risk-register-mitigasi" href="#14-risk-register-mitigasi">14) Risk Register + Mitigasi</a></li>
+<li><a data-target="15-script-assets-ringkas-siap-pakai" href="#15-script-assets-ringkas-siap-pakai">15) Script Assets Ringkas (Siap Pakai)</a></li>
+<li><a data-target="16-final-decision-matrix-apa-yang-harus-dipertahankan-konsisten" href="#16-final-decision-matrix-apa-yang-harus-dipertahankan-konsisten">16) Final Decision Matrix — Apa yang Harus Dipertahankan Konsisten</a></li>
+<li><a data-target="17-checklist-audit-cuanhijab-specific" href="#17-checklist-audit-cuanhijab-specific">17) Checklist Audit (CuanHijab-Specific)</a></li>
+<li><a data-target="18-penutup-eksekusi" href="#18-penutup-eksekusi">18) Penutup Eksekusi</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Market Differentiation &amp; Positioning — Cuan Hijab</h1>
+<hr/>
+<h2 id="0-snapshot-strategis-produk">0) Snapshot Strategis Produk</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Komponen</th>
+<th>Detail Spesifik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Nama Produk</td>
+<td>Cuan Hijab Next Level — Blueprint Praktisi 20 Tahun</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Rekaman Webinar + Ebook Premium (Digital Product)</td>
+</tr>
+<tr>
+<td>Harga Launch</td>
+<td>Rp49.000 untuk 500 pembeli pertama</td>
+</tr>
+<tr>
+<td>Harga Normal</td>
+<td>Rp99.000 setelah kuota launch habis</td>
+</tr>
+<tr>
+<td>Mentor</td>
+<td>Iman Awaludin, ST</td>
+</tr>
+<tr>
+<td>Kredensial Mentor</td>
+<td>20+ tahun industri hijab, 1.000+ mitra distribusi nasional, coaching bareng Budi Isman</td>
+</tr>
+<tr>
+<td>ICP inti</td>
+<td>Reseller hijab omzet stuck, agen hijab kena supplier zonk, pemilik brand hijab lokal perempuan 25–55</td>
+</tr>
+<tr>
+<td>Pain utama</td>
+<td>Supplier zonk, margin tipis 8–12%, DM ghosting, omzet fluktuatif</td>
+</tr>
+<tr>
+<td>Unique mechanism</td>
+<td>Checklist operasional terstandar, template HPP otomatis, formula scale-up teruji 1.000+ mitra</td>
+</tr>
+<tr>
+<td>Landscape pesaing</td>
+<td>Tutorial YouTube gratis, ebook generic Rp20–50K, kursus Rp200K–2jt, komunitas reseller</td>
+</tr>
+<tr>
+<td>Ascension/Upsell</td>
+<td>Rp49K → Konsultasi Rp197K → Bedah Bisnis Rp497K → Retainer pendampingan pabrik</td>
+</tr>
+<tr>
+<td>Tanggal Launch</td>
+<td>1 Mei 2026</td>
+</tr>
+<tr>
+<td>Mekanisme scarcity</td>
+<td>500 kuota pembeli pertama</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="1-purple-cow-test-apakah-cuanhijab-remarkable">1) Purple Cow Test — Apakah CuanHijab Remarkable?</h2>
+<h3 id="11-ringkasan-putusan">1.1 Ringkasan Putusan</h3>
+<p><strong>Status Purple Cow: PASS (dengan syarat eksekusi narasi harus disiplin).</strong></p>
+<p>Alasan pass:</p>
+<ol>
+<li>Produk bukan sekadar materi motivasi jualan hijab.</li>
+<li>Mekanisme berasal dari pengalaman operasional brand nasional selama 20+ tahun.</li>
+<li>Ada artefak konkret yang langsung dipakai: checklist, template HPP otomatis, formula scale-up.</li>
+<li>Harga entry rendah (Rp49K) untuk menurunkan resistance, tetapi value stack tinggi.</li>
+<li>Ada jalur implementasi lanjutan yang jelas (konsultasi, bedah bisnis, retainer).</li>
+</ol>
+<p>Risiko gagal Purple Cow:</p>
+<ol>
+<li>Jika copywriting jatuh ke klaim generic seperti “rahasia cuan hijab”.</li>
+<li>Jika konten promosi lebih banyak bicara “semangat” daripada “sistem operasional”.</li>
+<li>Jika tidak ada bukti konkret bagaimana framework bekerja di kasus nyata mitra.</li>
+</ol>
+<h3 id="12-remarkable-story-yang-harus-diceritakan-ulang">1.2 Remarkable Story yang Harus Diceritakan Ulang</h3>
+<blockquote>
+<p>“Ini bukan webinar reseller biasa. Ini blueprint operasional dari orang yang 20+ tahun hidup di industri hijab nasional, sudah pegang 1.000+ mitra, dan ngajarin cara berhenti jualan pakai feeling. Ada checklist, template HPP otomatis, dan formula scale-up yang bisa dipraktikkan bahkan kalau supplier sering zonk.”</p>
+</blockquote>
+<h3 id="13-uji-worth-talking-about">1.3 Uji “Worth Talking About”</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Pertanyaan Uji</th>
+<th>Jawaban CuanHijab</th>
+<th>Catatan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apa yang diceritakan member ke temannya?</td>
+<td>“Akhirnya ngerti margin beneran, bukan kira-kira.”</td>
+<td>Cerita berbasis outcome operasional</td>
+</tr>
+<tr>
+<td>Ada elemen yang bikin orang berhenti scrolling?</td>
+<td>Ya, “Blueprint Praktisi 20 Tahun” + “1.000+ mitra”</td>
+<td>Harus selalu tampil di hero copy</td>
+</tr>
+<tr>
+<td>Apakah polarizing?</td>
+<td>Ya, bukan untuk yang cari konten hiburan atau trik viral cepat</td>
+<td>Polarizing sehat, memperkuat quality lead</td>
+</tr>
+<tr>
+<td>Bisa dibedakan dari YouTube gratis?</td>
+<td>Ya, lewat kedalaman sistem dan standar operasional</td>
+<td>Perlu konten pembuktian, bukan klaim</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="14-purple-cow-messaging-hook-bank">1.4 Purple Cow Messaging Hook Bank</h3>
+<ol>
+<li>“Stop jualan hijab pakai feeling: pakai blueprint operasional.”</li>
+<li>“Bukan tips viral, ini SOP cuan dari praktisi 20 tahun.”</li>
+<li>“Margin tipis 8–12%? Bedah dari akar: HPP, supplier, repeat order.”</li>
+<li>“DM ghosting bukan nasib, tapi sistem follow-up yang belum distandarkan.”</li>
+<li>“Kalau supplier zonk bikin cashflow rusak, ini modul pemulihannya.”</li>
+</ol>
+<hr/>
+<h2 id="2-three-levers-identify-edges-pick-the-weird-design-for-extremes">2) Three Levers — Identify Edges, Pick the Weird, Design for Extremes</h2>
+<h3 id="21-lever-1-identify-the-edges">2.1 Lever 1: Identify the Edges</h3>
+<p>Edge CuanHijab yang paling tajam:</p>
+<ol>
+<li><strong>Edge pengalaman operasional</strong>: mentor bukan konten kreator karbitan.</li>
+<li><strong>Edge jaringan distribusi</strong>: pengalaman lapangan 1.000+ mitra memberi pattern recognition kuat.</li>
+<li><strong>Edge artefak implementasi</strong>: template HPP otomatis + checklist standar.</li>
+<li><strong>Edge pricing architecture</strong>: low-ticket entry dengan jalur nilai ke high-touch service.</li>
+<li><strong>Edge pain ownership</strong>: fokus pada problem riil hijab commerce, bukan teori bisnis umum.</li>
+</ol>
+<p>Edge yang harus dihindari:</p>
+<ol>
+<li>Meniru narasi “cuan cepat” ala konten viral.</li>
+<li>Bertarung di arena “termurah” melawan ebook generic.</li>
+<li>Menjadi “semua untuk semua” (reseller, dropshipper random, fashion umum).</li>
+</ol>
+<h3 id="22-lever-2-pick-your-weird">2.2 Lever 2: Pick Your Weird</h3>
+<p><strong>Weird CuanHijab:</strong> “Produk edukasi hijab yang diposisikan sebagai <em>operational blueprint</em> bukan kursus motivasi dan bukan sekadar strategi konten.”</p>
+<p>Manifestasi weird dalam produk:</p>
+<ol>
+<li>Setiap bab ebook punya output kerja, bukan teori panjang.</li>
+<li>Rekaman webinar menuntun peserta mengisi template, bukan hanya mendengar.</li>
+<li>Terdapat standar indikator operasional mingguan (margin, response rate, repeat order).</li>
+<li>Ada anti-pattern list “kebiasaan reseller yang bikin margin bocor”.</li>
+</ol>
+<h3 id="23-lever-3-design-for-extremes">2.3 Lever 3: Design for Extremes</h3>
+<p>Ekstrem yang dipilih:</p>
+<ol>
+<li><strong>Untuk reseller/agen yang sudah capek trial-error</strong>, bukan pemula yang baru mau coba-coba bisnis 2 minggu.</li>
+<li><strong>Untuk owner yang mau angka dan SOP</strong>, bukan yang hanya cari afirmasi.</li>
+<li><strong>Untuk yang rela eksekusi harian</strong>, bukan kolektor webinar.</li>
+</ol>
+<p>Self-selection cues di copy:</p>
+<ol>
+<li>“Jika Anda ingin hiburan bisnis, ini bukan produk Anda.”</li>
+<li>“Jika Anda siap audit margin dan SOP sendiri, Anda audiens kami.”</li>
+<li>“Jika Anda menolak disiplin data sederhana, jangan beli blueprint ini.”</li>
+</ol>
+<hr/>
+<h2 id="3-sva-smallest-viable-audience-bukan-semua-reseller-hijab">3) SVA — Smallest Viable Audience (Bukan “Semua Reseller Hijab”)</h2>
+<h3 id="31-definisi-sva-cuanhijab">3.1 Definisi SVA CuanHijab</h3>
+<p><strong>SVA Primer:</strong> Perempuan 28–45 tahun, sudah jualan hijab minimal 12 bulan, omzet bulanan berada di rentang Rp8 juta–Rp35 juta, margin bersih stagnan di 8–12%, mengandalkan supplier eksternal tanpa standar QC, aktif jualan via WhatsApp/Instagram, mengalami DM ghosting &gt;40% dari percakapan awal, dan sedang mencari sistem operasional yang bisa langsung dipakai tanpa rekrut tim besar.</p>
+<h3 id="32-sva-sekunder-adjacent">3.2 SVA Sekunder (Adjacent)</h3>
+<ol>
+<li>Agen hijab area kota tier-2/tier-3 yang sering kehilangan momentum karena lead time supplier.</li>
+<li>Pemilik brand hijab lokal skala mikro yang belum punya dashboard sederhana untuk margin dan repeat order.</li>
+<li>Mantan reseller yang ingin naik kelas jadi operator brand kecil dengan SOP.</li>
+</ol>
+<h3 id="33-sva-yang-secara-sengaja-tidak-diambil">3.3 SVA yang Secara Sengaja Tidak Diambil</h3>
+<ol>
+<li>Audiens yang hanya mau konten gratis dan tidak niat membeli tools.</li>
+<li>Pemula total yang belum pernah closing produk hijab sama sekali.</li>
+<li>Owner skala besar dengan tim finance dan ERP (kebutuhannya sudah berbeda).</li>
+<li>Pencari “cara cepat viral 24 jam”.</li>
+</ol>
+<h3 id="34-worldview-sva-yang-harus-di-address">3.4 Worldview SVA yang Harus Di-address</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Worldview SVA</th>
+<th>Implikasi Messaging</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>“Saya sudah kerja keras tapi margin tetap tipis.”</td>
+<td>Tekankan kebocoran sistem, bukan kurang semangat</td>
+</tr>
+<tr>
+<td>“Supplier bikin usaha saya tidak stabil.”</td>
+<td>Beri kontrol melalui SOP supplier dan buffer keputusan</td>
+</tr>
+<tr>
+<td>“Saya bingung kenapa DM sering berhenti di tengah.”</td>
+<td>Tawarkan framework follow-up berbasis tahapan chat</td>
+</tr>
+<tr>
+<td>“Omzet saya naik-turun, tidak bisa diprediksi.”</td>
+<td>Tawarkan ritme operasional mingguan berbasis metrik</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="35-sva-acceptance-criteria">3.5 SVA Acceptance Criteria</h3>
+<p>Calon pembeli SVA ideal memenuhi minimal 5 dari 7 indikator:</p>
+<ol>
+<li>Sudah pernah jualan hijab &gt; 12 bulan.</li>
+<li>Pernah mengalami masalah supplier zonk dalam 3 bulan terakhir.</li>
+<li>Mengaku margin tipis meski order berjalan.</li>
+<li>Mengelola chat penjualan sendiri atau dengan admin terbatas.</li>
+<li>Merasa sulit menstabilkan omzet.</li>
+<li>Bersedia mengisi template angka sederhana.</li>
+<li>Mau ikut eksekusi minimal 30 hari pasca pembelian.</li>
+</ol>
+<hr/>
+<h2 id="4-brand-story-5-element-cuanhijab">4) Brand Story 5-Element CuanHijab</h2>
+<h3 id="41-narasi-inti-satu-paragraf">4.1 Narasi Inti Satu Paragraf</h3>
+<p>Kami melihat reseller, agen, dan pemilik brand hijab lokal bekerja keras setiap hari tetapi tetap terjebak di margin tipis dan omzet yang tidak stabil. Masalah yang terlihat memang supplier zonk, DM ghosting, dan perputaran stok yang berantakan, tetapi masalah terdalamnya adalah bisnis dijalankan tanpa sistem operasional yang bisa diulang. Kami percaya tidak adil jika perempuan pelaku bisnis hijab terus disuruh “lebih semangat” tanpa diberikan blueprint kerja yang nyata. Karena itu Cuan Hijab Next Level dibangun untuk membawa pelaku bisnis dari mode reaktif berbasis feeling ke mode terukur berbasis SOP, checklist, dan formula scale-up yang sudah teruji di 1.000+ mitra.</p>
+<h3 id="42-breakdown-5-elemen">4.2 Breakdown 5 Elemen</h3>
+<h4 id="a-status-quo">A. Status Quo</h4>
+<ol>
+<li>Jualan jalan, tapi pemilik usaha tidak punya kontrol.</li>
+<li>Margin tipis dianggap normal.</li>
+<li>Setiap minggu selalu ada drama supplier atau stok.</li>
+<li>DM tidak dibalas, owner menyalahkan algoritma.</li>
+</ol>
+<h4 id="b-external-problem">B. External Problem</h4>
+<ol>
+<li>Supplier kirim kualitas tidak konsisten.</li>
+<li>HPP tidak dihitung detail, harga jual asal mengikuti pasar.</li>
+<li>Follow-up chat tidak punya script dan timing.</li>
+<li>Tidak ada ritme evaluasi mingguan.</li>
+</ol>
+<h4 id="c-internal-problem">C. Internal Problem</h4>
+<ol>
+<li>Frustrasi karena kerja keras tidak setara hasil.</li>
+<li>Cemas saat stok datang karena takut tidak laku atau reject.</li>
+<li>Minder melihat kompetitor tampak stabil.</li>
+<li>Lelah karena setiap masalah harus diselesaikan dari nol.</li>
+</ol>
+<h4 id="d-philosophical-problem">D. Philosophical Problem</h4>
+<ol>
+<li>Pelaku bisnis hijab berhak punya sistem, bukan sekadar disuruh “konsisten”.</li>
+<li>Bisnis perempuan tidak boleh dipaksa bertahan dengan trial-error tanpa alat.</li>
+<li>Industri ini butuh standar operasional, bukan hanya konten motivasi.</li>
+</ol>
+<h4 id="e-the-change">E. The Change</h4>
+<ol>
+<li>Dari jualan reaktif menjadi operasi yang terukur.</li>
+<li>Dari margin bocor ke margin yang dipantau.</li>
+<li>Dari ghosting chat ke alur follow-up yang bisa diulang.</li>
+<li>Dari omzet fluktuatif ke ritme pertumbuhan yang lebih stabil.</li>
+</ol>
+<h3 id="43-story-assets-untuk-landing-page">4.3 Story Assets untuk Landing Page</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Blok LP</th>
+<th>Pesan Story</th>
+<th>Bukti yang disarankan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Hero</td>
+<td>“Blueprint Praktisi 20 Tahun untuk bisnis hijab”</td>
+<td>Kredensial mentor + angka mitra</td>
+</tr>
+<tr>
+<td>Problem Section</td>
+<td>“Masalah Anda bukan semangat, tapi sistem”</td>
+<td>4 pain utama dengan contoh nyata</td>
+</tr>
+<tr>
+<td>Mechanism Section</td>
+<td>“Checklist + HPP otomatis + formula scale-up”</td>
+<td>Screenshot template</td>
+</tr>
+<tr>
+<td>Transformation</td>
+<td>“Dari chaos ke operasional”</td>
+<td>Studi kasus ringkas</td>
+</tr>
+<tr>
+<td>Offer Stack</td>
+<td>“Rp49K untuk 500 pembeli pertama”</td>
+<td>Scarcity counter + timeline</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="5-positioning-statement-3-versi-formula">5) Positioning Statement — 3 Versi Formula</h2>
+<p>Formula: <code>[BRAND] is for [SPECIFIC PEOPLE] who believe [WORLDVIEW]. Unlike [ALTERNATIVE], we [KEY DIFFERENCE] so that [OUTCOME].</code></p>
+<h3 id="51-versi-1-operational-precision">5.1 Versi 1 — Operational Precision</h3>
+<p><strong>Cuan Hijab Next Level</strong> adalah untuk reseller dan agen hijab perempuan yang sudah jualan tetapi percaya bahwa pertumbuhan bisnis harus ditopang sistem, bukan feeling. Berbeda dari tutorial gratis yang generic, kami memberikan blueprint operasional praktisi 20+ tahun dengan checklist, template HPP otomatis, dan formula scale-up sehingga margin lebih sehat dan omzet lebih stabil.</p>
+<h3 id="52-versi-2-anti-zonk-supply-chain">5.2 Versi 2 — Anti-Zonk Supply Chain</h3>
+<p><strong>Cuan Hijab Next Level</strong> adalah untuk pemilik brand hijab lokal skala kecil-menengah yang percaya masalah supplier harus diatasi lewat kontrol proses, bukan berharap vendor berubah sendiri. Berbeda dari ebook murah yang hanya memberi tips permukaan, kami memetakan cara audit supplier, standar keputusan pembelian, dan ritme evaluasi mingguan agar bisnis tidak lumpuh saat supplier bermasalah.</p>
+<h3 id="53-versi-3-chat-to-cash-discipline">5.3 Versi 3 — Chat-to-Cash Discipline</h3>
+<p><strong>Cuan Hijab Next Level</strong> adalah untuk pelaku bisnis hijab yang percaya penjualan chat harus diukur seperti operasi bisnis, bukan sekadar mengandalkan mood admin. Berbeda dari kursus mahal yang terlalu luas topiknya, kami fokuskan sistem yang langsung relevan untuk hijab commerce agar DM ghosting turun, follow-up rapi, dan repeat order naik.</p>
+<h3 id="54-rekomendasi-pemakaian-versi">5.4 Rekomendasi Pemakaian Versi</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Channel</th>
+<th>Versi Positioning yang Dipakai</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Landing page utama</td>
+<td>Versi 1</td>
+</tr>
+<tr>
+<td>VSL/Video sales</td>
+<td>Versi 1 + Versi 3</td>
+</tr>
+<tr>
+<td>Broadcast WA ke brand owner</td>
+<td>Versi 2</td>
+</tr>
+<tr>
+<td>Caption edukasi IG</td>
+<td>Versi 3</td>
+</tr>
+<tr>
+<td>Script closing admin</td>
+<td>Versi 1 ringkas</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="6-positioning-by-exclusion-cuanhijab-bukan-untuk-siapa">6) Positioning by Exclusion — CuanHijab Bukan untuk Siapa</h2>
+<h3 id="61-pernyataan-eksklusi-resmi">6.1 Pernyataan Eksklusi Resmi</h3>
+<p>Cuan Hijab Next Level <strong>bukan</strong> untuk:</p>
+<ol>
+<li>Orang yang mencari skema cepat kaya tanpa eksekusi operasional.</li>
+<li>Pemula total yang belum pernah transaksi hijab sama sekali.</li>
+<li>Pemilik bisnis yang menolak mencatat angka dasar (HPP, margin, conversion chat).</li>
+<li>Pencari hiburan webinar tanpa niat implementasi.</li>
+<li>Audiens di luar konteks bisnis hijab yang berharap materi berlaku 100% tanpa adaptasi.</li>
+</ol>
+<h3 id="62-mengapa-exclusion-ini-penting">6.2 Mengapa Exclusion Ini Penting</h3>
+<ol>
+<li>Menaikkan kualitas pembeli dan menurunkan refund/complaint.</li>
+<li>Menjaga komunitas WA tetap produktif, bukan noise.</li>
+<li>Mempercepat time-to-value karena peserta memiliki baseline pengalaman.</li>
+<li>Menghemat waktu support tim.</li>
+</ol>
+<h3 id="63-copy-exclusion-untuk-sales-page">6.3 Copy Exclusion untuk Sales Page</h3>
+<pre><code>
+Program ini didesain untuk pelaku bisnis hijab yang sudah berjalan dan siap menata ulang sistem operasional.
+Jika Anda belum pernah jualan hijab sama sekali atau mencari trik instan tanpa praktik,
+program ini kemungkinan tidak cocok untuk Anda.
+</code></pre>
+<hr/>
+<h2 id="7-competitive-differentiation-map-5-kompetitor-pada-2-axis-matrix">7) Competitive Differentiation Map — 5 Kompetitor pada 2-Axis Matrix</h2>
+<h3 id="71-definisi-sumbu">7.1 Definisi Sumbu</h3>
+<ul>
+<li><strong>Sumbu X:</strong> Kedalaman Operasional (surface tips → deep operational system)</li>
+<li><strong>Sumbu Y:</strong> Konteks Spesifik Hijab (generic business → hijab-specific)</li>
+</ul>
+<h3 id="72-daftar-kompetitor-yang-dipetakan">7.2 Daftar Kompetitor yang Dipetakan</h3>
+<ol>
+<li>Tutorial YouTube gratis (umum).</li>
+<li>Ebook generic Rp20–50K tentang reseller.</li>
+<li>Kursus online bisnis fashion Rp200K–2jt.</li>
+<li>Komunitas reseller hijab gratis/berbayar.</li>
+<li>Mentor individual via live class tanpa tools standar.</li>
+</ol>
+<h3 id="73-tabel-pemetaan">7.3 Tabel Pemetaan</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Pemain</th>
+<th>Harga</th>
+<th>Kedalaman Operasional</th>
+<th>Spesifik Hijab</th>
+<th>Kelebihan</th>
+<th>Kelemahan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>YouTube tutorial gratis</td>
+<td>Rp0</td>
+<td>Rendah</td>
+<td>Rendah-sedang</td>
+<td>Akses mudah, cepat</td>
+<td>Fragmented, tidak runtut</td>
+</tr>
+<tr>
+<td>Ebook generic reseller</td>
+<td>Rp20K–50K</td>
+<td>Rendah-sedang</td>
+<td>Rendah</td>
+<td>Murah, praktis</td>
+<td>Tidak kontekstual hijab supply chain</td>
+</tr>
+<tr>
+<td>Kursus online fashion umum</td>
+<td>Rp200K–2jt</td>
+<td>Sedang</td>
+<td>Rendah-sedang</td>
+<td>Materi lebih panjang</td>
+<td>Terlalu luas, implementasi lambat</td>
+</tr>
+<tr>
+<td>Komunitas reseller hijab</td>
+<td>Gratis/berbayar</td>
+<td>Rendah-sedang</td>
+<td>Tinggi</td>
+<td>Support sosial</td>
+<td>Advice tidak terstandar</td>
+</tr>
+<tr>
+<td>Mentor live class tanpa tools</td>
+<td>Rp100K–1jt</td>
+<td>Sedang</td>
+<td>Sedang-tinggi</td>
+<td>Interaksi langsung</td>
+<td>Tidak ada artefak sistem</td>
+</tr>
+<tr>
+<td><strong>Cuan Hijab Next Level</strong></td>
+<td><strong>Rp49K/Rp99K</strong></td>
+<td><strong>Tinggi</strong></td>
+<td><strong>Tinggi</strong></td>
+<td>Blueprint operasional + tools + kredensial lapangan</td>
+<td>Butuh disiplin eksekusi peserta</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="74-visual-kuadran-ascii">7.4 Visual Kuadran (ASCII)</h3>
+<pre><code>
+Y: Spesifik Hijab (tinggi)
+^
+| [Komunitas reseller]
+| [Mentor live class]
+| [CUAN HIJAB NEXT LEVEL]
+|
+| [Ebook generic]
+| [YouTube]
+|-------------------------------&gt; X: Kedalaman Operasional (tinggi)
+| [Kursus fashion umum]
+|
++--------------------------------------------------------------&gt;
+</code></pre>
+<h3 id="75-white-space-yang-ditempati-cuanhijab">7.5 White Space yang Ditempati CuanHijab</h3>
+<p>White space utama:</p>
+<ol>
+<li>Harga low-ticket tetapi kedalaman operasional tinggi.</li>
+<li>Konten hijab-specific yang tidak berhenti di motivasi.</li>
+<li>Jalur implementasi berjenjang dari edukasi ke pendampingan.</li>
+</ol>
+<hr/>
+<h2 id="8-category-creation-blueprint-operasional-hijab">8) Category Creation — “Blueprint Operasional Hijab”</h2>
+<h3 id="81-nama-kategori">8.1 Nama Kategori</h3>
+<p><strong>Blueprint Operasional Hijab (BOH)</strong></p>
+<h3 id="82-definisi-kategori">8.2 Definisi Kategori</h3>
+<p>Blueprint Operasional Hijab adalah kategori pembelajaran praktis yang mengubah aktivitas jualan hijab menjadi sistem operasional terukur melalui standar proses, metrik harian-mingguan, dan alat bantu implementasi yang langsung dipakai.</p>
+<h3 id="83-masalah-yang-direframe">8.3 Masalah yang Direframe</h3>
+<p>Masalah lama (kategori lama):</p>
+<ol>
+<li>“Kurang semangat promosi.”</li>
+<li>“Kurang jago konten.”</li>
+<li>“Kurang sering posting.”</li>
+</ol>
+<p>Reframe BOH:</p>
+<ol>
+<li>Margin tipis terjadi karena SOP margin dan HPP tidak distandarkan.</li>
+<li>Supplier zonk berdampak besar karena tidak ada protokol mitigasi.</li>
+<li>DM ghosting tinggi karena tidak ada struktur follow-up.</li>
+</ol>
+<h3 id="84-kriteria-program-yang-layak-disebut-boh">8.4 Kriteria Program yang Layak Disebut BOH</h3>
+<p>Suatu program hanya layak masuk kategori BOH jika memenuhi semua kriteria ini:</p>
+<ol>
+<li>Ada alat implementasi nyata (template/checklist/dashboard).</li>
+<li>Ada metrik operasional, bukan hanya inspirasi.</li>
+<li>Ada urutan eksekusi minimal 30 hari.</li>
+<li>Ada peta keputusan saat supplier bermasalah.</li>
+<li>Ada mekanisme evaluasi margin dan chat conversion.</li>
+</ol>
+<h3 id="85-manifesto-kategori-boh">8.5 Manifesto Kategori BOH</h3>
+<ol>
+<li>Kami menolak trial-error tanpa data dasar.</li>
+<li>Kami menolak edukasi yang selesai di level motivasi.</li>
+<li>Kami percaya bisnis hijab harus punya standar operasional yang manusiawi dan realistis.</li>
+<li>Kami percaya owner perempuan berhak pegang kontrol bisnis, bukan dikontrol chaos harian.</li>
+</ol>
+<h3 id="86-rencana-evangelism-12-minggu">8.6 Rencana Evangelism 12 Minggu</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Tema Edukasi Kategori</th>
+<th>Objective</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Kenapa bisnis hijab butuh kategori BOH</td>
+<td>Awareness kategori</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bedah kebocoran margin 8–12%</td>
+<td>Problem agitation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Supply chain mini-audit untuk reseller</td>
+<td>Demonstrasi framework</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Anatomy DM ghosting dan perbaikannya</td>
+<td>Reframe masalah</td>
+</tr>
+<tr>
+<td>5</td>
+<td>HPP bukan rumus rumit, ini kontrol bisnis</td>
+<td>Objection handling</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5 kesalahan follow-up chat owner hijab</td>
+<td>Demand shaping</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Studi kasus 30 hari eksekusi SOP</td>
+<td>Bukti penerapan</td>
+</tr>
+<tr>
+<td>8</td>
+<td>BOH vs kursus konten biasa</td>
+<td>Category contrast</td>
+</tr>
+<tr>
+<td>9</td>
+<td>QnA operasional hijab live</td>
+<td>Community engagement</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Kalkulasi rugi tersembunyi dari supplier zonk</td>
+<td>Economic consequence</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Path dari reseller ke owner berbasis sistem</td>
+<td>Future identity</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Recap BOH + CTA launch batch baru</td>
+<td>Conversion</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="87-frasa-yang-konsisten-dipakai-tim">8.7 Frasa yang Konsisten Dipakai Tim</h3>
+<ol>
+<li>“Ini masuk kategori Blueprint Operasional Hijab.”</li>
+<li>“Bukan tips random, ini sistem BOH.”</li>
+<li>“Output BOH harus terukur minggu ke minggu.”</li>
+<li>“Kalau tidak ada artefak implementasi, itu belum BOH.”</li>
+</ol>
+<hr/>
+<h2 id="9-defensibility-test-apa-yang-sulit-dicopy-kompetitor">9) Defensibility Test — Apa yang Sulit Dicopy Kompetitor</h2>
+<h3 id="91-aset-moat-inti">9.1 Aset Moat Inti</h3>
+<ol>
+<li><strong>Track record mentor 20+ tahun</strong> di industri hijab.</li>
+<li><strong>Jejak 1.000+ mitra distribusi nasional</strong> yang membentuk pattern library unik.</li>
+<li><strong>Kombinasi framework + konteks industri</strong> yang tidak mudah ditiru cepat.</li>
+<li><strong>Jalur monetisasi berjenjang</strong> dari low-ticket ke high-touch service.</li>
+<li><strong>Community learning loop</strong> yang mengumpulkan insight lapangan real-time.</li>
+</ol>
+<h3 id="92-tabel-uji-copyability">9.2 Tabel Uji Copyability</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Elemen Diferensiasi</th>
+<th>Bisa dicopy &lt; 1 bulan?</th>
+<th>Bisa dicopy &lt; 6 bulan?</th>
+<th>Catatan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Harga Rp49K</td>
+<td>Ya</td>
+<td>Ya</td>
+<td>Bukan moat</td>
+</tr>
+<tr>
+<td>Format webinar + ebook</td>
+<td>Ya</td>
+<td>Ya</td>
+<td>Bukan moat</td>
+</tr>
+<tr>
+<td>Klaim “tips hijab”</td>
+<td>Ya</td>
+<td>Ya</td>
+<td>Lemah</td>
+</tr>
+<tr>
+<td>Kredensial 20+ tahun mentor</td>
+<td>Tidak</td>
+<td>Sulit</td>
+<td>Moat personal credibility</td>
+</tr>
+<tr>
+<td>Bukti lapangan 1.000+ mitra</td>
+<td>Tidak</td>
+<td>Sulit</td>
+<td>Moat network history</td>
+</tr>
+<tr>
+<td>Checklist + HPP + SOP kontekstual</td>
+<td>Sebagian</td>
+<td>Mungkin</td>
+<td>Kuat jika terus diupdate</td>
+</tr>
+<tr>
+<td>Community WA berbasis implementasi</td>
+<td>Mungkin</td>
+<td>Mungkin</td>
+<td>Kuat jika engagement disiplin</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="93-cara-mempertebal-defensibility">9.3 Cara Mempertebal Defensibility</h3>
+<ol>
+<li>Dokumentasikan case library anonim dari member (before/after operasional).</li>
+<li>Rilis update template berkala berbasis data komunitas.</li>
+<li>Bangun sertifikasi internal “BOH Implementer” untuk alumni.</li>
+<li>Kembangkan benchmark indeks performa anggota (tanpa buka data sensitif).</li>
+<li>Konsisten menggunakan bahasa kategori sendiri agar market mengadopsi istilah BOH.</li>
+</ol>
+<h3 id="94-defensibility-risk-alert">9.4 Defensibility Risk Alert</h3>
+<ol>
+<li>Jika tim terlalu fokus diskon, moat melemah jadi price war.</li>
+<li>Jika konten publik tidak edukasi kategori, market melihat produk ini “kursus biasa”.</li>
+<li>Jika onboarding pasca pembelian lemah, proof of outcome tidak terkumpul.</li>
+</ol>
+<hr/>
+<h2 id="10-tribes-framework-4-pillar-komunitas-cuanhijab">10) Tribes Framework 4-Pillar — Komunitas CuanHijab</h2>
+<h3 id="101-pilar-1-shared-enemy-shared-belief">10.1 Pilar 1: Shared Enemy / Shared Belief</h3>
+<p><strong>Shared Enemy (bukan individu, tapi status quo):</strong></p>
+<ol>
+<li>Supplier zonk yang merusak ritme bisnis.</li>
+<li>Kebiasaan hitung margin asal-asalan.</li>
+<li>Ghosting DM karena follow-up tidak terstruktur.</li>
+<li>Pola bisnis chaos tanpa SOP.</li>
+</ol>
+<p><strong>Shared Belief:</strong></p>
+<ol>
+<li>“Bisnis hijab harus ditopang sistem, bukan feeling.”</li>
+<li>“Kecil dulu tidak masalah, yang penting operasional sehat.”</li>
+<li>“Data sederhana lebih baik daripada asumsi rumit.”</li>
+</ol>
+<h3 id="102-pilar-2-identity-markers">10.2 Pilar 2: Identity Markers</h3>
+<p>Identity markers komunitas CuanHijab:</p>
+<ol>
+<li>Sapaan: “Operator CuanHijab”.</li>
+<li>Istilah internal: “BOH Checkpoint”, “Anti-Zonk Routine”, “Margin Guard”.</li>
+<li>Ritual mingguan: “Rabu Audit Margin”, “Jumat Follow-up Sprint”.</li>
+<li>Badge partisipasi: “30-Hari Eksekutor”, “DM Recovery Finisher”.</li>
+</ol>
+<h3 id="103-pilar-3-gathering-spaces-owned">10.3 Pilar 3: Gathering Spaces (Owned)</h3>
+<p>Primary gathering:</p>
+<ol>
+<li><strong>WhatsApp Group inti</strong> per batch pembelian.</li>
+<li>WA Announcement untuk update materi dan jadwal.</li>
+<li>Google Sheet tracker bersama (template wajib).</li>
+</ol>
+<p>Secondary gathering:</p>
+<ol>
+<li>Sesi Zoom mingguan untuk bedah blocker.</li>
+<li>Kanal testimoni berbasis format standar.</li>
+<li>Form check-in 7 harian.</li>
+</ol>
+<h3 id="104-pilar-4-leader-structure">10.4 Pilar 4: Leader Structure</h3>
+<p>Struktur leader:</p>
+<ol>
+<li><strong>Founder/Mentor</strong>: pengarah prinsip kategori BOH.</li>
+<li><strong>Community captain</strong>: menjaga ritme diskusi harian.</li>
+<li><strong>Peer leader alumni</strong>: memimpin mini-thread implementasi.</li>
+<li><strong>Support admin</strong>: menjaga SLA respon pertanyaan teknis.</li>
+</ol>
+<h3 id="105-interaction-operating-system">10.5 Interaction Operating System</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Frekuensi</th>
+<th>Aktivitas</th>
+<th>Owner</th>
+<th>KPI</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Harian</td>
+<td>Prompt eksekusi 1 tindakan</td>
+<td>Captain</td>
+<td>Response rate thread &gt; 35%</td>
+</tr>
+<tr>
+<td>2x/minggu</td>
+<td>Quick clinic 30 menit</td>
+<td>Mentor/Admin</td>
+<td>Pertanyaan terjawab &gt; 90%</td>
+</tr>
+<tr>
+<td>Mingguan</td>
+<td>Audit metrik batch</td>
+<td>Captain</td>
+<td>Form check-in terkumpul &gt; 70%</td>
+</tr>
+<tr>
+<td>Bulanan</td>
+<td>Showcase hasil member</td>
+<td>Founder</td>
+<td>Testimoni terstruktur &gt;= 15</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="106-rules-of-engagement-komunitas">10.6 Rules of Engagement Komunitas</h3>
+<ol>
+<li>Dilarang share promosi produk di thread utama tanpa konteks belajar.</li>
+<li>Setiap pertanyaan wajib sertakan data minimum (omzet rentang, masalah inti, aksi yang sudah dicoba).</li>
+<li>Fokus diskusi pada implementasi, bukan debat teori panjang.</li>
+<li>Beri ruang peer-to-peer support sebelum mentor menjawab.</li>
+</ol>
+<hr/>
+<h2 id="11-messaging-architecture-turunan-dari-positioning">11) Messaging Architecture Turunan dari Positioning</h2>
+<h3 id="111-core-message-house">11.1 Core Message House</h3>
+<ul>
+<li><strong>Pilar Utama:</strong> Blueprint Praktisi 20 Tahun.</li>
+<li><strong>Reason to Believe #1:</strong> 1.000+ mitra distribusi nasional.</li>
+<li><strong>Reason to Believe #2:</strong> Checklist + HPP otomatis + formula scale-up.</li>
+<li><strong>Reason to Believe #3:</strong> Fokus problem riil hijab commerce.</li>
+<li><strong>Big Promise:</strong> Dari chaos operasional ke kontrol bisnis yang terukur.</li>
+</ul>
+<h3 id="112-claim-ladder">11.2 Claim Ladder</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Level</th>
+<th>Jenis Klaim</th>
+<th>Contoh</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Level 1</td>
+<td>Faktual</td>
+<td>Mentor 20+ tahun di industri hijab</td>
+</tr>
+<tr>
+<td>Level 2</td>
+<td>Mekanisme</td>
+<td>Ada template HPP otomatis</td>
+</tr>
+<tr>
+<td>Level 3</td>
+<td>Outcome proximate</td>
+<td>Membantu identifikasi kebocoran margin</td>
+</tr>
+<tr>
+<td>Level 4</td>
+<td>Outcome bisnis</td>
+<td>Membantu menstabilkan performa penjualan</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="113-do-dont-messaging">11.3 Do / Don&#39;t Messaging</h3>
+<p>Do:</p>
+<ol>
+<li>Tunjukkan “bagaimana” secara ringkas.</li>
+<li>Pakai data/proses spesifik.</li>
+<li>Gunakan bahasa operasional yang mudah dipraktikkan.</li>
+</ol>
+<p>Don’t:</p>
+<ol>
+<li>Klaim absolut tanpa bukti.</li>
+<li>Janji angka tidak realistis.</li>
+<li>Menyamakan produk ini dengan “kursus motivasi”.</li>
+</ol>
+<hr/>
+<h2 id="12-implementation-blueprint-30-hari-untuk-positioning-rollout">12) Implementation Blueprint 30 Hari untuk Positioning Rollout</h2>
+<h3 id="121-fase-1-hari-17-positioning-alignment-internal">12.1 Fase 1 (Hari 1–7): Positioning Alignment Internal</h3>
+<ol>
+<li>Finalisasi satu positioning statement utama.</li>
+<li>Sinkronisasi script admin chat dengan statement tersebut.</li>
+<li>Update hero landing page dan CTA.</li>
+<li>Buat FAQ kontra-kompetitor tanpa menjelekkan pihak lain.</li>
+<li>Brief tim konten tentang bahasa kategori BOH.</li>
+</ol>
+<h3 id="122-fase-2-hari-814-market-education">12.2 Fase 2 (Hari 8–14): Market Education</h3>
+<ol>
+<li>Rilis 4 konten edukasi “masalah bukan semangat, tapi sistem”.</li>
+<li>Rilis 2 konten bukti artefak (template/checklist).</li>
+<li>Adakan 1 sesi live bedah margin tipis.</li>
+<li>Dorong interaksi komentar dengan prompt diagnosis.</li>
+</ol>
+<h3 id="123-fase-3-hari-1521-conversion-push">12.3 Fase 3 (Hari 15–21): Conversion Push</h3>
+<ol>
+<li>Jalankan kampanye scarcity 500 kuota.</li>
+<li>Kirim broadcast WA segmented berdasar pain utama.</li>
+<li>Terapkan script objection handling by exclusion.</li>
+<li>Tampilkan social proof berbasis output implementasi.</li>
+</ol>
+<h3 id="124-fase-4-hari-2230-tribe-activation">12.4 Fase 4 (Hari 22–30): Tribe Activation</h3>
+<ol>
+<li>Onboarding batch pembeli ke WA Group.</li>
+<li>Aktivasi ritual mingguan BOH Checkpoint.</li>
+<li>Kumpulkan baseline metric member minggu pertama.</li>
+<li>Siapkan peta upsell berbasis readiness member.</li>
+</ol>
+<hr/>
+<h2 id="13-kpi-positioning-differentiation">13) KPI Positioning &amp; Differentiation</h2>
+<h3 id="131-kpi-awareness">13.1 KPI Awareness</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target 30 Hari</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Persentase konten memakai istilah BOH</td>
+<td>&gt;= 80%</td>
+</tr>
+<tr>
+<td>Reach konten edukasi kategori</td>
+<td>&gt;= 150.000 impressions</td>
+</tr>
+<tr>
+<td>View-through rate konten proof mechanism</td>
+<td>&gt;= 25%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="132-kpi-conversion">13.2 KPI Conversion</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target Launch</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Penjualan kuota launch Rp49K</td>
+<td>500 buyer</td>
+</tr>
+<tr>
+<td>Conversion landing page</td>
+<td>&gt;= 2,5%</td>
+</tr>
+<tr>
+<td>WA chat-to-payment conversion</td>
+<td>&gt;= 18%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="133-kpi-community">13.3 KPI Community</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target 14 Hari Pasca Beli</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Aktivasi member di WA Group</td>
+<td>&gt;= 70%</td>
+</tr>
+<tr>
+<td>Pengisian template HPP awal</td>
+<td>&gt;= 60%</td>
+</tr>
+<tr>
+<td>Partisipasi check-in mingguan</td>
+<td>&gt;= 65%</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="14-risk-register-mitigasi">14) Risk Register + Mitigasi</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Risiko</th>
+<th>Dampak</th>
+<th>Mitigasi</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Narasi kembali generic</td>
+<td>Differentiation turun</td>
+<td>Enforce message house mingguan</td>
+</tr>
+<tr>
+<td>Overclaim hasil</td>
+<td>Trust turun</td>
+<td>Gunakan claim ladder berjenjang</td>
+</tr>
+<tr>
+<td>Komunitas pasif</td>
+<td>Defensibility melemah</td>
+<td>Aktivasi ritual + captain</td>
+</tr>
+<tr>
+<td>Kompetitor meniru istilah</td>
+<td>Noise kategori</td>
+<td>Perkuat bukti dan artefak khas</td>
+</tr>
+<tr>
+<td>Traffic tinggi tapi buyer rendah</td>
+<td>CAC membengkak</td>
+<td>Perbaiki exclusion + segmentasi pain</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="15-script-assets-ringkas-siap-pakai">15) Script Assets Ringkas (Siap Pakai)</h2>
+<h3 id="151-script-hero-lp">15.1 Script Hero LP</h3>
+<pre><code>
+Cuan Hijab Next Level adalah Blueprint Operasional Hijab untuk reseller, agen,
+dan owner brand lokal yang ingin berhenti jualan pakai feeling.
+Belajar dari praktisi 20+ tahun dengan 1.000+ mitra distribusi nasional.
+Kuota launch Rp49.000 hanya untuk 500 pembeli pertama.
+</code></pre>
+<h3 id="152-script-wa-broadcast-segmen-reseller-omzet-stuck">15.2 Script WA Broadcast Segmen Reseller Omzet Stuck</h3>
+<pre><code>
+Kalau omzet Anda stuck dan margin tetap tipis 8–12%,
+biasanya masalahnya bukan kurang promo, tapi sistem operasional yang belum rapi.
+Di Cuan Hijab Next Level, Anda dapat blueprint praktisi 20 tahun + template HPP otomatis.
+Launch 1 Mei, harga Rp49K untuk 500 pembeli pertama.
+</code></pre>
+<h3 id="153-script-objection-saya-sudah-belajar-dari-youtube">15.3 Script Objection “Saya Sudah Belajar dari YouTube”</h3>
+<pre><code>
+Bagus sekali sudah belajar dari YouTube.
+Perbedaannya, di Cuan Hijab Next Level Anda tidak hanya dapat ide,
+tapi juga urutan implementasi, checklist, dan template angka yang langsung dipakai
+untuk konteks bisnis hijab.
+</code></pre>
+<hr/>
+<h2 id="16-final-decision-matrix-apa-yang-harus-dipertahankan-konsisten">16) Final Decision Matrix — Apa yang Harus Dipertahankan Konsisten</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Keputusan</th>
+<th>Status</th>
+<th>Alasan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Fokus kategori BOH</td>
+<td>Wajib</td>
+<td>Menjaga positioning unik</td>
+</tr>
+<tr>
+<td>Exclusion audiens non-fit</td>
+<td>Wajib</td>
+<td>Menjaga kualitas buyer</td>
+</tr>
+<tr>
+<td>Pricing launch Rp49K (500 kuota)</td>
+<td>Wajib</td>
+<td>Mempercepat adopsi awal</td>
+</tr>
+<tr>
+<td>Evidence-based messaging</td>
+<td>Wajib</td>
+<td>Menjaga trust dan conversion</td>
+</tr>
+<tr>
+<td>Aktivasi komunitas WA pasca beli</td>
+<td>Wajib</td>
+<td>Menghasilkan proof + upsell</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="17-checklist-audit-cuanhijab-specific">17) Checklist Audit (CuanHijab-Specific)</h2>
+<ul>
+<li>[x] Purple Cow Test dinilai dan diputuskan.</li>
+<li>[x] Remarkable story ditulis untuk diceritakan ulang.</li>
+<li>[x] 3 levers diterapkan ke konteks hijab.</li>
+<li>[x] SVA didefinisikan spesifik dan sempit.</li>
+<li>[x] Story 5-element lengkap dan operasional.</li>
+<li>[x] Positioning statement dibuat 3 versi.</li>
+<li>[x] Exclusion rules eksplisit.</li>
+<li>[x] Competitive map 5 pemain dengan 2 sumbu.</li>
+<li>[x] Category baru BOH dinamai, didefinisikan, diberi kriteria.</li>
+<li>[x] Defensibility diuji dengan horizon copyability.</li>
+<li>[x] Tribe 4-pillar didesain lengkap untuk WA ecosystem.</li>
+</ul>
+<hr/>
+<h2 id="18-penutup-eksekusi">18) Penutup Eksekusi</h2>
+<p>Blueprint ini menempatkan Cuan Hijab Next Level bukan sebagai “produk info” biasa, melainkan sebagai kendaraan category ownership pada ruang <strong>Blueprint Operasional Hijab</strong>. Kunci keberhasilan bukan hanya launch Rp49K, tetapi konsistensi bahasa kategori, disiplin exclusion, dan kualitas aktivasi komunitas agar proof of implementation terus bertambah. Semakin banyak bukti lapangan dari member, semakin tebal moat CuanHijab, semakin sulit kompetitor mengejar meski meniru format permukaan.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

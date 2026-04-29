@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Performance Mindset &amp; Execution — Cuan Hijab</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Performance Mindset &amp; Execution — Cuan Hijab</h1>
+<p class="subtitle">Blueprint eksekusi launch Cuan Hijab Next Level berbasis framework Performance Mindset untuk memastikan target 500 buyer tercapai secara disiplin dan terukur.</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="0-parameter-eksekusi-yang-dikunci" href="#0-parameter-eksekusi-yang-dikunci">0) Parameter Eksekusi yang Dikunci</a></li>
+<li><a data-target="1-4-layer-blocker-diagnosis-state-decision-identity-system" href="#1-4-layer-blocker-diagnosis-state-decision-identity-system">1) 4-Layer Blocker Diagnosis (State / Decision / Identity / System)</a></li>
+<li><a data-target="2-triad-protocol-state-management-launch-week-1-mei-2026" href="#2-triad-protocol-state-management-launch-week-1-mei-2026">2) Triad Protocol — State Management Launch Week (1 Mei 2026)</a></li>
+<li><a data-target="3-six-human-needs-map-driver-tim-cuanhijab" href="#3-six-human-needs-map-driver-tim-cuanhijab">3) Six Human Needs Map — Driver Tim CuanHijab</a></li>
+<li><a data-target="4-time-mastery-weekly-time-blocking-template-launch" href="#4-time-mastery-weekly-time-blocking-template-launch">4) Time Mastery — Weekly Time Blocking Template Launch</a></li>
+<li><a data-target="5-priority-matrix-pemetaan-tugas-launch-ke-q1q2q3q4" href="#5-priority-matrix-pemetaan-tugas-launch-ke-q1q2q3q4">5) Priority Matrix — Pemetaan Tugas Launch ke Q1/Q2/Q3/Q4</a></li>
+<li><a data-target="6-accountability-system-3-level-untuk-launch-cuanhijab" href="#6-accountability-system-3-level-untuk-launch-cuanhijab">6) Accountability System — 3 Level untuk Launch CuanHijab</a></li>
+<li><a data-target="7-raving-fan-execution-habits-bukan-sekadar-kepuasan" href="#7-raving-fan-execution-habits-bukan-sekadar-kepuasan">7) Raving Fan Execution Habits — Bukan Sekadar Kepuasan</a></li>
+<li><a data-target="8-ultimate-success-formula-4-step-untuk-goal-90-hari" href="#8-ultimate-success-formula-4-step-untuk-goal-90-hari">8) Ultimate Success Formula — 4 Step untuk Goal 90 Hari</a></li>
+<li><a data-target="9-power-of-decisions-keputusan-yang-harus-dikunci-sekarang" href="#9-power-of-decisions-keputusan-yang-harus-dikunci-sekarang">9) Power of Decisions — Keputusan yang Harus Dikunci Sekarang</a></li>
+<li><a data-target="10-daily-execution-checklist-campaign-management-cuanhijab" href="#10-daily-execution-checklist-campaign-management-cuanhijab">10) Daily Execution Checklist — Campaign Management CuanHijab</a></li>
+<li><a data-target="11-kpi-tree-leading-vs-lagging-indicators" href="#11-kpi-tree-leading-vs-lagging-indicators">11) KPI Tree — Leading vs Lagging Indicators</a></li>
+<li><a data-target="12-launch-week-runbook-d-3-sampai-d7" href="#12-launch-week-runbook-d-3-sampai-d7">12) Launch Week Runbook (D-3 sampai D+7)</a></li>
+<li><a data-target="13-system-sop-ringkas-untuk-menutup-4-layer-blocker" href="#13-system-sop-ringkas-untuk-menutup-4-layer-blocker">13) System SOP Ringkas untuk Menutup 4-Layer Blocker</a></li>
+<li><a data-target="14-bahasa-agency-untuk-tim-anti-bahasa-korban" href="#14-bahasa-agency-untuk-tim-anti-bahasa-korban">14) Bahasa Agency untuk Tim (Anti Bahasa Korban)</a></li>
+<li><a data-target="15-pre-mortem-90-hari-skenario-gagal-dan-pencegahannya" href="#15-pre-mortem-90-hari-skenario-gagal-dan-pencegahannya">15) Pre-Mortem 90 Hari — Skenario Gagal dan Pencegahannya</a></li>
+<li><a data-target="16-30-60-90-day-execution-milestones" href="#16-30-60-90-day-execution-milestones">16) 30-60-90 Day Execution Milestones</a></li>
+<li><a data-target="17-audit-checklist-cuanhijab-specific" href="#17-audit-checklist-cuanhijab-specific">17) Audit Checklist (CuanHijab-Specific)</a></li>
+<li><a data-target="18-penutup-operasional" href="#18-penutup-operasional">18) Penutup Operasional</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Performance Mindset &amp; Execution — Cuan Hijab</h1>
+<hr/>
+<h2 id="0-parameter-eksekusi-yang-dikunci">0) Parameter Eksekusi yang Dikunci</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Nilai</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Produk</td>
+<td>Cuan Hijab Next Level — Blueprint Praktisi 20 Tahun</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Rekaman Webinar + Ebook Premium</td>
+</tr>
+<tr>
+<td>Launch date</td>
+<td>1 Mei 2026</td>
+</tr>
+<tr>
+<td>Launch price</td>
+<td>Rp49.000 (500 buyer pertama)</td>
+</tr>
+<tr>
+<td>Price after quota</td>
+<td>Rp99.000</td>
+</tr>
+<tr>
+<td>90-day target buyer</td>
+<td>500 buyer</td>
+</tr>
+<tr>
+<td>90-day target revenue front-end</td>
+<td>Rp25.000.000</td>
+</tr>
+<tr>
+<td>Upsell path</td>
+<td>Konsultasi Rp197K → Bedah Bisnis Rp497K → Retainer</td>
+</tr>
+<tr>
+<td>ICP</td>
+<td>Reseller/Agen/Owner hijab lokal perempuan 25–55</td>
+</tr>
+<tr>
+<td>Core pains</td>
+<td>Supplier zonk, margin 8–12%, DM ghosting, omzet fluktuatif</td>
+</tr>
+</tbody>
+</table></div>
+<p>Asumsi operasional dasar:</p>
+<ol>
+<li>Tim inti terdiri dari Founder, 1 project lead, 1–2 admin chat, 1 content operator.</li>
+<li>WA menjadi kanal konversi utama.</li>
+<li>Materi produk sudah siap minimal H-7 launch.</li>
+<li>Landing page, payment, dan onboarding sudah aktif sebelum hari launch.</li>
+</ol>
+<hr/>
+<h2 id="1-4-layer-blocker-diagnosis-state-decision-identity-system">1) 4-Layer Blocker Diagnosis (State / Decision / Identity / System)</h2>
+<h3 id="11-tujuan-diagnosa">1.1 Tujuan Diagnosa</h3>
+<p>Framework ini dipakai untuk mencegah kesalahan umum: tim merasa “kurang semangat”, padahal akar masalah ada di keputusan yang kabur atau sistem kerja yang bocor.</p>
+<h3 id="12-layer-1-state-blocker">1.2 Layer 1 — State Blocker</h3>
+<p>Gejala paling mungkin pada tim CuanHijab:</p>
+<ol>
+<li>Founder overthinking menjelang launch dan menunda eksekusi konten penting.</li>
+<li>Admin chat lelah karena volume pertanyaan berulang.</li>
+<li>Tim panik saat ada hari dengan conversion rendah.</li>
+<li>Energi tim drop karena jam kerja melebar tanpa recovery.</li>
+</ol>
+<p>Dampak jika tidak ditangani:</p>
+<ol>
+<li>Respons chat melambat.</li>
+<li>Nada komunikasi defensif.</li>
+<li>Keputusan emosional (diskon liar, ubah positioning mendadak).</li>
+</ol>
+<p>Indikator monitor state:</p>
+<ol>
+<li>SLA balas chat &gt; 10 menit pada jam puncak.</li>
+<li>Error operasional berulang di hari yang sama.</li>
+<li>Missed task harian &gt; 20%.</li>
+</ol>
+<h3 id="13-layer-2-decision-blocker">1.3 Layer 2 — Decision Blocker</h3>
+<p>Gejala paling mungkin:</p>
+<ol>
+<li>Tidak ada decision owner untuk promo harian.</li>
+<li>Kriteria “kapan broadcast dikirim” tidak jelas.</li>
+<li>Perdebatan berkepanjangan soal copy tanpa deadline keputusan.</li>
+<li>Tim menunggu founder untuk keputusan minor.</li>
+</ol>
+<p>Dampak:</p>
+<ol>
+<li>Bottleneck di founder.</li>
+<li>Task penting mundur ke esok hari.</li>
+<li>Momentum launch hilang.</li>
+</ol>
+<p>Indikator:</p>
+<ol>
+<li>&gt;3 keputusan penting tertunda &gt;24 jam.</li>
+<li>Meeting harian selesai tanpa keputusan final.</li>
+<li>Task blocking meningkat dari hari ke hari.</li>
+</ol>
+<h3 id="14-layer-3-identity-blocker">1.4 Layer 3 — Identity Blocker</h3>
+<p>Narasi identity yang berisiko muncul:</p>
+<ol>
+<li>“Saya bukan orang sales.”</li>
+<li>“Saya tidak enak follow-up karena takut ganggu.”</li>
+<li>“Saya bukan tipe orang yang tegas pakai data.”</li>
+<li>“Produk murah berarti nilainya kecil.”</li>
+</ol>
+<p>Dampak:</p>
+<ol>
+<li>Follow-up jadi setengah hati.</li>
+<li>Tim sulit menegaskan urgency kuota 500.</li>
+<li>Founder menghindari aktivitas revenue-driving.</li>
+</ol>
+<p>Indikator:</p>
+<ol>
+<li>Bahasa korban muncul di daily check-in.</li>
+<li>Penolakan tugas berbasis ketidaknyamanan personal.</li>
+<li>Konsistensi aktivitas sales rendah meski materi siap.</li>
+</ol>
+<h3 id="15-layer-4-system-blocker">1.5 Layer 4 — System Blocker</h3>
+<p>Bottleneck sistem yang paling realistis:</p>
+<ol>
+<li>Tidak ada dashboard satu pintu untuk KPI harian.</li>
+<li>Tidak ada template jawaban chat berbasis objection.</li>
+<li>Konten, admin, dan closing berjalan tanpa ritme sinkron.</li>
+<li>Tidak ada mekanisme handoff dari buyer ke onboarding WA.</li>
+</ol>
+<p>Dampak:</p>
+<ol>
+<li>Data tidak akurat untuk keputusan cepat.</li>
+<li>Banyak lead hangat hilang.</li>
+<li>Buyer experience tidak konsisten.</li>
+</ol>
+<p>Indikator:</p>
+<ol>
+<li>Tracking buyer manual dan terlambat.</li>
+<li>Lead status tidak ter-update.</li>
+<li>Repeat pertanyaan basic meningkat.</li>
+</ol>
+<h3 id="16-prioritas-blocker-cuanhijab-urutan-intervensi">1.6 Prioritas Blocker CuanHijab (Urutan Intervensi)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Prioritas</th>
+<th>Layer</th>
+<th>Alasan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>System</td>
+<td>Tanpa sistem, state dan decision terus kacau</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Decision</td>
+<td>Launch butuh kecepatan dan kejelasan pemilik keputusan</td>
+</tr>
+<tr>
+<td>3</td>
+<td>State</td>
+<td>Dibutuhkan untuk mempertahankan kualitas eksekusi harian</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Identity</td>
+<td>Diselesaikan paralel lewat bahasa dan standar perilaku</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="17-intervensi-7-hari-untuk-masing-masing-layer">1.7 Intervensi 7 Hari untuk Masing-Masing Layer</h3>
+<h4 id="intervensi-state-h-7-sampai-h-1">Intervensi State (H-7 sampai H-1)</h4>
+<ol>
+<li>Tetapkan jam kerja launch dan jam recovery.</li>
+<li>Terapkan 2 kali reset state per hari (pagi, sore).</li>
+<li>Gunakan template check-in energi skala 1–10.</li>
+</ol>
+<h4 id="intervensi-decision">Intervensi Decision</h4>
+<ol>
+<li>Buat daftar keputusan yang harus dikunci sebelum launch.</li>
+<li>Tetapkan “decision deadline by hour”, bukan by day.</li>
+<li>Gunakan RACI mini untuk setiap keputusan.</li>
+</ol>
+<h4 id="intervensi-identity">Intervensi Identity</h4>
+<ol>
+<li>Ganti bahasa “takut follow-up” menjadi “saya sedang membantu calon buyer ambil keputusan”.</li>
+<li>Simulasikan role-play objection 20 menit/hari.</li>
+<li>Tempelkan statement perilaku tim di dashboard.</li>
+</ol>
+<h4 id="intervensi-system">Intervensi System</h4>
+<ol>
+<li>Aktifkan launch dashboard live (traffic, chat, payment, onboarding).</li>
+<li>Finalisasi script objection by pain point.</li>
+<li>Buat SOP handoff buyer &lt; 5 menit setelah payment.</li>
+</ol>
+<hr/>
+<h2 id="2-triad-protocol-state-management-launch-week-1-mei-2026">2) Triad Protocol — State Management Launch Week (1 Mei 2026)</h2>
+<p>Triad = Physiology + Focus + Language.</p>
+<h3 id="21-prinsip-utama">2.1 Prinsip Utama</h3>
+<p>Selama launch week, kualitas keputusan sangat dipengaruhi kondisi tubuh, arah perhatian, dan bahasa internal tim. Protokol ini bukan motivasi; ini standar operasional psikologis.</p>
+<h3 id="22-physiology-protocol">2.2 Physiology Protocol</h3>
+<p>Checklist fisiologi harian tim:</p>
+<ol>
+<li>Start day dengan 5 menit movement + breathing 4-4-6.</li>
+<li>Wajib break 10 menit setiap 90 menit fokus.</li>
+<li>Hindari meeting sambil duduk pasif lebih dari 45 menit.</li>
+<li>Minum air terjadwal (jam 09.00, 12.00, 15.00, 18.00).</li>
+</ol>
+<p>Red flag:</p>
+<ol>
+<li>Tim mulai mengetik agresif saat chat.</li>
+<li>Kecepatan salah input meningkat.</li>
+<li>Nada suara meeting menurun tajam.</li>
+</ol>
+<p>Recovery action (&lt;= 7 menit):</p>
+<ol>
+<li>Berdiri dan jalan cepat.</li>
+<li>Breathing cycle 10 kali.</li>
+<li>Re-open task dengan checklist singkat.</li>
+</ol>
+<h3 id="23-focus-protocol">2.3 Focus Protocol</h3>
+<p>Arah fokus wajib:</p>
+<ol>
+<li>Fokus ke leading indicators (chat aktif, follow-up, CTR, payment link sent).</li>
+<li>Hindari doom-scrolling metrik vanity.</li>
+<li>Set “One critical outcome” per blok kerja.</li>
+</ol>
+<p>Pertanyaan fokus standar:</p>
+<ol>
+<li>“Aksi apa dalam 30 menit ini yang paling berdampak ke buyer hari ini?”</li>
+<li>“Lead mana yang paling siap close bila di-follow-up sekarang?”</li>
+<li>“Bottleneck apa yang bisa dihapus sebelum jam berikutnya?”</li>
+</ol>
+<h3 id="24-language-protocol">2.4 Language Protocol</h3>
+<p>Bahasa yang dilarang:</p>
+<ol>
+<li>“Hari ini jelek, berarti launch gagal.”</li>
+<li>“Calon buyer susah banget.”</li>
+<li>“Nanti saja follow-up.”</li>
+</ol>
+<p>Bahasa pengganti:</p>
+<ol>
+<li>“Hari ini data memberi sinyal perbaikan apa?”</li>
+<li>“Lead ini butuh informasi tambahan apa agar maju?”</li>
+<li>“Follow-up sekarang untuk menjaga momentum.”</li>
+</ol>
+<h3 id="25-triad-meeting-cadence-launch-week">2.5 Triad Meeting Cadence (Launch Week)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Waktu</th>
+<th>Agenda</th>
+<th>Durasi</th>
+<th>Owner</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>08.30</td>
+<td>Triad activation + prioritas harian</td>
+<td>15 menit</td>
+<td>Project Lead</td>
+</tr>
+<tr>
+<td>13.00</td>
+<td>Mid-day reset + bottleneck removal</td>
+<td>10 menit</td>
+<td>Founder/Lead</td>
+</tr>
+<tr>
+<td>19.30</td>
+<td>Debrief data + lesson capture</td>
+<td>20 menit</td>
+<td>Semua inti</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="26-triad-scorecard-harian">2.6 Triad Scorecard Harian</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Skor 1-5</th>
+<th>Catatan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Physiology team</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Focus discipline</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Language quality</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Decision speed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Execution consistency</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Aturan:</p>
+<ol>
+<li>Jika skor total &lt; 15, wajib kurangi beban non-esensial besok.</li>
+<li>Jika dua hari berturut-turut &lt; 15, lakukan root-cause review 30 menit.</li>
+</ol>
+<hr/>
+<h2 id="3-six-human-needs-map-driver-tim-cuanhijab">3) Six Human Needs Map — Driver Tim CuanHijab</h2>
+<h3 id="31-mapping-kebutuhan-dominan-tim">3.1 Mapping Kebutuhan Dominan Tim</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Need</th>
+<th>Driver pada tim CuanHijab</th>
+<th>Risiko jika tidak terpenuhi</th>
+<th>Solusi operasional</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Certainty</td>
+<td>Butuh kejelasan target harian</td>
+<td>Freeze dan menunda aksi</td>
+<td>Dashboard KPI + SOP harian</td>
+</tr>
+<tr>
+<td>Uncertainty</td>
+<td>Butuh variasi ritme kerja</td>
+<td>Bosan dan drop fokus</td>
+<td>Rotasi micro-task tiap 2 jam</td>
+</tr>
+<tr>
+<td>Significance</td>
+<td>Ingin kontribusinya terlihat</td>
+<td>Demotivasi diam-diam</td>
+<td>Daily scoreboard kontribusi</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>Butuh dukungan tim</td>
+<td>Kerja silo, miskomunikasi</td>
+<td>Standup 2x/hari + check-in</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>Ingin merasa berkembang</td>
+<td>Rutinitas mekanis tanpa belajar</td>
+<td>Post-mortem mini harian</td>
+</tr>
+<tr>
+<td>Contribution</td>
+<td>Ingin dampak ke buyer</td>
+<td>Kerja terasa transaksional</td>
+<td>Cerita success buyer mingguan</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="32-pemenuhan-needs-per-role">3.2 Pemenuhan Needs per Role</h3>
+<h4 id="founder">Founder</h4>
+<ol>
+<li>Certainty: menerima ringkasan dashboard pada jam tetap.</li>
+<li>Significance: fokus pada keputusan high-leverage, bukan task administratif.</li>
+<li>Contribution: ikut sesi testimoni buyer untuk melihat dampak nyata.</li>
+</ol>
+<h4 id="admin-chat">Admin Chat</h4>
+<ol>
+<li>Certainty: script objection dan eskalasi jelas.</li>
+<li>Connection: ada support buddy saat volume chat tinggi.</li>
+<li>Growth: review 5 chat terbaik/terlemah setiap malam.</li>
+</ol>
+<h4 id="content-operator">Content Operator</h4>
+<ol>
+<li>Uncertainty: variasi format konten (story, short video, carousel).</li>
+<li>Significance: lihat langsung konten mana memicu chat masuk.</li>
+<li>Growth: eksperimen terukur dengan hipotesis per konten.</li>
+</ol>
+<h3 id="33-needs-diagnostic-pertanyaan-harian">3.3 Needs Diagnostic Pertanyaan Harian</h3>
+<ol>
+<li>Kebutuhan apa yang paling kosong hari ini?</li>
+<li>Apakah kekosongan itu memengaruhi kualitas output?</li>
+<li>Intervensi 1 langkah apa yang bisa dilakukan dalam 20 menit?</li>
+</ol>
+<hr/>
+<h2 id="4-time-mastery-weekly-time-blocking-template-launch">4) Time Mastery — Weekly Time Blocking Template Launch</h2>
+<h3 id="41-prinsip-alokasi-waktu">4.1 Prinsip Alokasi Waktu</h3>
+<ol>
+<li>60% waktu tim harus ada di Q2 (important-not-urgent) sebelum launch.</li>
+<li>Saat launch week, Q1 naik sementara tetapi Q2 tetap diproteksi minimal 35%.</li>
+<li>Founder wajib punya CEO block non-negotiable.</li>
+</ol>
+<h3 id="42-template-waktu-mingguan-h-14-sampai-h14">4.2 Template Waktu Mingguan (H-14 sampai H+14)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Blok</th>
+<th>Durasi/Hari</th>
+<th>Fokus</th>
+<th>Pemilik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CEO Block 1</td>
+<td>08.45–10.45</td>
+<td>Decision high-impact, offer tuning, bottleneck kill</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>Execution Block</td>
+<td>11.00–13.00</td>
+<td>Konten + follow-up + optimization</td>
+<td>Tim inti</td>
+</tr>
+<tr>
+<td>Admin Block</td>
+<td>14.00–15.30</td>
+<td>Rekap data, payment check, onboarding QA</td>
+<td>Admin/Lead</td>
+</tr>
+<tr>
+<td>Buffer Block</td>
+<td>15.30–16.00</td>
+<td>Isu mendadak / recovery</td>
+<td>Semua</td>
+</tr>
+<tr>
+<td>Closing Block</td>
+<td>19.00–20.30</td>
+<td>Follow-up warm lead + CTA urgency</td>
+<td>Admin + Founder fallback</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="43-jadwal-contoh-seninminggu-launch-week">4.3 Jadwal Contoh Senin–Minggu (Launch Week)</h3>
+<pre><code>
+Senin: Offer reminder + edukasi pain supplier
+Selasa: Konten bukti mekanisme + live QnA singkat
+Rabu: Broadcast segment margin tipis + follow-up sprint
+Kamis: Social proof day + objection handling
+Jumat: Scarcity reinforcement + countdown kuota
+Sabtu: Case breakdown + CTA fast action
+Minggu: Rekap pekanan + reset pipeline minggu depan
+</code></pre>
+<h3 id="44-energy-based-scheduling">4.4 Energy-Based Scheduling</h3>
+<ol>
+<li>Task strategis ditempatkan di peak energy founder (pagi).</li>
+<li>Task administratif ditempatkan di slot energi rendah (siang).</li>
+<li>Follow-up closing ditempatkan saat respons audiens tinggi (malam).</li>
+</ol>
+<h3 id="45-time-audit-rules">4.5 Time Audit Rules</h3>
+<p>Aturan audit mingguan:</p>
+<ol>
+<li>Jika Q3+Q4 &gt; 25%, potong aktivitas non-konversi.</li>
+<li>Jika CEO Block terpotong &gt;2 kali, tunjuk deputy untuk tugas operasional.</li>
+<li>Jika buffer selalu habis, sistem prioritas perlu dipangkas.</li>
+</ol>
+<hr/>
+<h2 id="5-priority-matrix-pemetaan-tugas-launch-ke-q1q2q3q4">5) Priority Matrix — Pemetaan Tugas Launch ke Q1/Q2/Q3/Q4</h2>
+<h3 id="51-daftar-tugas-prioritas">5.1 Daftar Tugas Prioritas</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Task</th>
+<th>Kuadran</th>
+<th>Kenapa</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Finalisasi script objection per pain point</td>
+<td>Q2</td>
+<td>Penting, harus siap sebelum krisis</td>
+</tr>
+<tr>
+<td>Setup dashboard KPI real-time</td>
+<td>Q2</td>
+<td>Fondasi keputusan cepat</td>
+</tr>
+<tr>
+<td>Perbaikan payment link down</td>
+<td>Q1</td>
+<td>Urgent dan revenue-blocking</td>
+</tr>
+<tr>
+<td>Menjawab chat non-qualified panjang</td>
+<td>Q3</td>
+<td>Urgent terasa, tapi dampak rendah</td>
+</tr>
+<tr>
+<td>Scroll kompetitor tanpa rencana</td>
+<td>Q4</td>
+<td>Waste</td>
+</tr>
+<tr>
+<td>Onboarding buyer ke WA &lt;5 menit</td>
+<td>Q1/Q2</td>
+<td>Urgent saat launch, penting untuk retention</td>
+</tr>
+<tr>
+<td>Produksi konten edukasi kategori BOH</td>
+<td>Q2</td>
+<td>Membangun demand berkualitas</td>
+</tr>
+<tr>
+<td>Meeting tanpa keputusan</td>
+<td>Q4</td>
+<td>Buang waktu</td>
+</tr>
+<tr>
+<td>Follow-up lead warm 2x/hari</td>
+<td>Q1/Q2</td>
+<td>High conversion activity</td>
+</tr>
+<tr>
+<td>Dokumentasi lesson learned harian</td>
+<td>Q2</td>
+<td>Menaikkan kualitas eksekusi besok</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="52-aturan-pindah-kuadran">5.2 Aturan Pindah Kuadran</h3>
+<ol>
+<li>Aktivitas Q3 yang berulang harus diotomasi/delegasi dalam 7 hari.</li>
+<li>Aktivitas Q1 yang berulang &gt;3 kali menandakan kegagalan desain Q2.</li>
+<li>Aktivitas Q4 harus dieliminasi, bukan dikelola.</li>
+</ol>
+<h3 id="53-q2-protection-checklist">5.3 Q2 Protection Checklist</h3>
+<ul>
+<li>[ ] CEO block terlindungi.</li>
+<li>[ ] Dashboard diperbarui sebelum jam 09.00.</li>
+<li>[ ] Script chat di-review harian.</li>
+<li>[ ] Konten edukasi tetap berjalan walau ada tekanan closing.</li>
+</ul>
+<hr/>
+<h2 id="6-accountability-system-3-level-untuk-launch-cuanhijab">6) Accountability System — 3 Level untuk Launch CuanHijab</h2>
+<h3 id="61-level-1-self-accountability">6.1 Level 1: Self Accountability</h3>
+<p>Tools:</p>
+<ol>
+<li>Daily checklist per role.</li>
+<li>Personal commitment card (3 tugas wajib/hari).</li>
+<li>End-of-day self score (0–100).</li>
+</ol>
+<p>Batasan:</p>
+<ol>
+<li>Cenderung bias optimisme.</li>
+<li>Mudah longgar saat tekanan tinggi.</li>
+</ol>
+<h3 id="62-level-2-partner-accountability">6.2 Level 2: Partner Accountability</h3>
+<p>Mekanisme:</p>
+<ol>
+<li>Pairing founder-project lead.</li>
+<li>Pairing admin A-admin B saat closing block.</li>
+<li>Check-in 2 kali sehari (siang, malam).</li>
+</ol>
+<p>Format check-in 5 menit:</p>
+<ol>
+<li>Komitmen sebelumnya.</li>
+<li>Status tercapai/tidak.</li>
+<li>Blocker utama.</li>
+<li>Aksi 2 jam berikutnya.</li>
+</ol>
+<h3 id="63-level-3-publicconsequence-accountability">6.3 Level 3: Public/Consequence Accountability</h3>
+<p>Mekanisme:</p>
+<ol>
+<li>Dashboard performa harian terlihat semua tim inti.</li>
+<li>Deadline campaign dipublikasikan internal dengan owner nama jelas.</li>
+<li>KPI mingguan dipresentasikan tanpa alasan defensif.</li>
+</ol>
+<p>Consequence rules:</p>
+<ol>
+<li>Miss task kritikal 2x tanpa eskalasi = role review.</li>
+<li>Miss SLA chat &gt; 20% = immediate process adjustment.</li>
+<li>Meeting tanpa output keputusan = dihentikan.</li>
+</ol>
+<h3 id="64-accountability-cadence">6.4 Accountability Cadence</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Frekuensi</th>
+<th>Agenda</th>
+<th>Durasi</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Harian pagi</td>
+<td>Target &amp; owner</td>
+<td>15 menit</td>
+</tr>
+<tr>
+<td>Harian malam</td>
+<td>Realisasi &amp; gap</td>
+<td>20 menit</td>
+</tr>
+<tr>
+<td>Mingguan</td>
+<td>KPI, blockers, keputusan berikutnya</td>
+<td>45 menit</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="65-weekly-reporting-template">6.5 Weekly Reporting Template</h3>
+<pre><code>
+Committed:
+Delivered:
+Gap:
+Root Cause (State/Decision/Identity/System):
+Correction for next week:
+Owner:
+Deadline:
+</code></pre>
+<hr/>
+<h2 id="7-raving-fan-execution-habits-bukan-sekadar-kepuasan">7) Raving Fan Execution Habits — Bukan Sekadar Kepuasan</h2>
+<h3 id="71-objective">7.1 Objective</h3>
+<p>Menciptakan buyer yang aktif mereferensikan CuanHijab melalui pengalaman eksekusi yang konsisten dan terasa personal.</p>
+<h3 id="72-onboarding-wa-group-024-jam-pasca-pembelian">7.2 Onboarding WA Group (0–24 Jam Pasca Pembelian)</h3>
+<p>Checklist onboarding:</p>
+<ol>
+<li>Buyer masuk WA Group maksimal 5 menit setelah payment valid.</li>
+<li>Kirim pesan selamat datang personal (nama + role buyer).</li>
+<li>Bagikan “Start Here” berisi 3 aksi pertama 24 jam.</li>
+<li>Minta buyer isi baseline form (omzet, margin, kendala utama).</li>
+</ol>
+<h3 id="73-check-in-structure-71430-hari">7.3 Check-in Structure 7/14/30 Hari</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Fokus</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Hari 7</td>
+<td>Aktivasi tools</td>
+<td>Buyer mengisi template HPP awal</td>
+</tr>
+<tr>
+<td>Hari 14</td>
+<td>Implementasi chat flow</td>
+<td>Buyer kirim screenshot penerapan</td>
+</tr>
+<tr>
+<td>Hari 30</td>
+<td>Early outcome review</td>
+<td>Buyer laporkan perubahan metrik</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="74-surprise-delight-yang-relevan">7.4 Surprise &amp; Delight yang Relevan</h3>
+<ol>
+<li>Bonus mini-template follow-up untuk peserta aktif.</li>
+<li>Voice note review singkat dari mentor untuk 10 case terpilih.</li>
+<li>Badge “Eksekutor 30 Hari” untuk member yang menyelesaikan checklist.</li>
+</ol>
+<h3 id="75-proactive-communication">7.5 Proactive Communication</h3>
+<ol>
+<li>Update progress komunitas setiap 3 hari.</li>
+<li>Reminder yang edukatif, bukan hanya dorongan jualan.</li>
+<li>Eskalasi cepat jika buyer terlihat pasif &gt; 5 hari.</li>
+</ol>
+<h3 id="76-raving-fan-kpi">7.6 Raving Fan KPI</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target 30 Hari</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Buyer aktif di WA Group</td>
+<td>&gt;= 70%</td>
+</tr>
+<tr>
+<td>Completion checklist 30 hari</td>
+<td>&gt;= 50%</td>
+</tr>
+<tr>
+<td>Testimoni terstruktur</td>
+<td>&gt;= 40 testimoni</td>
+</tr>
+<tr>
+<td>Referral dari buyer awal</td>
+<td>&gt;= 15% dari batch</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="8-ultimate-success-formula-4-step-untuk-goal-90-hari">8) Ultimate Success Formula — 4 Step untuk Goal 90 Hari</h2>
+<p>Goal utama: <strong>500 buyer / Rp25.000.000 front-end revenue</strong> dalam 90 hari.</p>
+<h3 id="81-step-1-know-your-outcome">8.1 Step 1 — Know Your Outcome</h3>
+<p>Outcome primer:</p>
+<ol>
+<li>500 transaksi valid untuk produk front-end.</li>
+<li>Revenue minimum Rp25 juta front-end.</li>
+<li>Buyer activation ke WA group &gt;= 80%.</li>
+</ol>
+<p>Outcome sekunder:</p>
+<ol>
+<li>Konversi ke konsultasi Rp197K minimal 10%.</li>
+<li>Konversi ke bedah bisnis Rp497K minimal 5% dari buyer front-end.</li>
+</ol>
+<h3 id="82-step-2-take-massive-action">8.2 Step 2 — Take Massive Action</h3>
+<p>Massive actions mingguan:</p>
+<ol>
+<li>5–7 konten edukasi spesifik pain ICP.</li>
+<li>2 sesi live/pekan untuk objection handling.</li>
+<li>2x broadcast WA segment per pekan.</li>
+<li>Follow-up warm leads minimal 2 siklus/hari.</li>
+<li>Daily optimization pada LP headline/CTA/chat script.</li>
+</ol>
+<h3 id="83-step-3-know-whats-working">8.3 Step 3 — Know What’s Working</h3>
+<p>Dashboard metrik wajib harian:</p>
+<ol>
+<li>Traffic landing page.</li>
+<li>CTR ke payment.</li>
+<li>Jumlah chat masuk.</li>
+<li>Chat-to-payment conversion.</li>
+<li>Buyer onboarding completion.</li>
+<li>Refund / complaint ratio.</li>
+</ol>
+<h3 id="84-step-4-change-your-approach">8.4 Step 4 — Change Your Approach</h3>
+<p>Aturan pivot:</p>
+<ol>
+<li>Jika CTR &lt; target 2 hari berturut, ubah hook kreatif.</li>
+<li>Jika chat tinggi tapi payment rendah, revisi script objection.</li>
+<li>Jika payment tinggi tapi onboarding rendah, perbaiki handoff SOP.</li>
+<li>Jika semua turun serentak, evaluasi offer-message mismatch.</li>
+</ol>
+<h3 id="85-loop-eksekusi-90-hari">8.5 Loop Eksekusi 90 Hari</h3>
+<pre><code>
+Outcome mingguan -&gt; Action harian -&gt; Measurement malam -&gt; Adjustment pagi -&gt; Repeat
+</code></pre>
+<hr/>
+<h2 id="9-power-of-decisions-keputusan-yang-harus-dikunci-sekarang">9) Power of Decisions — Keputusan yang Harus Dikunci Sekarang</h2>
+<h3 id="91-daftar-keputusan-now-or-never-h-14-sd-h-1">9.1 Daftar Keputusan Now-or-Never (H-14 s.d H-1)</h3>
+<ol>
+<li>Positioning final yang dipakai semua channel.</li>
+<li>Batas diskon: hanya Rp49K untuk 500 buyer, tanpa diskon tambahan liar.</li>
+<li>Owner tunggal untuk keputusan copy final per hari.</li>
+<li>SLA balas chat dan eskalasi lead panas.</li>
+<li>Definisi lead warm/hot/cold secara operasional.</li>
+<li>Aturan kapan upsell ditawarkan (timing &amp; syarat).</li>
+<li>Struktur onboarding setelah payment.</li>
+<li>Daftar metrik utama dan cut-off jam laporan.</li>
+</ol>
+<h3 id="92-decision-quality-criteria">9.2 Decision Quality Criteria</h3>
+<p>Keputusan dianggap valid jika:</p>
+<ol>
+<li>Ada owner.</li>
+<li>Ada deadline.</li>
+<li>Ada indikator sukses.</li>
+<li>Ada fallback plan jika gagal.</li>
+</ol>
+<h3 id="93-decision-log-template">9.3 Decision Log Template</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Tanggal</th>
+<th>Keputusan</th>
+<th>Owner</th>
+<th>Deadline</th>
+<th>KPI</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="94-anti-hedging-rules">9.4 Anti-Hedging Rules</h3>
+<ol>
+<li>“Kita lihat nanti” dilarang untuk isu launch kritikal.</li>
+<li>Setiap opsi harus diputuskan maksimal dalam 24 jam.</li>
+<li>Jika data belum lengkap, gunakan eksperimen kecil berdurasi 1 hari.</li>
+</ol>
+<hr/>
+<h2 id="10-daily-execution-checklist-campaign-management-cuanhijab">10) Daily Execution Checklist — Campaign Management CuanHijab</h2>
+<h3 id="101-checklist-founder-harian">10.1 Checklist Founder (Harian)</h3>
+<ul>
+<li>[ ] Review dashboard KPI jam 08.30.</li>
+<li>[ ] Tentukan 1 keputusan high-impact sebelum jam 10.00.</li>
+<li>[ ] Approve konten utama hari ini sebelum jam 11.00.</li>
+<li>[ ] Review 10 chat objection utama sebelum closing block.</li>
+<li>[ ] Debrief malam dengan keputusan perbaikan besok.</li>
+</ul>
+<h3 id="102-checklist-project-lead">10.2 Checklist Project Lead</h3>
+<ul>
+<li>[ ] Pastikan standup pagi berjalan 15 menit.</li>
+<li>[ ] Sinkronkan owner task lintas fungsi.</li>
+<li>[ ] Pantau SLA chat per 2 jam.</li>
+<li>[ ] Validasi data buyer dan onboarding.</li>
+<li>[ ] Tutup hari dengan laporan gap + action plan.</li>
+</ul>
+<h3 id="103-checklist-admin-chat">10.3 Checklist Admin Chat</h3>
+<ul>
+<li>[ ] Jalankan script sesuai pain point lead.</li>
+<li>[ ] Tag lead warm/hot/cold real-time.</li>
+<li>[ ] Follow-up 2 siklus per hari untuk warm leads.</li>
+<li>[ ] Escalate lead panas ke closer/founder bila perlu.</li>
+<li>[ ] Catat objection baru ke bank script.</li>
+</ul>
+<h3 id="104-checklist-content-operator">10.4 Checklist Content Operator</h3>
+<ul>
+<li>[ ] Publish 1 konten edukasi utama.</li>
+<li>[ ] Publish 1 konten bukti/mekanisme.</li>
+<li>[ ] Update CTA sesuai sisa kuota.</li>
+<li>[ ] Pantau komentar/DM trigger untuk tim chat.</li>
+<li>[ ] Dokumentasi performa konten untuk iterasi.</li>
+</ul>
+<h3 id="105-checklist-customer-success-community">10.5 Checklist Customer Success / Community</h3>
+<ul>
+<li>[ ] Buyer baru masuk WA &lt; 5 menit.</li>
+<li>[ ] Kirim Start Here + baseline form.</li>
+<li>[ ] Follow-up buyer pasif &gt; 48 jam.</li>
+<li>[ ] Rekap progress checklist member.</li>
+<li>[ ] Kumpulkan testimoni format standar.</li>
+</ul>
+<hr/>
+<h2 id="11-kpi-tree-leading-vs-lagging-indicators">11) KPI Tree — Leading vs Lagging Indicators</h2>
+<h3 id="111-leading-indicators-harian">11.1 Leading Indicators (Harian)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Konten terpublikasi sesuai plan</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Warm lead di-follow-up 2x/hari</td>
+<td>&gt;= 90%</td>
+</tr>
+<tr>
+<td>SLA chat &lt; 10 menit</td>
+<td>&gt;= 85% sesi</td>
+</tr>
+<tr>
+<td>Buyer onboarding &lt; 5 menit</td>
+<td>&gt;= 90% buyer</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="112-lagging-indicators-mingguan">11.2 Lagging Indicators (Mingguan)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Total buyer kumulatif</td>
+<td>On track ke 500</td>
+</tr>
+<tr>
+<td>Revenue kumulatif front-end</td>
+<td>On track ke Rp25 jt</td>
+</tr>
+<tr>
+<td>Conversion chat-to-payment</td>
+<td>&gt;= 18%</td>
+</tr>
+<tr>
+<td>Aktivasi WA member</td>
+<td>&gt;= 70%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="113-trigger-based-action">11.3 Trigger-Based Action</h3>
+<ol>
+<li>Jika follow-up rate turun &lt; 80%: tambah 1 slot closing block.</li>
+<li>Jika onboarding lambat: alihkan 1 admin ke onboarding lane.</li>
+<li>Jika conversion rendah 3 hari: audit script + offer framing.</li>
+</ol>
+<hr/>
+<h2 id="12-launch-week-runbook-d-3-sampai-d7">12) Launch Week Runbook (D-3 sampai D+7)</h2>
+<h3 id="121-d-3-sampai-d-1">12.1 D-3 sampai D-1</h3>
+<ol>
+<li>Stress-test payment flow.</li>
+<li>Simulasi chat objection 30 skenario.</li>
+<li>Final check materi dan link akses.</li>
+<li>Finalisasi dashboard dan owner alert.</li>
+</ol>
+<h3 id="122-d-day-1-mei-2026">12.2 D-Day (1 Mei 2026)</h3>
+<ol>
+<li>Kickoff meeting 08.30.</li>
+<li>Konten launch utama tayang maksimal 09.00.</li>
+<li>Broadcast gelombang 1 jam 10.00.</li>
+<li>Follow-up sprint 11.00–13.00 dan 19.00–21.00.</li>
+<li>Debrief data dan keputusan perbaikan jam 21.30.</li>
+</ol>
+<h3 id="123-d1-sampai-d7">12.3 D+1 sampai D+7</h3>
+<ol>
+<li>Daily optimization hook dan script.</li>
+<li>Dorong urgency berdasarkan kuota real.</li>
+<li>Aktivasi testimoni buyer awal.</li>
+<li>Mulai soft-intro upsell untuk buyer siap.</li>
+</ol>
+<hr/>
+<h2 id="13-system-sop-ringkas-untuk-menutup-4-layer-blocker">13) System SOP Ringkas untuk Menutup 4-Layer Blocker</h2>
+<h3 id="sop-01-dashboard-update">SOP-01: Dashboard Update</h3>
+<ul>
+<li>Input data jam 08.15, 13.15, 20.45.</li>
+<li>Owner: Project Lead.</li>
+<li>Output: snapshot KPI dan alert.</li>
+</ul>
+<h3 id="sop-02-chat-escalation">SOP-02: Chat Escalation</h3>
+<ul>
+<li>Warm lead &gt; 2 interaksi tanpa payment -&gt; follow-up template B.</li>
+<li>Hot lead dengan objection harga -&gt; escalate ke closer.</li>
+<li>Silent lead 24 jam -&gt; reminder value + scarcity.</li>
+</ul>
+<h3 id="sop-03-onboarding-handoff">SOP-03: Onboarding Handoff</h3>
+<ul>
+<li>Payment terverifikasi -&gt; WA invite otomatis/manual.</li>
+<li>Start Here dikirim &lt; 5 menit.</li>
+<li>Baseline form terisi &lt; 24 jam.</li>
+</ul>
+<h3 id="sop-04-daily-decision-log">SOP-04: Daily Decision Log</h3>
+<ul>
+<li>Catat 3 keputusan utama harian.</li>
+<li>Review dampaknya esok pagi.</li>
+<li>Hapus keputusan yang tidak relevan.</li>
+</ul>
+<hr/>
+<h2 id="14-bahasa-agency-untuk-tim-anti-bahasa-korban">14) Bahasa Agency untuk Tim (Anti Bahasa Korban)</h2>
+<p>Gunakan:</p>
+<ol>
+<li>“Saya pilih prioritas ini karena dampaknya paling besar.”</li>
+<li>“Data hari ini menunjukkan area perbaikan X.”</li>
+<li>“Kita ubah pendekatan, bukan menunda eksekusi.”</li>
+</ol>
+<p>Hindari:</p>
+<ol>
+<li>“Tidak sempat.”</li>
+<li>“Nanti kalau sempat.”</li>
+<li>“Lead-nya jelek semua.”</li>
+</ol>
+<p>Aturan:</p>
+<ol>
+<li>Bahasa korban di meeting harus langsung direframe.</li>
+<li>Reframe dilakukan tanpa menyalahkan personal.</li>
+<li>Fokus pada aksi berikutnya dalam 30 menit.</li>
+</ol>
+<hr/>
+<h2 id="15-pre-mortem-90-hari-skenario-gagal-dan-pencegahannya">15) Pre-Mortem 90 Hari — Skenario Gagal dan Pencegahannya</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Skenario gagal</th>
+<th>Penyebab akar</th>
+<th>Pencegahan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Buyer tidak tembus 500</td>
+<td>Follow-up disiplin rendah</td>
+<td>Audit follow-up harian + ownership jelas</td>
+</tr>
+<tr>
+<td>Revenue stagnan</td>
+<td>Traffic ada, conversion lemah</td>
+<td>Perbaiki offer-message-script alignment</td>
+</tr>
+<tr>
+<td>Tim burnout</td>
+<td>Jam kerja tanpa recovery</td>
+<td>Triad + recovery block wajib</td>
+</tr>
+<tr>
+<td>Komunitas pasif</td>
+<td>Onboarding dangkal</td>
+<td>Start Here + check-in 7/14/30</td>
+</tr>
+<tr>
+<td>Upsell rendah</td>
+<td>Timing upsell salah</td>
+<td>Segmentasi readiness buyer</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="16-30-60-90-day-execution-milestones">16) 30-60-90 Day Execution Milestones</h2>
+<h3 id="day-130">Day 1–30</h3>
+<ol>
+<li>Validasi channel dan script terbaik.</li>
+<li>Stabilkan SLA chat + onboarding.</li>
+<li>Kumpulkan bukti early wins dari buyer.</li>
+</ol>
+<h3 id="day-3160">Day 31–60</h3>
+<ol>
+<li>Tingkatkan conversion lewat optimasi objection.</li>
+<li>Skala konten yang terbukti menghasilkan warm leads.</li>
+<li>Mulai mesin referral sederhana.</li>
+</ol>
+<h3 id="day-6190">Day 61–90</h3>
+<ol>
+<li>Tutup gap menuju 500 buyer.</li>
+<li>Maksimalkan upsell readiness.</li>
+<li>Dokumentasikan playbook versi 2.0.</li>
+</ol>
+<hr/>
+<h2 id="17-audit-checklist-cuanhijab-specific">17) Audit Checklist (CuanHijab-Specific)</h2>
+<ul>
+<li>[x] 4-layer blocker didiagnosis spesifik konteks launch CuanHijab.</li>
+<li>[x] Triad protocol dirancang untuk launch week 1 Mei 2026.</li>
+<li>[x] Six Human Needs dipetakan per role tim.</li>
+<li>[x] Time mastery template memuat CEO/Admin/Buffer block.</li>
+<li>[x] Priority matrix memetakan task nyata ke Q1/Q2/Q3/Q4.</li>
+<li>[x] Accountability system 3 level ditetapkan dengan cadence.</li>
+<li>[x] Raving fan habits disusun berbasis onboarding dan check-in.</li>
+<li>[x] Ultimate success formula diterapkan ke goal 90 hari.</li>
+<li>[x] Power of decisions dijadikan daftar keputusan now-or-never.</li>
+<li>[x] Daily execution checklist dibuat per peran operasional.</li>
+</ul>
+<hr/>
+<h2 id="18-penutup-operasional">18) Penutup Operasional</h2>
+<p>Blueprint ini memastikan Cuan Hijab Next Level dieksekusi sebagai campaign yang disiplin data, cepat keputusan, dan kuat follow-through. Fokus utamanya bukan menambah aktivitas, melainkan menghilangkan hambatan pada empat layer sekaligus: system, decision, state, identity. Jika ritme ini dijaga selama 90 hari, target 500 buyer bukan sekadar ambisi, melainkan output yang dapat dikejar melalui tindakan terukur setiap hari.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

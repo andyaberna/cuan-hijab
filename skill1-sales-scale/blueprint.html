@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Scale &amp; Revenue Expansion — Cuan Hijab</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Sales Scale &amp; Revenue Expansion — Cuan Hijab</h1>
+<p class="subtitle">Blueprint eksekusi Sales Scale untuk peluncuran dan scaling Cuan Hijab Next Level selama 90 hari.</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="a-product-snapshot-yang-menjadi-pondasi-scaling" href="#a-product-snapshot-yang-menjadi-pondasi-scaling">A. Product Snapshot yang Menjadi Pondasi Scaling</a></li>
+<li><a data-target="b-icp-dan-pain-mapping-yang-dipakai-untuk-sales-scale" href="#b-icp-dan-pain-mapping-yang-dipakai-untuk-sales-scale">B. ICP dan Pain Mapping yang Dipakai untuk Sales Scale</a></li>
+<li><a data-target="c-sales-math-target-angka-cplcacltvroas" href="#c-sales-math-target-angka-cplcacltvroas">C. Sales Math — Target Angka (CPL/CAC/LTV/ROAS)</a></li>
+<li><a data-target="d-four-degrees-of-action-diagnosis-rencana-level-4" href="#d-four-degrees-of-action-diagnosis-rencana-level-4">D. Four Degrees of Action — Diagnosis + Rencana Level 4</a></li>
+<li><a data-target="e-10x-calculation-template-dari-rp5jt-ke-rp50jtbulan" href="#e-10x-calculation-template-dari-rp5jt-ke-rp50jtbulan">E. 10X Calculation Template — Dari Rp5jt ke Rp50jt/Bulan</a></li>
+<li><a data-target="f-sales-multiplication-4-lever-spesifik-cuanhijab" href="#f-sales-multiplication-4-lever-spesifik-cuanhijab">F. Sales Multiplication 4-Lever (Spesifik CuanHijab)</a></li>
+<li><a data-target="g-digital-sales-channels-plan" href="#g-digital-sales-channels-plan">G. Digital Sales Channels Plan</a></li>
+<li><a data-target="h-follow-up-cadence-7-30-hari-wa-group-email" href="#h-follow-up-cadence-7-30-hari-wa-group-email">H. Follow-up Cadence 7-30 Hari (WA Group + Email)</a></li>
+<li><a data-target="i-5-objection-translation-cuanhijab-only" href="#i-5-objection-translation-cuanhijab-only">I. 5 Objection Translation (CuanHijab-Only)</a></li>
+<li><a data-target="j-closing-discipline-sop" href="#j-closing-discipline-sop">J. Closing Discipline SOP</a></li>
+<li><a data-target="k-90-day-execution-roadmap" href="#k-90-day-execution-roadmap">K. 90-Day Execution Roadmap</a></li>
+<li><a data-target="l-massive-action-tracker-operasional-per-fase" href="#l-massive-action-tracker-operasional-per-fase">L. Massive Action Tracker (Operasional per Fase)</a></li>
+<li><a data-target="m-cadence-mingguan-120-hari-milestone-per-fase" href="#m-cadence-mingguan-120-hari-milestone-per-fase">M. Cadence Mingguan 120 Hari (Milestone per Fase)</a></li>
+<li><a data-target="n-checklist-monitoring-mingguan" href="#n-checklist-monitoring-mingguan">N. Checklist Monitoring Mingguan</a></li>
+<li><a data-target="o-ringkasan-keputusan" href="#o-ringkasan-keputusan">O. Ringkasan Keputusan</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Sales Scale &amp; Revenue Expansion — Cuan Hijab</h1>
+<h2 id="a-product-snapshot-yang-menjadi-pondasi-scaling">A. Product Snapshot yang Menjadi Pondasi Scaling</h2>
+<ul>
+<li>Produk: <strong>Cuan Hijab Next Level — Blueprint Praktisi 20 Tahun</strong>.</li>
+<li>Format: Rekaman Webinar + Ebook Premium + Template HPP Otomatis + WA Group Eksklusif.</li>
+<li>Harga promo: <strong>Rp49.000</strong> untuk 500 pembeli pertama.</li>
+<li>Harga normal: <strong>Rp99.000</strong> setelah kuota promo habis.</li>
+<li>Margin unit: sekitar <strong>Rp43.000</strong>.</li>
+<li>Garansi: <strong>7 hari uang kembali</strong>.</li>
+<li>Checkout: https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-co</li>
+<li>Mentor: Iman Awaludin, ST (20+ tahun industri hijab, 1.000+ mitra distribusi nasional).</li>
+</ul>
+<h2 id="b-icp-dan-pain-mapping-yang-dipakai-untuk-sales-scale">B. ICP dan Pain Mapping yang Dipakai untuk Sales Scale</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Segmen ICP</th>
+<th>Gejala Lapangan</th>
+<th>Pesan Sales Prioritas</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Reseller Hijab (omzet stuck)</td>
+<td>Jualan jalan tapi stagnan</td>
+<td>Upgrade margin + ritme penjualan</td>
+</tr>
+<tr>
+<td>Agen Hijab (supplier zonk)</td>
+<td>Barang beda foto, repeat komplain</td>
+<td>Sistem seleksi supplier anti-zonk</td>
+</tr>
+<tr>
+<td>Brand owner hijab lokal</td>
+<td>DM ramai tapi transfer sepi</td>
+<td>Framework conversion DM -&gt; transfer</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pain inti yang selalu dijahit ke pesan sales:</p>
+<ol>
+<li>Supplier zonk merusak cashflow + trust buyer.</li>
+<li>Margin tipis 8-12% karena HPP salah hitung.</li>
+<li>DM ramai tapi transaksi minim.</li>
+<li>Omzet naik-turun tanpa pola operasional.</li>
+</ol>
+<h2 id="c-sales-math-target-angka-cplcacltvroas">C. Sales Math — Target Angka (CPL/CAC/LTV/ROAS)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Metrik</th>
+<th>Target</th>
+<th>Alasan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CPA (front-end)</td>
+<td>&lt; Rp25.000</td>
+<td>Constraint wajib dari brief</td>
+</tr>
+<tr>
+<td>ROAS (front-end)</td>
+<td>&gt; 2.0x</td>
+<td>Constraint wajib dari brief</td>
+</tr>
+<tr>
+<td>Margin/unit</td>
+<td>Rp43.000</td>
+<td>Menjaga contribution positif</td>
+</tr>
+<tr>
+<td>Checkout CVR</td>
+<td>&gt;= 5%</td>
+<td>Agar CPA stabil pada CPC realistis</td>
+</tr>
+<tr>
+<td>Refund rate</td>
+<td>&lt;= 8%</td>
+<td>Lindungi margin digital product</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="c1-rumus-wajib-dashboard">C.1 Rumus wajib dashboard</h3>
+<pre><code>
+CPA = Ad Spend / Buyers
+ROAS = Revenue / Ad Spend
+Contribution per buyer = Margin unit - CPA
+Buyer target harian = Revenue target harian / Harga
+LTV 90 hari = Entry + expected upsell revenue
+</code></pre>
+<h3 id="c2-simulasi-ringkas-agar-constraint-lolos">C.2 Simulasi ringkas agar constraint lolos</h3>
+<pre><code>
+Harga entry = Rp49.000
+CPA target = Rp24.000
+ROAS front-end = 49.000 / 24.000 = 2,04x (LOLOS)
+Contribution = 43.000 - 24.000 = Rp19.000 per buyer
+</code></pre>
+<h3 id="c3-ltv-target-dari-upsell-ladder">C.3 LTV target dari upsell ladder</h3>
+<pre><code>
+Entry : 49.000
+Konsultasi 30 menit : 197.000 x 15% = 29.550
+Bedah 3 sesi : 497.000 x 7% = 34.790
+Retainer pabrik : 2.500.000 x 1,5% = 37.500
+Estimated LTV 90 hari: 150.840
+Blended CAC sehat (LTV:CAC &gt;= 3:1): &lt;= 50.280
+</code></pre>
+<h2 id="d-four-degrees-of-action-diagnosis-rencana-level-4">D. Four Degrees of Action — Diagnosis + Rencana Level 4</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Degree</th>
+<th>Indikasi di Tim CuanHijab</th>
+<th>Risiko Jika Dibiarkan</th>
+<th>Tindakan Perbaikan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Level 1 (Do Nothing)</td>
+<td>Menunda launch menunggu aset sempurna</td>
+<td>Kehilangan momentum penjualan</td>
+<td>Launch cepat berbasis data</td>
+</tr>
+<tr>
+<td>Level 2 (Retreat)</td>
+<td>Ads merah 1-2 hari langsung stop</td>
+<td>Tidak ada learning curve</td>
+<td>Pakai kill rule 72 jam</td>
+</tr>
+<tr>
+<td>Level 3 (Normal Action)</td>
+<td>Follow-up tidak disiplin</td>
+<td>Hasil rata-rata</td>
+<td>SOP harian wajib</td>
+</tr>
+<tr>
+<td>Level 4 (Massive Action)</td>
+<td>Aktivitas terukur lintas channel</td>
+<td>Risiko lelah bila tanpa sistem</td>
+<td>Jalankan sistem + delegasi</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="d1-level-4-plan-khusus-cuanhijab">D.1 Level 4 plan khusus CuanHijab</h3>
+<ul>
+<li>Jalankan 4 angle kreatif aktif per minggu: supplier, HPP, DM-&gt;transfer, omzet stabil.</li>
+<li>Follow-up WA minimal 3 batch/hari.</li>
+<li>Konten organik IG/TikTok minimal 2 aset/hari.</li>
+<li>Daily KPI review jam 21.00 (CPA, ROAS, CVR, refund, upsell take rate).</li>
+</ul>
+<h2 id="e-10x-calculation-template-dari-rp5jt-ke-rp50jtbulan">E. 10X Calculation Template — Dari Rp5jt ke Rp50jt/Bulan</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Variabel</th>
+<th>Baseline</th>
+<th>Target</th>
+<th>Pengungkit</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Revenue bulanan</td>
+<td>Rp5.000.000</td>
+<td>Rp50.000.000</td>
+<td>Traffic + conversion + ascension</td>
+</tr>
+<tr>
+<td>Buyer entry</td>
+<td>~102</td>
+<td>700+</td>
+<td>Meta scaling + follow-up</td>
+</tr>
+<tr>
+<td>AOV blended</td>
+<td>rendah</td>
+<td>meningkat</td>
+<td>Bump + OTO + bedah</td>
+</tr>
+<tr>
+<td>LTV 90 hari</td>
+<td>belum terstruktur</td>
+<td>&gt;= Rp150.840</td>
+<td>Ladder disiplin</td>
+</tr>
+</tbody>
+</table></div>
+<pre><code>
+10X multiplier design:
+Leads : 2,8x
+Conversion : 1,6x
+AOV : 2,1x
+Frequency : 2,1x
+Combined : 19,76x theoretical
+Execution haircut 50% =&gt; 9,88x practical (mendekati 10X target)
+</code></pre>
+<h2 id="f-sales-multiplication-4-lever-spesifik-cuanhijab">F. Sales Multiplication 4-Lever (Spesifik CuanHijab)</h2>
+<h3 id="f1-lever-1-more-prospects">F.1 Lever 1 — More Prospects</h3>
+<ul>
+<li>Cold audience perempuan 25-55 minat hijab/muslim fashion/UMKM.</li>
+<li>Lookalike dari buyer entry dan engagers WA.</li>
+<li>Retarget semua visitor checkout 3/7/14/30 hari.</li>
+</ul>
+<h3 id="f2-lever-2-more-touches">F.2 Lever 2 — More Touches</h3>
+<ul>
+<li>Minimal 7 touchpoint untuk lead warm.</li>
+<li>Bentuk touch: WA text, VN, email proof, story, live reminder.</li>
+</ul>
+<h3 id="f3-lever-3-more-channels">F.3 Lever 3 — More Channels</h3>
+<ul>
+<li>Primary: Meta Ads.</li>
+<li>Secondary: WA Broadcast.</li>
+<li>Supporting: IG organic, TikTok, marketplace.</li>
+</ul>
+<h3 id="f4-lever-4-more-frequency">F.4 Lever 4 — More Frequency</h3>
+<ul>
+<li>Follow-up 3 kali/hari.</li>
+<li>CTA penawaran muncul setiap hari, bukan mingguan.</li>
+<li>Objection log diupdate harian.</li>
+</ul>
+<h2 id="g-digital-sales-channels-plan">G. Digital Sales Channels Plan</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Channel</th>
+<th>Peran di Funnel</th>
+<th>KPI</th>
+<th>Catatan CuanHijab</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Meta Ads</td>
+<td>Primary acquisition</td>
+<td>CPA, ROAS</td>
+<td>Engine utama skala cepat</td>
+</tr>
+<tr>
+<td>WA Broadcast</td>
+<td>Warm conversion</td>
+<td>Reply rate, checkout rate</td>
+<td>Penguat close low-ticket</td>
+</tr>
+<tr>
+<td>IG Organic</td>
+<td>Trust reinforcement</td>
+<td>DM intent</td>
+<td>Bukti kredibilitas mentor</td>
+</tr>
+<tr>
+<td>TikTok</td>
+<td>Top funnel awareness</td>
+<td>Hook retention, CTR bio</td>
+<td>Reach cepat untuk pain awareness</td>
+</tr>
+<tr>
+<td>Marketplace</td>
+<td>Backup channel</td>
+<td>Unit sale, review</td>
+<td>Risiko platform lock, tetap dorong owned channel</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="h-follow-up-cadence-7-30-hari-wa-group-email">H. Follow-up Cadence 7-30 Hari (WA Group + Email)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Channel</th>
+<th>Objective</th>
+<th>CTA</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>WA</td>
+<td>Validasi pain supplier zonk</td>
+<td>Klik checkout</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>WA</td>
+<td>Edukasi margin via HPP</td>
+<td>Balas &quot;HPP&quot;</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Email</td>
+<td>Cerita pola omzet naik-turun</td>
+<td>Kunjungi checkout</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>WA</td>
+<td>Naikkan trust mentor</td>
+<td>Amankan kuota</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>WA</td>
+<td>Handle objection harga</td>
+<td>Transfer hari ini</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>Email</td>
+<td>Tekankan value Rp438K</td>
+<td>Checkout sekarang</td>
+</tr>
+<tr>
+<td>D7</td>
+<td>WA</td>
+<td>Urgency kuota 500</td>
+<td>Bayar sekarang</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>WA</td>
+<td>Re-activation warm lead</td>
+<td>Ambil akses promo</td>
+</tr>
+<tr>
+<td>D14</td>
+<td>Email</td>
+<td>Proof + mini case</td>
+<td>Reply jika butuh arahan</td>
+</tr>
+<tr>
+<td>D21</td>
+<td>WA</td>
+<td>Last batch push</td>
+<td>Checkout sebelum naik harga</td>
+</tr>
+<tr>
+<td>D30</td>
+<td>WA+Email</td>
+<td>Long-term nurture</td>
+<td>Join batch normal price</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="i-5-objection-translation-cuanhijab-only">I. 5 Objection Translation (CuanHijab-Only)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Objection</th>
+<th>Makna Sebenarnya</th>
+<th>Response Translation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>&quot;Rp49K masih mikir&quot;</td>
+<td>Trust belum cukup</td>
+<td>Tekankan garansi 7 hari + value Rp438K</td>
+</tr>
+<tr>
+<td>&quot;Saya bisa cari di YouTube&quot;</td>
+<td>Takut beli konten umum</td>
+<td>Tekankan blueprint niche hijab + template HPP</td>
+</tr>
+<tr>
+<td>&quot;Saya sudah tahu jualan hijab&quot;</td>
+<td>Blind spot belum terlihat</td>
+<td>Audit cepat margin + close rate real</td>
+</tr>
+<tr>
+<td>&quot;Nanti dulu&quot;</td>
+<td>Urgency rendah</td>
+<td>Sisa kuota 500 + harga akan naik</td>
+</tr>
+<tr>
+<td>&quot;Takut ketipu lagi&quot;</td>
+<td>Trauma pengalaman buruk</td>
+<td>Bukti mentor + refund policy jelas</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="j-closing-discipline-sop">J. Closing Discipline SOP</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Jam</th>
+<th>Aktivitas</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>08:30</td>
+<td>Prioritas lead</td>
+<td>Daftar hot/warm/cold</td>
+</tr>
+<tr>
+<td>10:00</td>
+<td>Follow-up batch 1</td>
+<td>Update CRM</td>
+</tr>
+<tr>
+<td>13:00</td>
+<td>Follow-up batch 2</td>
+<td>Push checkout</td>
+</tr>
+<tr>
+<td>16:30</td>
+<td>Follow-up batch 3</td>
+<td>Handle objection</td>
+</tr>
+<tr>
+<td>20:30</td>
+<td>Last call urgency</td>
+<td>Pending transfer list</td>
+</tr>
+<tr>
+<td>21:00</td>
+<td>Daily KPI review</td>
+<td>Scale/hold/kill decision</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rules wajib:</p>
+<ul>
+<li>Setiap lead hot wajib minimal 3 kali ask-for-sale dalam 7 hari.</li>
+<li>Deal tanpa next-step date dianggap dead deal.</li>
+<li>Semua alasan no-buy wajib dicatat untuk feedback offer.</li>
+</ul>
+<h2 id="k-90-day-execution-roadmap">K. 90-Day Execution Roadmap</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Fase</th>
+<th>Hari</th>
+<th>Fokus</th>
+<th>KPI</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Fase 1</td>
+<td>1-30</td>
+<td>Stabilkan acquisition + conversion</td>
+<td>CPA &lt;25K, ROAS &gt;2x</td>
+</tr>
+<tr>
+<td>Fase 2</td>
+<td>31-60</td>
+<td>Scale volume + upsell</td>
+<td>Take rate konsultasi &gt;=15%</td>
+</tr>
+<tr>
+<td>Fase 3</td>
+<td>61-90</td>
+<td>Maksimalkan LTV</td>
+<td>LTV 90 hari naik konsisten</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="l-massive-action-tracker-operasional-per-fase">L. Massive Action Tracker (Operasional per Fase)</h2>
+<h3 id="fase-1-validasi-hari-1-30">Fase 1 — Validasi (Hari 1-30)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Area</th>
+<th>Aksi Spesifik</th>
+<th>KPI</th>
+<th>PIC</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Creative Testing</td>
+<td>Uji 4 angle iklan: supplier zonk, margin tipis, DM ghosting, omzet fluktuatif — masing-masing 2 varian visual</td>
+<td>CTR &gt; 2%, CPA &lt; Rp25K per angle</td>
+<td>Media Buyer</td>
+</tr>
+<tr>
+<td>2</td>
+<td>WA Broadcast</td>
+<td>Kirim edukasi template HPP otomatis ke lead warm segmen reseller (batch 100 kontak/hari)</td>
+<td>Reply rate &gt; 15%</td>
+<td>Admin WA</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Follow-up Script</td>
+<td>Deploy script closing untuk lead yang DM ramai tapi belum transfer — uji 3 variasi pembuka</td>
+<td>Checkout rate dari DM &gt; 5%</td>
+<td>Tim Sales</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Authority Content</td>
+<td>Publikasi 2 konten/minggu tentang kredibilitas Iman Awaludin (20+ tahun, 1.000+ mitra)</td>
+<td>Save rate &gt; 3%</td>
+<td>Tim Konten</td>
+</tr>
+<tr>
+<td>5</td>
+<td>TikTok Acquisition</td>
+<td>Unggah 5 video/minggu dengan hook anti-zonk, durasi 15-30 detik, CTA ke bio link checkout</td>
+<td>Profile visit &gt; 500/minggu</td>
+<td>Tim Konten</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fase-2-optimasi-hari-31-60">Fase 2 — Optimasi (Hari 31-60)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Area</th>
+<th>Aksi Spesifik</th>
+<th>KPI</th>
+<th>PIC</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>Retargeting</td>
+<td>Retarget visitor checkout yang belum transfer: window 3, 7, dan 14 hari dengan pesan berbeda</td>
+<td>CPA retarget &lt; Rp15K</td>
+<td>Media Buyer</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Urgency Push</td>
+<td>Broadcast sisa kuota 500 pembeli dengan bukti counter real — hindari fake countdown</td>
+<td>Conversion spike &gt; 20% vs hari biasa</td>
+<td>Admin WA</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Upsell Activation</td>
+<td>Tawarkan konsultasi 30 menit Rp197K ke buyer yang sudah akses materi &gt; 3 hari</td>
+<td>Take rate konsultasi &gt;= 12%</td>
+<td>Tim Sales</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Objection Mining</td>
+<td>Rekap 5 objection terbanyak per minggu, update script dan FAQ berdasarkan data chat</td>
+<td>Objection repeat turun 30%</td>
+<td>Tim Sales</td>
+</tr>
+<tr>
+<td>10</td>
+<td>CPA Audit</td>
+<td>Audit CPA per adset dan per angle setiap Senin — kill adset CPA &gt; Rp30K setelah 72 jam</td>
+<td>CPA blended &lt; Rp25K</td>
+<td>Media Buyer</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fase-3-scale-hari-61-90">Fase 3 — Scale (Hari 61-90)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Area</th>
+<th>Aksi Spesifik</th>
+<th>KPI</th>
+<th>PIC</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>Budget Scaling</td>
+<td>Naikkan budget 20% per 48 jam pada adset ROAS &gt; 2x, rollback jika CPA naik &gt; 30%</td>
+<td>ROAS stabil &gt; 2x</td>
+<td>Media Buyer</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Bedah Bisnis Push</td>
+<td>Tawarkan Bedah Bisnis 3 Sesi Rp497K ke buyer konsultasi yang menunjukkan komitmen eksekusi</td>
+<td>Take rate bedah &gt;= 5%</td>
+<td>Founder</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Proof Collection</td>
+<td>Kumpulkan 10 testimoni terstruktur (before/after margin, supplier, closing rate) dari buyer aktif</td>
+<td>10 proof baru per bulan</td>
+<td>Admin WA</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Channel Expansion</td>
+<td>Aktifkan marketplace sebagai backup channel — dorong review positif dari buyer existing</td>
+<td>20 review baru di marketplace</td>
+<td>Tim Konten</td>
+</tr>
+<tr>
+<td>15</td>
+<td>LTV Review</td>
+<td>Hitung LTV aktual vs proyeksi Rp150.840 — adjust ladder pricing jika gap &gt; 20%</td>
+<td>LTV tracking akurat</td>
+<td>Founder</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="m-cadence-mingguan-120-hari-milestone-per-fase">M. Cadence Mingguan 120 Hari (Milestone per Fase)</h2>
+<h3 id="fase-1-validasi-channel-message-fit-hari-1-30">Fase 1 — Validasi Channel-Message Fit (Hari 1-30)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+<th>Keputusan Akhir Minggu</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W1 (H1-7)</td>
+<td>Launch ABO 5 adset, pasang pixel, aktifkan WA Group</td>
+<td>5 adset live, pixel firing, WA Group siap</td>
+<td>Adset mana yang CTR &gt; 2%?</td>
+</tr>
+<tr>
+<td>W2 (H8-14)</td>
+<td>Evaluasi adset pertama, kill CTR &lt; 1.5%, scale winner</td>
+<td>2-3 adset aktif, 1 winning angle teridentifikasi</td>
+<td>Angle mana yang CPA paling rendah?</td>
+</tr>
+<tr>
+<td>W3 (H15-21)</td>
+<td>A/B test headline LP (pain vs authority), kirim WA sequence batch 1</td>
+<td>LP varian B live, 100+ lead masuk sequence</td>
+<td>LP mana yang CVR lebih tinggi?</td>
+</tr>
+<tr>
+<td>W4 (H22-30)</td>
+<td>Audit WA engagement, kumpulkan 5 testimoni awal, finalisasi winning message</td>
+<td>5 proof, 1 winning message terkunci</td>
+<td>Ada winning angle? Jika tidak, pivot sebelum scale.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fase-2-optimasi-conversion-objection-hari-31-60">Fase 2 — Optimasi Conversion + Objection (Hari 31-60)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+<th>Keputusan Akhir Minggu</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W5 (H31-37)</td>
+<td>Audit checkout flow, identifikasi drop-off payment</td>
+<td>Peta friction checkout, perbaikan field/metode bayar</td>
+<td>Checkout completion &gt; 70%?</td>
+</tr>
+<tr>
+<td>W6 (H38-44)</td>
+<td>Aktifkan retarget bertahap (3/7/14 hari), uji 3 pesan retarget berbeda</td>
+<td>3 retarget adset live</td>
+<td>Retarget CPA &lt; Rp15K?</td>
+</tr>
+<tr>
+<td>W7 (H45-51)</td>
+<td>Push upsell konsultasi Rp197K ke buyer aktif, deploy objection script v2</td>
+<td>Script v2 live, 10+ penawaran konsultasi terkirim</td>
+<td>Take rate konsultasi &gt;= 12%?</td>
+</tr>
+<tr>
+<td>W8 (H52-60)</td>
+<td>Kumpulkan 10 testimoni angka spesifik, refresh creative yang fatigue</td>
+<td>10 proof baru, 2 creative baru</td>
+<td>AOV naik minimal 30%? Jika tidak, perkuat copy bump/OTO.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fase-3-scale-budget-upsell-flow-hari-61-90">Fase 3 — Scale Budget + Upsell Flow (Hari 61-90)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+<th>Keputusan Akhir Minggu</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W9 (H61-67)</td>
+<td>Pindah ke CBO/ASC+, naikkan budget 20% per 48 jam pada winner</td>
+<td>CBO live, budget naik bertahap</td>
+<td>ROAS &gt; 2x stabil di budget baru?</td>
+</tr>
+<tr>
+<td>W10 (H68-74)</td>
+<td>Soft-sell Bedah Bisnis Rp497K ke buyer konsultasi, segmentasi buyer aktif vs pasif</td>
+<td>5+ penawaran bedah bisnis terkirim</td>
+<td>Ada 3+ booking bedah bisnis?</td>
+</tr>
+<tr>
+<td>W11 (H75-81)</td>
+<td>Aktifkan referral program sederhana (buyer ajak 1 teman, dapat bonus template)</td>
+<td>Referral mechanism live</td>
+<td>Referral menghasilkan &gt; 5 buyer baru?</td>
+</tr>
+<tr>
+<td>W12 (H82-90)</td>
+<td>Review LTV aktual vs proyeksi, audit full funnel, siapkan pitch retainer pabrik</td>
+<td>Laporan LTV 90 hari, 1-2 prospect retainer</td>
+<td>Target 500 buyer tercapai? LTV sesuai proyeksi?</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fase-4-stabilisasi-ltv-retensi-hari-91-120">Fase 4 — Stabilisasi LTV + Retensi (Hari 91-120)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Milestone</th>
+<th>Deliverable</th>
+<th>Keputusan Akhir Minggu</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W13 (H91-97)</td>
+<td>Dokumentasi SOP campaign + onboarding, delegasi ke tim</td>
+<td>SOP lengkap, bisa jalan tanpa founder harian</td>
+<td>Tim bisa eksekusi mandiri?</td>
+</tr>
+<tr>
+<td>W14 (H98-104)</td>
+<td>Buka slot Retainer Pendampingan Pabrik untuk buyer qualified</td>
+<td>1-2 prospect retainer di-approach</td>
+<td>Ada closing retainer?</td>
+</tr>
+<tr>
+<td>W15 (H105-111)</td>
+<td>Refresh creative iklan (rotasi visual baru), audit ad fatigue</td>
+<td>3 creative baru live</td>
+<td>CTR tidak turun &gt; 20% dari peak?</td>
+</tr>
+<tr>
+<td>W16 (H112-120)</td>
+<td>Review full 120 hari: LTV, CAC, ROAS, ascension rate, buat rencana Q2</td>
+<td>Laporan 120 hari final + rencana Q2</td>
+<td>Sistem sustainable tanpa intervensi harian?</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="n-checklist-monitoring-mingguan">N. Checklist Monitoring Mingguan</h2>
+<ul>
+<li>[ ] Dashboard KPI aktif: CPA, ROAS, CVR checkout, refund, take-rate upsell.</li>
+<li>[ ] Semua iklan Meta memiliki naming + UTM konsisten CuanHijab.</li>
+<li>[ ] Sequence WA D1-D30 berjalan tanpa lead terlewat.</li>
+<li>[ ] Objection translation diperbarui dari data chat minggu berjalan.</li>
+<li>[ ] Aset proof/credibility minimal 3 materi baru per minggu.</li>
+<li>[ ] Peta eskalasi buyer ke konsultasi/bedah/retainer dieksekusi disiplin.</li>
+</ul>
+<h2 id="o-ringkasan-keputusan">O. Ringkasan Keputusan</h2>
+<p>Blueprint ini mengunci disiplin Sales Scale CuanHijab pada tiga hal: angka ketat (CPA/ROAS), aktivitas massive tapi sistematis (bukan acak), dan follow-up yang konsisten sampai closing. Dengan struktur ini, target naik dari Rp5jt ke Rp50jt/bulan menjadi target operasional yang realistis.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

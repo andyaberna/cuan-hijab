@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brand Context Engine — Cuan Hijab Next Level</title>
+<style>
+  :root { --bg:#faf9f5; --text:#1f2937; --heading:#8B1A4A; --accent:#C2185B; --line:#e5e7eb; --muted:#64748b; --card:#fff; --gold:#D4AF37; --warn:#dc2626; --info:#2563eb; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:"Segoe UI",system-ui,-apple-system,sans-serif; line-height:1.7; }
+  .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--accent); z-index:1000; transition:width .1s; width:0; }
+  .hero { background:linear-gradient(135deg,#8B1A4A 0%,#C2185B 50%,#D4AF37 100%); color:#fff; padding:3rem 2rem; text-align:center; }
+  .hero h1 { font-size:clamp(1.4rem,3.5vw,2.2rem); font-family:Georgia,serif; margin-bottom:.4rem; }
+  .hero p { color:#fce7f3; font-size:1rem; }
+  .hero .badge { display:inline-block; background:var(--gold); color:#1a1a1a; padding:.2rem .7rem; border-radius:999px; font-size:.8rem; font-weight:700; margin-top:.6rem; }
+  .layout { display:flex; max-width:1200px; margin:0 auto; }
+  .sidebar { width:260px; position:sticky; top:20px; height:fit-content; padding:1.5rem 1rem; border-right:1px solid var(--line); flex-shrink:0; }
+  .sidebar h3 { font-size:.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:.8rem; }
+  .sidebar a { display:block; padding:.35rem .6rem; font-size:.85rem; color:var(--text); text-decoration:none; border-radius:6px; margin-bottom:.15rem; border-left:3px solid transparent; transition:all .15s; }
+  .sidebar a:hover, .sidebar a.active { background:#fce7f3; color:var(--heading); border-left-color:var(--accent); }
+  .main { flex:1; padding:2rem 2.5rem; min-width:0; }
+  h2 { font-family:Georgia,serif; color:var(--heading); font-size:1.5rem; border-bottom:2px solid var(--accent); padding-bottom:.4rem; margin:2.5rem 0 1rem; }
+  h3 { color:var(--heading); font-size:1.15rem; margin:1.5rem 0 .6rem; }
+  h4 { color:var(--text); font-size:1rem; margin:1.2rem 0 .4rem; font-weight:600; }
+  .profile-card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.2rem 1.5rem; margin-bottom:1rem; }
+  .profile-card h4 { margin-top:0; color:var(--heading); }
+  .profile-card .label { font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; font-weight:600; }
+  .profile-card .value { font-size:.95rem; margin-bottom:.6rem; }
+  .tag { display:inline-block; padding:.15rem .55rem; border-radius:4px; font-size:.78rem; font-weight:600; margin:.15rem .2rem .15rem 0; }
+  .tag-green { background:#fce7f3; color:#9d174d; }
+  .tag-red { background:#fee2e2; color:#991b1b; }
+  .tag-blue { background:#fdf2f8; color:#9f1239; }
+  .tag-gold { background:#fef3c7; color:#92400e; }
+  .tag-gray { background:#f3f4f6; color:#374151; }
+  .persona { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.5rem; margin-bottom:1.2rem; }
+  .persona h4 { margin-top:0; font-size:1.1rem; }
+  .persona .persona-id { font-size:.78rem; color:var(--muted); font-weight:600; }
+  ul, ol { padding-left:1.3rem; margin:.4rem 0 .8rem; }
+  li { margin-bottom:.35rem; font-size:.93rem; }
+  .snippet { background:#f8fafc; border-left:3px solid var(--accent); padding:.8rem 1rem; margin:.6rem 0; border-radius:0 8px 8px 0; font-size:.9rem; }
+  .snippet .snippet-type { font-size:.75rem; color:var(--accent); font-weight:700; text-transform:uppercase; margin-bottom:.3rem; }
+  .table-wrap { overflow-x:auto; margin:.8rem 0; }
+  table { width:100%; border-collapse:collapse; font-size:.88rem; }
+  th { background:var(--heading); color:#fff; padding:.6rem .8rem; text-align:left; font-weight:600; }
+  td { padding:.5rem .8rem; border-bottom:1px solid var(--line); }
+  tr:hover td { background:#fff1f2; }
+  .do-dont { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0; }
+  .do-box, .dont-box { border-radius:10px; padding:1rem 1.2rem; }
+  .do-box { background:#fff1f2; border:1px solid #f9a8d4; }
+  .dont-box { background:#fef2f2; border:1px solid #fecaca; }
+  .do-box h4 { color:#9d174d; margin-top:0; }
+  .dont-box h4 { color:#991b1b; margin-top:0; }
+  .back-top { position:fixed; bottom:2rem; right:2rem; background:var(--accent); color:#fff; border:none; width:44px; height:44px; border-radius:50%; font-size:1.2rem; cursor:pointer; display:none; box-shadow:0 2px 8px rgba(0,0,0,.2); z-index:999; }
+  .back-top:hover { background:var(--heading); }
+  .back-home { padding:.8rem 0 .2rem; }
+  .back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+  .back-home a:hover { color:var(--heading); border-color:var(--heading); background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  @media(max-width:768px) {
+    .layout { flex-direction:column; }
+    .sidebar { width:100%; position:static; border-right:none; border-bottom:1px solid var(--line); padding:1rem; }
+    .main { padding:1.5rem 1rem; }
+    .do-dont { grid-template-columns:1fr; }
+    .hero { padding:2rem 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="reading-progress" id="progress"></div>
+
+<div class="hero">
+  <h1>🔒 Brand Context Engine</h1>
+  <p>Cuan Hijab Next Level — by Iman Awaludin, ST</p>
+  <span class="badge">Brand Profile v1.1</span>
+</div>
+
+<div class="layout">
+  <nav class="sidebar">
+    <h3>Navigasi</h3>
+    <a href="#overview">Overview</a>
+    <a href="#products">Produk &amp; Pricing</a>
+    <a href="#personas">Customer Personas</a>
+    <a href="#voice">Brand Voice</a>
+    <a href="#copy-snippets">Copy Snippets</a>
+    <a href="#values">Visi &amp; Values</a>
+    <a href="#content">Content Preferences</a>
+    <a href="#cta">CTA Library</a>
+    <a href="#tech">Tech Stack</a>
+    <a href="#dos-donts">Do's &amp; Don'ts</a>
+    <a href="#social-proof">Social Proof</a>
+  </nav>
+
+  <main class="main">
+    <nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav>
+
+    <h2 id="overview">Overview</h2>
+    <div class="profile-card">
+      <div class="label">Brand Name</div>
+      <div class="value"><strong>Cuan Hijab Next Level (by Iman Awaludin)</strong></div>
+      <div class="label">Mission</div>
+      <div class="value">Membantu reseller hijab, agen, dan pemilik brand lokal di Indonesia untuk keluar dari stuck omzet dan melakukan scale up bisnis melalui blueprint operasional teruji, manajemen supplier anti-zonk, dan perhitungan margin yang presisi.</div>
+      <div class="label">Problem yang Diselesaikan</div>
+      <div class="value">Reseller hijab hancur karena supplier zonk (kualitas beda dengan foto), salah hitung margin (ternyata cuma 8-12%), dan closing rate rendah karena DM berujung ghosting.</div>
+      <div class="label">Elevator Pitch</div>
+      <div class="value" style="font-style:italic; border-left:3px solid var(--gold); padding-left:.8rem;">Cuan Hijab Next Level adalah blueprint bisnis hijab dari praktisi dengan 20+ tahun pengalaman, eks operasional Nibras &amp; Rabbani. Ini bukan sekadar kelas motivasi, melainkan framework praktis 2 jalur—Jalur Kilat untuk Reseller dan Jalur Sultan untuk Brand Owner—lengkap dengan hack supplier, template HPP otomatis, dan formula scale-up yang telah teruji di 1.000+ mitra hijab nasional.</div>
+    </div>
+    <div class="profile-card">
+      <div class="label">Mentor</div>
+      <div class="value"><strong>Iman Awaludin, ST</strong> — CEO &amp; Praktisi Bisnis Hijab, SmartPlus Accelerator</div>
+      <ul>
+        <li>20+ tahun di industri busana muslim (produksi hingga ritel nasional)</li>
+        <li>Eks Operasional Nibras &amp; Rabbani</li>
+        <li>Mengelola 1.000+ titik distribusi mitra hijab nasional</li>
+        <li>Coaching bersama Budi Isman (eks Presdir Sari Husada/Danone) &amp; Dr. Armala</li>
+      </ul>
+      <div class="label">Links</div>
+      <div class="value">
+        <a href="https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-co" target="_blank" style="color:var(--accent)">Checkout</a> ·
+        <a href="https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-v2" target="_blank" style="color:var(--accent)">Landing Page</a>
+      </div>
+    </div>
+
+    <h2 id="products">Produk &amp; Pricing</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Level</th><th>Produk</th><th>Harga</th><th>Target</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag tag-gray">Lead Magnet</span></td><td>null (tidak ada lead magnet murni)</td><td>Rp 0</td><td>-</td></tr>
+          <tr><td><span class="tag tag-green">Front-End</span></td><td>Cuan Hijab Next Level (Bundle)</td><td>Rp 49.000 (normal Rp 99.000)</td><td>PERSONA_01</td></tr>
+          <tr><td><span class="tag tag-blue">Mid-Ticket</span></td><td>Konsultasi Privat 30 Menit via Zoom</td><td>Rp 197.000</td><td>PERSONA_01</td></tr>
+          <tr><td><span class="tag tag-gold">Mid-Ticket ⭐</span></td><td>Program Audit "Bedah Bisnis" 3 Sesi via Zoom</td><td>Rp 497.000</td><td>PERSONA_02</td></tr>
+          <tr><td><span class="tag tag-blue">Back-End</span></td><td>Retainer Pendampingan Pabrik</td><td>Custom</td><td>PERSONA_02</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="profile-card">
+      <div class="label">Value Anchor</div>
+      <div class="value">Rp 438.000 (Rekaman Webinar Rp197.000 + Ebook Premium Rp97.000 + Template HPP Rp47.000 + WA Group Rp97.000)</div>
+      <div class="label">Scarcity</div>
+      <div class="value">500 pembeli pertama dapat harga Rp49.000, setelah itu otomatis naik ke Rp99.000</div>
+      <div class="label">Guarantee</div>
+      <div class="value">Garansi 7 hari uang kembali 100% tanpa proses rumit</div>
+    </div>
+
+    <h2 id="personas">Customer Personas</h2>
+    <div class="persona">
+      <span class="persona-id">PERSONA_01</span>
+      <h4>👩 Reseller / Agen Hijab yang "Stuck" (Jalur Kilat)</h4>
+      <div class="label">Demografi</div>
+      <div class="value">Usia 25-45 · Indonesia urban/sub-urban · Problem-Aware</div>
+      <div class="label">Masalah Utama</div>
+      <ul>
+        <li>Sering dapat Supplier Zonk (barang beda sama foto, pengiriman lama).</li>
+        <li>Menghitung HPP dengan cara salah (dikira untung besar, ternyata margin cuma 8-12%).</li>
+        <li>Korban DM Ghosting (capek balas panjang lebar, ujungnya cuma dibaca doang).</li>
+      </ul>
+      <div class="label">Desired Outcomes</div>
+      <ul>
+        <li>Punya checklist supplier terpercaya agar tidak diomeli customer.</li>
+        <li>Tahu cara membalas DM yang berujung ke transfer.</li>
+        <li>Tembus omzet stabil bulan ke bulan tanpa harus nambah jam kerja.</li>
+      </ul>
+      <div class="label">Common Objections</div>
+      <ul>
+        <li>Ini ilmunya kepakai nggak buat saya yang cuma dropshipper kecil?</li>
+        <li>Saya gaptek, emangnya bisa pakai Template HPP itu?</li>
+        <li>Ah paling isinya teori motivasi doang, bukan praktek.</li>
+      </ul>
+      <div class="label">Trigger Words</div>
+      <div class="value">
+        <span class="tag tag-green">Supplier zonk</span>
+        <span class="tag tag-green">margin tipis</span>
+        <span class="tag tag-green">DM ghosting</span>
+        <span class="tag tag-green">nanya harga doang</span>
+        <span class="tag tag-green">HPP asli</span>
+      </div>
+    </div>
+
+    <div class="persona">
+      <span class="persona-id">PERSONA_02</span>
+      <h4>🏷️ Aspiring Brand Owner (Jalur Sultan)</h4>
+      <div class="label">Demografi</div>
+      <div class="value">Usia 28-45 · Indonesia urban · Solution-Aware</div>
+      <div class="label">Masalah Utama</div>
+      <ul>
+        <li>Margin keuntungan tertahan karena cuma "menjualkan" barang orang lain.</li>
+        <li>Buta soal produksi (tidak tahu cara cari konveksi terpercaya).</li>
+        <li>Tidak paham legalitas (HKI) dan strategi distribusi awal tanpa modal raksasa.</li>
+      </ul>
+      <div class="label">Desired Outcomes</div>
+      <ul>
+        <li>Membangun brand hijab milik sendiri dari nol (Zero to Product).</li>
+        <li>Punya niche killer yang membuat produknya dicari orang.</li>
+        <li>Punya SOP Tim CS agar bisnis bisa jalan meski ditinggal tidur.</li>
+      </ul>
+      <div class="label">Common Objections</div>
+      <ul>
+        <li>Bikin brand sendiri pasti butuh modal ratusan juta, saya belum sanggup.</li>
+        <li>Apa saya bisa bersaing dengan brand besar/artis yang sudah jalan?</li>
+        <li>Gimana kalau gagal dan stok kain numpuk di gudang?</li>
+      </ul>
+      <div class="label">Trigger Words</div>
+      <div class="value">
+        <span class="tag tag-blue">Bikin brand sendiri</span>
+        <span class="tag tag-blue">konveksi</span>
+        <span class="tag tag-blue">HKI</span>
+        <span class="tag tag-blue">SOP tim</span>
+        <span class="tag tag-blue">scale up</span>
+        <span class="tag tag-blue">niche killer</span>
+        <span class="tag tag-blue">Zero to Product</span>
+      </div>
+    </div>
+
+    <h2 id="voice">Brand Voice</h2>
+    <div class="profile-card">
+      <div class="label">Tone</div>
+      <div class="value">
+        <span class="tag tag-green">Praktisi</span>
+        <span class="tag tag-green">Otoritatif</span>
+        <span class="tag tag-green">Edukatif</span>
+        <span class="tag tag-green">Ramah</span>
+        <span class="tag tag-green">Blak-blakan (No-BS)</span>
+      </div>
+      <div class="label">Sapaan</div>
+      <div class="value">Bunda / Sister / Kakak</div>
+      <div class="label">Formality</div>
+      <div class="value">Kasual</div>
+      <div class="label">Writing Guidelines</div>
+      <div class="value">Fokus pada fakta konkret (angka HPP, nama konveksi, SOP) bukan teori motivasi. Menggunakan framework masalah-konkret → konsekuensi → solusi presisi. Blame selalu diarahkan pada sistem, pola, atau kurangnya ilmu, bukan personal audiens.</div>
+    </div>
+
+    <h3>Power Words</h3>
+    <div style="margin-bottom:1rem;">
+      <span class="tag tag-green">blueprint</span>
+      <span class="tag tag-green">checklist</span>
+      <span class="tag tag-green">margin asli</span>
+      <span class="tag tag-green">HPP</span>
+      <span class="tag tag-green">supplier zonk</span>
+      <span class="tag tag-green">praktisi</span>
+      <span class="tag tag-green">Pengalaman 20 Tahun</span>
+      <span class="tag tag-green">scale up</span>
+    </div>
+
+    <h3>Banned Words</h3>
+    <div style="margin-bottom:1rem;">
+      <span class="tag tag-red">gagal</span>
+      <span class="tag tag-red">miskin</span>
+      <span class="tag tag-red">pusing</span>
+      <span class="tag tag-red">jelek</span>
+      <span class="tag tag-red">auto sultan</span>
+      <span class="tag tag-red">cara instan</span>
+      <span class="tag tag-red">dijamin kaya</span>
+      <span class="tag tag-red">rahasia kilat</span>
+    </div>
+
+    <h2 id="copy-snippets">Copy Snippets</h2>
+    <div class="snippet">
+      <div class="snippet-type">Hook_Supplier</div>
+      Udah 3x ganti supplier hijab. Barangnya tetap beda sama foto. Ini bukan masalah hoki — ini masalah checklist.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Hook_Margin</div>
+      Kok orderan banyak tapi rekeningnya gitu-gitu aja? Coba hitung HPP-nya. Beneran.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Hook_DM</div>
+      "Berapaan kak?" — dibaca, gak dibales. Familiar? Masalahnya bukan di produk. Masalahnya di pola balas DM.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Hook_Authority</div>
+      20 tahun di industri hijab. Eks operasional Nibras &amp; Rabbani. 1.000+ mitra distribusi nasional.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Benefit</div>
+      Template HPP otomatis ini bantu hitung pengeluaran tak kasat mata. Tinggal isi angka, langsung kelihatan margin aslinya.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Urgency_CTA</div>
+      Blueprint pengalaman 20 tahun ini dijual Rp49.000 hanya untuk 500 pembeli pertama. Setelah penuh, harga otomatis naik.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Guarantee_CTA</div>
+      Garansi 7 hari uang kembali. Zero risk. Amankan blueprint-nya sekarang.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">WA_Edukasi</div>
+      Cek lagi supplier hijab Bunda sekarang. Kalau belum lolos 7 poin ini, kemungkinan besar barang dateng gak sesuai.
+    </div>
+
+    <h2 id="values">Visi &amp; Values</h2>
+    <div class="profile-card">
+      <div class="label">Long-Term Vision</div>
+      <div class="value">Menjadi pusat akselerasi bisnis hijab terdepan di Indonesia, membantu mengubah ribuan reseller yang stuck menjadi Brand Owner sukses yang memiliki sistem terstruktur, profitabel, dan bertahan lintas generasi.</div>
+      <div class="label">Core Values</div>
+      <ul>
+        <li>Praktisi over Teori</li>
+        <li>Transparansi &amp; Realistis</li>
+        <li>Sistem di Atas Semangat</li>
+      </ul>
+      <div class="label">Key Differentiators</div>
+      <ul>
+        <li>Otoritas Level Dewa: Mentor (Pak Iman) adalah Praktisi Bisnis Hijab dengan Pengalaman Operasional lebih dari 20 tahun.</li>
+        <li>Mekanisme yang Unik: Menggunakan pendekatan Blueprint 2 Jalur (Jalur Kilat untuk Reseller &amp; Jalur Sultan untuk Brand Owner).</li>
+        <li>Penyedia Tools Otomatis: Memberikan deliverable yang langsung pakai (seperti Template HPP Otomatis di Spreadsheet).</li>
+      </ul>
+    </div>
+
+    <h2 id="content">Content Preferences</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Channel</th><th>Purpose</th><th>Format Rules</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Meta Ads</strong></td><td>Awareness / Conversion (Top-Funnel)</td><td>Struktur: Hook → Agitate → Authority → Offer → CTA. Paragraf pendek (1-2 baris). Semua klaim harus exact-match product brief.</td></tr>
+          <tr><td><strong>WA Group Broadcast</strong></td><td>Nurturing / Upsell (Mid-Funnel)</td><td>Dikirim prime time. Sapaan Bunda/Sister/Kakak. Pola selang-seling: 1 hari edukasi teknis, 1 hari upsell, tutup dengan reply keyword.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="profile-card">
+      <div class="label">Length &amp; Depth</div>
+      <div class="value">Tulisan harus membumi, menohok langsung ke rasa sakit (margin, supplier, DM sepi) tanpa jargon rumit.</div>
+      <div class="label">Visual vs Textual</div>
+      <div class="value">Copywriting (teks) adalah senjata utama. Visual bertugas sebagai scroll stopper atau bukti pendukung.</div>
+    </div>
+
+    <h2 id="cta">CTA Library</h2>
+    <h4>Awareness</h4>
+    <ul>
+      <li>Rp49.000 untuk 500 pembeli pertama. Setelah itu naik jadi Rp99.000. Klik Learn More.</li>
+      <li>Garansi 7 hari uang kembali. Zero risk. Amankan blueprint-nya sekarang.</li>
+    </ul>
+    <h4>Nurturing</h4>
+    <ul>
+      <li>Udah dipraktekin belum Bunda? Share hasilnya di grup dong 🙌</li>
+      <li>Coba malam ini cek lagi supplier Bunda ya.</li>
+    </ul>
+    <h4>Conversion</h4>
+    <ul>
+      <li>Yang minat dibedah kasusnya langsung via Zoom, reply "MENTORING" sekarang.</li>
+      <li>Mau upgrade ke Brand Owner? Reply "BRAND" kalau mau tahu lebih lanjut.</li>
+      <li>Reply "PRO" buat dapat link eksklusif potongan khusus member.</li>
+    </ul>
+
+    <h2 id="tech">Tech Stack</h2>
+    <div class="profile-card">
+      <div class="label">Website Platform</div>
+      <div class="value">Scalev (myscalev.com)</div>
+      <div class="label">CRM</div>
+      <div class="value">Scalev</div>
+      <div class="label">Email / Broadcast Tool</div>
+      <div class="value">WhatsApp Business (Manual Admin / Broadcast Tool)</div>
+      <div class="label">Payment Processor</div>
+      <div class="value">Scalev Integrated Payment Gateway</div>
+      <div class="label">Ads Platforms</div>
+      <div class="value">Meta Ads</div>
+      <div class="label">Other Integrations</div>
+      <div class="value">Meta Pixel &amp; CAPI</div>
+      <div class="label">Campaign Setup</div>
+      <ul>
+        <li>Objective: Sales / Conversions → Purchase</li>
+        <li>Budget Testing: Rp100.000/hari (5 adset × Rp20K ABO)</li>
+        <li>Targeting: Broad / Advantage+ Audience, Perempuan 25-55, Indonesia</li>
+        <li>Placements: Advantage+ Placements</li>
+        <li>CPA Target: &lt; Rp25.000</li>
+        <li>Margin per Unit: Rp43.000 (margin produk digital ~88%)</li>
+        <li>WA Follow-up: 10 hari selang-seling edukasi/upsell, prime time 19.30-21.00 WIB</li>
+      </ul>
+    </div>
+
+    <h2 id="dos-donts">Do's &amp; Don'ts</h2>
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✅ DO</h4>
+        <ul>
+          <li>Gunakan bukti spesifik &amp; angka nyata (margin 8-12%, checklist 7 poin, 20+ tahun pengalaman, harga 49rb) untuk membangun otoritas.</li>
+          <li>Blame the system, not the person: arahkan kesalahan pada sistem/kurangnya tools, validasi frustrasi audiens tanpa menyerang personal.</li>
+          <li>Edukasi sebelum jualan: khusus di WA grup, berikan insight teknis actionable sebelum upsell.</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>❌ DON'T</h4>
+        <ul>
+          <li>No income guarantee &amp; overclaiming: jangan menjanjikan omzet meledak semalam atau hasil instan.</li>
+          <li>No personal attack: jangan gunakan kata-kata negatif yang merendahkan identitas audiens.</li>
+          <li>No hard-selling beruntun: jangan mengirim upsell membabi-buta di WA, wajib patuhi ritme selang-seling edukasi-promosi.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="social-proof">Social Proof</h2>
+    <div class="profile-card">
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; text-align:center;">
+        <div>
+          <div style="font-size:2rem; font-weight:700; color:var(--heading);">1.000+</div>
+          <div style="font-size:.85rem; color:var(--muted);">Titik Distribusi Mitra</div>
+        </div>
+        <div>
+          <div style="font-size:2rem; font-weight:700; color:var(--heading);">27</div>
+          <div style="font-size:.85rem; color:var(--muted);">Early Adopters</div>
+        </div>
+        <div>
+          <div style="font-size:2rem; font-weight:700; color:var(--heading);">Real</div>
+          <div style="font-size:.85rem; color:var(--muted);">Screenshot Testimoni</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;">
+        <div class="label">Social Proof Notes</div>
+        <div class="value">1.000+ titik distribusi mitra hijab nasional · 27 orang sudah daftar dari 500 kuota · screenshot testimoni nyata dari peserta &amp; mitra (tanpa edit).</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<button type="button" class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+
+<footer style="text-align:center; padding:2rem; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); margin-top:2rem;">
+  Brand Context Engine v1.1 · Cuan Hijab Next Level · by Iman Awaludin, ST
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('progress').style.width = (window.scrollY / h * 100) + '%';
+  document.getElementById('backTop').style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+const links = document.querySelectorAll('.sidebar a[href^="#"]');
+const sections = [...links].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (s.getBoundingClientRect().top < 120) current = s.id; });
+  links.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>

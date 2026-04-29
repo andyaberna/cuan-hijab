@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Persuasion, Closing &amp; Sales Psychology — Cuan Hijab</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Persuasion, Closing &amp; Sales Psychology — Cuan Hijab</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="1-persuasion-objective" href="#1-persuasion-objective">1) Persuasion Objective</a></li>
+<li><a data-target="2-3-tens-certainty-audit-product-brand-capability" href="#2-3-tens-certainty-audit-product-brand-capability">2) 3 Tens Certainty Audit (Product / Brand / Capability)</a></li>
+<li><a data-target="21-audit-awal-kondisi-cuanhijab" href="#21-audit-awal-kondisi-cuanhijab">2.1 Audit awal kondisi CuanHijab</a></li>
+<li><a data-target="22-action-untuk-naikkan-product-certainty-ke-9" href="#22-action-untuk-naikkan-product-certainty-ke-9">2.2 Action untuk naikkan Product Certainty ke 9+</a></li>
+<li><a data-target="23-action-untuk-naikkan-brand-certainty-ke-9" href="#23-action-untuk-naikkan-brand-certainty-ke-9">2.3 Action untuk naikkan Brand Certainty ke 9+</a></li>
+<li><a data-target="24-action-untuk-naikkan-capability-certainty-ke-9" href="#24-action-untuk-naikkan-capability-certainty-ke-9">2.4 Action untuk naikkan Capability Certainty ke 9+</a></li>
+<li><a data-target="25-kpi-certainty" href="#25-kpi-certainty">2.5 KPI Certainty</a></li>
+<li><a data-target="3-straight-line-persuasion-map-scattered-certain" href="#3-straight-line-persuasion-map-scattered-certain">3) Straight Line Persuasion Map (Scattered → Certain)</a></li>
+<li><a data-target="31-titik-awal-prospek-scattered" href="#31-titik-awal-prospek-scattered">3.1 Titik awal prospek (scattered)</a></li>
+<li><a data-target="32-titik-akhir-prospek-certain" href="#32-titik-akhir-prospek-certain">3.2 Titik akhir prospek (certain)</a></li>
+<li><a data-target="33-straight-line-step-by-step" href="#33-straight-line-step-by-step">3.3 Straight line step-by-step</a></li>
+<li><a data-target="34-guardrail-straight-line" href="#34-guardrail-straight-line">3.4 Guardrail straight line</a></li>
+<li><a data-target="4-looping-scripts-5-loop-per-objection-utama" href="#4-looping-scripts-5-loop-per-objection-utama">4) Looping Scripts — 5 Loop per Objection Utama</a></li>
+<li><a data-target="5-4-tonalities-mapping-untuk-sales-page-cuanhijab" href="#5-4-tonalities-mapping-untuk-sales-page-cuanhijab">5) 4 Tonalities Mapping untuk Sales Page CuanHijab</a></li>
+<li><a data-target="6-4-types-of-objections-cuanhijab-specific" href="#6-4-types-of-objections-cuanhijab-specific">6) 4 Types of Objections (CuanHijab-Specific)</a></li>
+<li><a data-target="7-written-persuasion-7-section-sales-page-structure-full-copy" href="#7-written-persuasion-7-section-sales-page-structure-full-copy">7) Written Persuasion — 7 Section Sales Page Structure (FULL COPY)</a></li>
+<li><a data-target="section-1-hook-identification" href="#section-1-hook-identification">Section 1 — Hook &amp; Identification</a></li>
+<li><a data-target="section-2-problem-diagnosis" href="#section-2-problem-diagnosis">Section 2 — Problem Diagnosis</a></li>
+<li><a data-target="section-3-mechanism-method" href="#section-3-mechanism-method">Section 3 — Mechanism &amp; Method</a></li>
+<li><a data-target="section-4-authority-trust" href="#section-4-authority-trust">Section 4 — Authority &amp; Trust</a></li>
+<li><a data-target="section-5-offer-stack" href="#section-5-offer-stack">Section 5 — Offer Stack</a></li>
+<li><a data-target="section-6-risk-reversal" href="#section-6-risk-reversal">Section 6 — Risk Reversal</a></li>
+<li><a data-target="section-7-close-action" href="#section-7-close-action">Section 7 — Close &amp; Action</a></li>
+<li><a data-target="8-emailwa-persuasion-sequence-5-pesan" href="#8-emailwa-persuasion-sequence-5-pesan">8) Email/WA Persuasion Sequence (5 Pesan)</a></li>
+<li><a data-target="9-social-copy-templates-10-post-igtiktokthreads" href="#9-social-copy-templates-10-post-igtiktokthreads">9) Social Copy Templates — 10 Post (IG/TikTok/Threads)</a></li>
+<li><a data-target="10-social-proof-framework-collection-deployment" href="#10-social-proof-framework-collection-deployment">10) Social Proof Framework (Collection + Deployment)</a></li>
+<li><a data-target="101-collection-strategy" href="#101-collection-strategy">10.1 Collection Strategy</a></li>
+<li><a data-target="102-deployment-strategy" href="#102-deployment-strategy">10.2 Deployment Strategy</a></li>
+<li><a data-target="103-social-proof-sequencing" href="#103-social-proof-sequencing">10.3 Social proof sequencing</a></li>
+<li><a data-target="104-proof-hygiene-rules" href="#104-proof-hygiene-rules">10.4 Proof hygiene rules</a></li>
+<li><a data-target="11-persuasion-script-untuk-tim-wa-closing" href="#11-persuasion-script-untuk-tim-wa-closing">11) Persuasion Script untuk Tim WA Closing</a></li>
+<li><a data-target="12-integration-dengan-wa-group-follow-up-existing" href="#12-integration-dengan-wa-group-follow-up-existing">12) Integration dengan WA Group Follow-Up Existing</a></li>
+<li><a data-target="13-persuasion-metrics-dashboard" href="#13-persuasion-metrics-dashboard">13) Persuasion Metrics Dashboard</a></li>
+<li><a data-target="14-14-hari-persuasion-deployment-plan" href="#14-14-hari-persuasion-deployment-plan">14) 14-Hari Persuasion Deployment Plan</a></li>
+<li><a data-target="15-certainty-re-score-template-weekly" href="#15-certainty-re-score-template-weekly">15) Certainty Re-Score Template (Weekly)</a></li>
+<li><a data-target="16-faq-persuasion-block-ready-to-use" href="#16-faq-persuasion-block-ready-to-use">16) FAQ Persuasion Block (ready-to-use)</a></li>
+<li><a data-target="17-closing-narrative-master-untuk-halaman-akhircheckout-preframe" href="#17-closing-narrative-master-untuk-halaman-akhircheckout-preframe">17) Closing Narrative Master (untuk halaman akhir/checkout preframe)</a></li>
+<li><a data-target="18-penutup-blueprint-persuasion" href="#18-penutup-blueprint-persuasion">18) Penutup Blueprint Persuasion</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><hr/>
+<p>Dipakai oleh: Founder, Copywriter, Tim Closing WA, Admin WA Group, Tim Konten IG/TikTok/Threads, dan Tim Sales.</p>
+<hr/>
+<h1>Persuasion, Closing &amp; Sales Psychology — Cuan Hijab</h1>
+<h2 id="1-persuasion-objective">1) Persuasion Objective</h2>
+<p>Goal dokumen ini bukan sekadar membuat copy “terdengar meyakinkan”. Goal utama adalah meningkatkan certainty calon buyer di tiga area:</p>
+<ul>
+<li>Certainty terhadap produk (produk ini memang relevan untuk saya),</li>
+<li>Certainty terhadap brand/mentor (siapa yang mengajar bisa dipercaya),</li>
+<li>Certainty terhadap diri sendiri (saya mampu menjalankan materinya).</li>
+</ul>
+<p>Ketika tiga certainty ini naik, proses closing menjadi lebih natural, bukan memaksa.</p>
+<p>Produk yang dijual tetap: Cuan Hijab Next Level, Rp49.000 batch awal, normal Rp99.000, dengan garansi 7 hari uang kembali.</p>
+<hr/>
+<h2 id="2-3-tens-certainty-audit-product-brand-capability">2) 3 Tens Certainty Audit (Product / Brand / Capability)</h2>
+<p>Skor memakai skala 1-10. Target ideal straight-line closing adalah mendekati 10/10/10.</p>
+<h2 id="21-audit-awal-kondisi-cuanhijab">2.1 Audit awal kondisi CuanHijab</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Dimensi Certainty</th>
+<th>Skor Saat Ini</th>
+<th>Alasan Skor</th>
+<th>Risiko Jika Tidak Ditingkatkan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Product Certainty</td>
+<td>7.8/10</td>
+<td>Offer jelas, value anchor kuat, harga entry rendah</td>
+<td>Prospek tetap menunda karena merasa “nanti aja”</td>
+</tr>
+<tr>
+<td>Brand Certainty</td>
+<td>8.2/10</td>
+<td>Kredensial mentor kuat (20+ tahun, 1.000+ mitra)</td>
+<td>Sebagian audience belum kenal personal mentor</td>
+</tr>
+<tr>
+<td>Capability Certainty</td>
+<td>6.9/10</td>
+<td>Materi praktis, namun buyer takut tidak konsisten eksekusi</td>
+<td>Buyer berpikir “saya udah sering gagal”</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="22-action-untuk-naikkan-product-certainty-ke-9">2.2 Action untuk naikkan Product Certainty ke 9+</h2>
+<ol>
+<li>Tampilkan isi paket secara visual (box stack + preview file).</li>
+<li>Tambahkan “what happens after buy” step-by-step.</li>
+<li>Perjelas outcome realistis:</li>
+<p>dari nebak ke terukur, bukan janji omzet fantastis.</p>
+<li>Letakkan FAQ “ini cocok untuk siapa/tidak cocok untuk siapa”.</li>
+</ol>
+<h2 id="23-action-untuk-naikkan-brand-certainty-ke-9">2.3 Action untuk naikkan Brand Certainty ke 9+</h2>
+<ol>
+<li>Perkuat story mentor di atas fold.</li>
+<li>Masukkan 3 bukti authority berurutan:</li>
+<p>pengalaman, skala mitra, konteks coaching.</p>
+<li>Gunakan potongan video mentor (15-30 detik) untuk humanize.</li>
+<li>Tampilkan social proof buyer baru + mitra lama sebagai jembatan trust.</li>
+</ol>
+<h2 id="24-action-untuk-naikkan-capability-certainty-ke-9">2.4 Action untuk naikkan Capability Certainty ke 9+</h2>
+<ol>
+<li>Pecah implementasi jadi langkah 15 menit.</li>
+<li>Berikan “Quick Win Day-1” di onboarding.</li>
+<li>Gunakan bahasa:</li>
+<p>“mulai dari 1 produk dulu, bukan rombak semua”.</p>
+<li>Follow-up WA untuk memastikan buyer merasa didampingi.</li>
+</ol>
+<h2 id="25-kpi-certainty">2.5 KPI Certainty</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Certainty</th>
+<th>Leading Indicator</th>
+<th>Lagging Indicator</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Product</td>
+<td>Scroll depth section offer, klik CTA mid-page</td>
+<td>Conversion rate checkout</td>
+</tr>
+<tr>
+<td>Brand</td>
+<td>Video play rate mentor, time on authority block</td>
+<td>Reply trust-related di WA</td>
+</tr>
+<tr>
+<td>Capability</td>
+<td>Join WA group, download template, submit progress</td>
+<td>Upsell acceptance Rp197K</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="3-straight-line-persuasion-map-scattered-certain">3) Straight Line Persuasion Map (Scattered → Certain)</h2>
+<p>Straight line berarti: setiap komunikasi membawa prospek lebih dekat ke keputusan, bukan muter-muter tanpa arah.</p>
+<h2 id="31-titik-awal-prospek-scattered">3.1 Titik awal prospek (scattered)</h2>
+<p>Ciri prospek scattered CuanHijab:</p>
+<ul>
+<li>Konsumsi konten random dari banyak sumber.</li>
+<li>Tahu masalah, tidak tahu prioritas solusi.</li>
+<li>Punya niat, tapi gampang terdistraksi.</li>
+<li>Sering berkata “nanti aja”.</li>
+</ul>
+<h2 id="32-titik-akhir-prospek-certain">3.2 Titik akhir prospek (certain)</h2>
+<p>Ciri prospek certain:</p>
+<ul>
+<li>Tahu masalah utama yang harus dibenahi dulu.</li>
+<li>Paham kenapa CuanHijab sesuai konteksnya.</li>
+<li>Yakin harga Rp49K adalah keputusan rendah risiko.</li>
+<li>Melakukan pembelian tanpa didorong berlebihan.</li>
+</ul>
+<h2 id="33-straight-line-step-by-step">3.3 Straight line step-by-step</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Step</th>
+<th>Kondisi Psikologis</th>
+<th>Pesan yang Dikirim</th>
+<th>Bukti yang Dipakai</th>
+<th>CTA</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>“Saya capek tapi bingung”</td>
+<td>Validasi pain spesifik hijab seller</td>
+<td>Supplier/DM/margin examples</td>
+<td>“Lihat apakah ini relate”</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>“Masalah saya ternyata umum”</td>
+<td>Problem diagnosis + salah akar</td>
+<td>Checklist/angka margin</td>
+<td>“Cek kerangka solusi”</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>“Oh ada sistemnya”</td>
+<td>Perkenalkan mechanism blueprint</td>
+<td>2 jalur + HPP template</td>
+<td>“Lihat isi paket”</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>“Siapa mentornya?”</td>
+<td>Authority dan kredensial</td>
+<td>20+ tahun + 1.000+ mitra</td>
+<td>“Dengar penjelasan mentor”</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>“Worth it gak?”</td>
+<td>Value stack Rp438K vs Rp49K</td>
+<td>Breakdown nilai</td>
+<td>“Amankan batch awal”</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>“Takut tidak cocok”</td>
+<td>Risk reversal</td>
+<td>Garansi 7 hari</td>
+<td>“Mulai tanpa risiko besar”</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>“Saya siap”</td>
+<td>Close dengan urgency rasional</td>
+<td>Kuota 500 + harga naik</td>
+<td>“Saya lock Rp49K sekarang”</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="34-guardrail-straight-line">3.4 Guardrail straight line</h2>
+<ul>
+<li>Jangan lompat langsung ke harga sebelum diagnosis pain.</li>
+<li>Jangan bicara upsell sebelum buyer merasa win di core offer.</li>
+<li>Jangan membanjiri fitur tanpa narasi hasil.</li>
+</ul>
+<hr/>
+<h2 id="4-looping-scripts-5-loop-per-objection-utama">4) Looping Scripts — 5 Loop per Objection Utama</h2>
+<p>Format looping:</p>
+<ul>
+<li>Acknowledge,</li>
+<li>Reframe,</li>
+<li>Evidence,</li>
+<li>Mini-close,</li>
+<li>Next-loop jika belum closed.</li>
+</ul>
+<h3 id="objection-1-mahal-rp49k">Objection 1: “Mahal Rp49K”</h3>
+<h4 id="loop-1">Loop 1</h4>
+<p>Acknowledge: “Paham Bun, tiap rupiah memang harus jelas hasilnya.”</p>
+<p>Reframe: “Justru karena itu produk ini bukan kursus panjang mahal, tapi entry untuk beresin titik bocor paling dasar.”</p>
+<p>Evidence: “Ada template HPP dan checklist supplier yang langsung dipakai di hari yang sama.”</p>
+<p>Mini-close: “Kalau dengan Rp49K bisa hindari 1 keputusan stok yang salah, menurut Bunda itu lebih ringan atau lebih berat?”</p>
+<h4 id="loop-2">Loop 2</h4>
+<p>Acknowledge: “Wajar kalau terasa mahal saat manfaat belum kelihatan.”</p>
+<p>Reframe: “Yang sering mahal itu bukan beli ilmunya, tapi salah langkah berulang berbulan-bulan.”</p>
+<p>Evidence: “Di sini ada jalur praktis supaya keputusan supplier dan margin tidak nebak.”</p>
+<p>Mini-close: “Mau saya kirim ringkasan isi agar Bunda nilai objektif dulu?”</p>
+<h4 id="loop-3">Loop 3</h4>
+<p>Acknowledge: “Betul, harga kecil pun tetap harus logis.”</p>
+<p>Reframe: “Value paket Rp438K, bayar batch awal Rp49K, dengan garansi 7 hari.”</p>
+<p>Evidence: “Artinya ada safety net, bukan beli gelap-gelapan.”</p>
+<p>Mini-close: “Kalau tidak cocok bisa refund, bagian mana yang masih paling mengganjal?”</p>
+<h4 id="loop-4">Loop 4</h4>
+<p>Acknowledge: “Saya suka cara Bunda hati-hati.”</p>
+<p>Reframe: “Itu justru karakter owner yang sehat.”</p>
+<p>Evidence: “Karena itu kita mulai dari nominal paling ringan dulu, belum masuk program pendampingan besar.”</p>
+<p>Mini-close: “Setuju kalau ini dipakai sebagai test kecil berisiko rendah?”</p>
+<h4 id="loop-5">Loop 5</h4>
+<p>Acknowledge: “Bunda pengen keputusan yang aman, benar banget.”</p>
+<p>Reframe: “Aman itu bukan menunda terus, tapi mencoba dengan guardrail.”</p>
+<p>Evidence: “Guardrail-nya: harga entry + garansi + step implementasi sederhana.”</p>
+<p>Mini-close: “Kalau saya kirim link checkout sekarang, Bunda bisa lock harga dulu, belajarnya fleksibel malam ini.”</p>
+<hr/>
+<h3 id="objection-2-materi-begini-bisa-cari-di-youtube">Objection 2: “Materi begini bisa cari di YouTube”</h3>
+<h4 id="loop-1-2">Loop 1</h4>
+<p>Acknowledge: “Betul Bun, konten gratis memang banyak.”</p>
+<p>Reframe: “Masalahnya biasanya bukan kurang konten, tapi kontennya terpencar dan tidak jadi sistem.”</p>
+<p>Evidence: “CuanHijab mengurutkan dari supplier → HPP → DM closing, sesuai urutan keputusan harian reseller.”</p>
+<p>Mini-close: “Bunda lebih butuh nambah informasi, atau butuh alur yang bisa langsung dipakai?”</p>
+<h4 id="loop-2-2">Loop 2</h4>
+<p>Acknowledge: “Setuju, YouTube bisa bantu insight awal.”</p>
+<p>Reframe: “Tapi insight tanpa implementasi sering berhenti jadi catatan.”</p>
+<p>Evidence: “Di sini ada template siap pakai, bukan cuma teori.”</p>
+<p>Mini-close: “Kalau ada file yang langsung dipakai hari ini, apakah itu beda nilainya dibanding nonton random?”</p>
+<h4 id="loop-3-2">Loop 3</h4>
+<p>Acknowledge: “Bunda realistis, itu bagus.”</p>
+<p>Reframe: “Gratis cocok untuk eksplorasi, berbayar cocok untuk eksekusi terstruktur.”</p>
+<p>Evidence: “Ada WA group untuk follow-up, jadi tidak belajar sendirian.”</p>
+<p>Mini-close: “Kalau didampingi implementasi, prosesnya lebih mungkin jalan gak Bun?”</p>
+<h4 id="loop-4-2">Loop 4</h4>
+<p>Acknowledge: “Rasa ‘saya bisa cari sendiri’ itu valid.”</p>
+<p>Reframe: “Pertanyaannya, berapa lama lagi mau trial-error?”</p>
+<p>Evidence: “Blueprint ini disusun dari 20+ tahun praktik, jadi Bunda meminjam pengalaman, bukan mulai dari nol.”</p>
+<p>Mini-close: “Lebih hemat waktu mana: merangkai sendiri 50 video, atau pakai alur jadi?”</p>
+<h4 id="loop-5-2">Loop 5</h4>
+<p>Acknowledge: “Saya paham Bun, semua orang ingin efisien.”</p>
+<p>Reframe: “CuanHijab itu membayar kurasi + urutan + konteks hijab seller Indonesia.”</p>
+<p>Evidence: “Itu yang biasanya tidak didapat dari konten umum.”</p>
+<p>Mini-close: “Mau saya kirim breakdown isi per bab, biar Bunda bandingkan langsung sebelum putuskan?”</p>
+<hr/>
+<h3 id="objection-3-nanti-aja">Objection 3: “Nanti aja”</h3>
+<h4 id="loop-1-3">Loop 1</h4>
+<p>Acknowledge: “Boleh Bun, keputusan tetap di Bunda.”</p>
+<p>Reframe: “Biasanya ‘nanti’ itu artinya belum ada prioritas yang jelas.”</p>
+<p>Evidence: “Padahal 1 jam belajar bisa langsung dipakai buat cek margin 1 produk.”</p>
+<p>Mini-close: “Kalau mulai dari satu SKU dulu, masih terasa berat?”</p>
+<h4 id="loop-2-3">Loop 2</h4>
+<p>Acknowledge: “Saya ngerti, jadwal Bunda pasti padat.”</p>
+<p>Reframe: “Karena itu formatnya rekaman, bisa dicicil sesuai waktu.”</p>
+<p>Evidence: “Tidak harus duduk 3 jam sekaligus. Bisa 20-30 menit per malam.”</p>
+<p>Mini-close: “Kalau fleksibel begini, apa halangan utamanya sekarang?”</p>
+<h4 id="loop-3-3">Loop 3</h4>
+<p>Acknowledge: “Menunda kadang terasa aman.”</p>
+<p>Reframe: “Tapi biaya menunda sering tidak terasa di depan.”</p>
+<p>Evidence: “Selama belum dibenahi, margin tipis dan supplier risk tetap jalan.”</p>
+<p>Mini-close: “Mending mulai kecil sekarang, atau bayar mahal lewat trial-error sebulan lagi?”</p>
+<h4 id="loop-4-3">Loop 4</h4>
+<p>Acknowledge: “Sikap hati-hati itu bagus Bun.”</p>
+<p>Reframe: “Kita bisa buat keputusan kecil dulu: lock harga batch awal, implementasi bisa malam nanti.”</p>
+<p>Evidence: “Rp49K hanya batch awal, setelah kuota habis kembali Rp99K.”</p>
+<p>Mini-close: “Mau saya bantu lock harga dulu sekarang?”</p>
+<h4 id="loop-5-3">Loop 5</h4>
+<p>Acknowledge: “Kalau Bunda belum siap, saya hormati.”</p>
+<p>Reframe: “Tapi kalau memang ingin beres, kapan tanggal pasti mulainya?”</p>
+<p>Evidence: “Tanpa tanggal, ‘nanti’ biasanya jadi tidak mulai.”</p>
+<p>Mini-close: “Kalau setuju, kita jadikan hari ini sebagai start kecil.”</p>
+<hr/>
+<h3 id="objection-4-saya-sudah-tahu-cara-jualan-hijab">Objection 4: “Saya sudah tahu cara jualan hijab”</h3>
+<h4 id="loop-1-4">Loop 1</h4>
+<p>Acknowledge: “Keren Bun, berarti pondasi Bunda sudah ada.”</p>
+<p>Reframe: “Program ini bukan untuk yang tidak bisa jualan, tapi untuk yang mau naik level keputusan.”</p>
+<p>Evidence: “Fokusnya supplier, HPP, dan scale system, bukan basic posting.”</p>
+<p>Mini-close: “Kalau begitu, justru ini relevan buat level Bunda sekarang.”</p>
+<h4 id="loop-2-4">Loop 2</h4>
+<p>Acknowledge: “Setuju, pengalaman lapangan itu penting.”</p>
+<p>Reframe: “Biasanya bottleneck berikutnya ada di sistem, bukan di niat jualan.”</p>
+<p>Evidence: “Banyak yang bisa jual, tapi margin tetap bocor karena hitungannya belum rapih.”</p>
+<p>Mini-close: “Mau dipakai untuk audit cepat bisnis Bunda, bukan belajar dari nol?”</p>
+<h4 id="loop-3-4">Loop 3</h4>
+<p>Acknowledge: “Wajar kalau Bunda merasa sudah paham flow.”</p>
+<p>Reframe: “Yang kami tawarkan bukan ‘cara jualan umum’, tapi framework operasional yang terukur.”</p>
+<p>Evidence: “Template HPP otomatis + checklist supplier itu alat kerja, bukan teori motivasi.”</p>
+<p>Mini-close: “Kalau berupa alat, apakah lebih relevan dengan kebutuhan Bunda?”</p>
+<h4 id="loop-4-4">Loop 4</h4>
+<p>Acknowledge: “Pengalaman Bunda adalah aset besar.”</p>
+<p>Reframe: “Framework akan membuat aset pengalaman itu lebih konsisten hasilnya.”</p>
+<p>Evidence: “Tujuannya supaya keputusan tidak tergantung mood pasar harian.”</p>
+<p>Mini-close: “Mau dipakai untuk menstabilkan, bukan mengganti gaya jualan Bunda.”</p>
+<h4 id="loop-5-4">Loop 5</h4>
+<p>Acknowledge: “Saya suka confidence Bunda.”</p>
+<p>Reframe: “Confidence paling kuat saat ditopang data yang rapi.”</p>
+<p>Evidence: “Program ini memberi struktur data keputusan. Mulai dari HPP hingga prioritas scale.”</p>
+<p>Mini-close: “Kalau diposisikan sebagai alat upgrade, Bunda siap mulai dari batch Rp49K?”</p>
+<hr/>
+<h2 id="5-4-tonalities-mapping-untuk-sales-page-cuanhijab">5) 4 Tonalities Mapping untuk Sales Page CuanHijab</h2>
+<p>Empat tonalitas yang digunakan:</p>
+<ol>
+<li>Reasonable Man,</li>
+<li>Absolute Certainty,</li>
+<li>Scarcity/Urgency,</li>
+<li>Empathy &amp; Care.</li>
+</ol>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Section Sales Page</th>
+<th>Tonality Dominan</th>
+<th>Tujuan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Hero + Problem</td>
+<td>Empathy &amp; Care</td>
+<td>Membuat audience merasa dipahami</td>
+</tr>
+<tr>
+<td>Authority + Mechanism</td>
+<td>Absolute Certainty</td>
+<td>Menegaskan ada metode jelas</td>
+</tr>
+<tr>
+<td>Offer Stack + Price</td>
+<td>Reasonable Man</td>
+<td>Menunjukkan rasionalitas nilai</td>
+</tr>
+<tr>
+<td>Kuota + CTA</td>
+<td>Scarcity/Urgency</td>
+<td>Mendorong keputusan sekarang</td>
+</tr>
+<tr>
+<td>Garansi + FAQ</td>
+<td>Empathy &amp; Care + Reasonable</td>
+<td>Menurunkan rasa takut</td>
+</tr>
+<tr>
+<td>Close Final</td>
+<td>Absolute Certainty + Care</td>
+<td>Menyatukan logika dan emosi</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="contoh-kalimat-per-tonality">Contoh kalimat per tonality</h3>
+<p>Reasonable Man: “Kalau valuenya Rp438K, maka entry Rp49K untuk uji relevansi adalah keputusan logis.”</p>
+<p>Absolute Certainty: “Masalah supplier dan margin bisa dipetakan. Dan di sini peta langkahnya sudah disiapkan.”</p>
+<p>Scarcity/Urgency: “Batch Rp49K hanya untuk 500 pembeli pertama, setelah itu kembali Rp99K.”</p>
+<p>Empathy &amp; Care: “Kami paham Bunda jalankan bisnis sambil urus rumah, karena itu format belajar dibuat fleksibel.”</p>
+<hr/>
+<h2 id="6-4-types-of-objections-cuanhijab-specific">6) 4 Types of Objections (CuanHijab-Specific)</h2>
+<h3 id="type-1-product-objection">Type 1 — Product Objection</h3>
+<p>Contoh: “Materinya pasti basic.”</p>
+<p>Respon: “Materi fokus pada keputusan operasional: supplier, HPP, closing flow. Bukan materi dasar upload produk.”</p>
+<h3 id="type-2-price-objection">Type 2 — Price Objection</h3>
+<p>Contoh: “Rp49K masih mikir.”</p>
+<p>Respon: “Wajar. Karena itu disiapkan garansi 7 hari agar keputusan tetap aman.”</p>
+<h3 id="type-3-time-objection">Type 3 — Time Objection</h3>
+<p>Contoh: “Lagi sibuk, belum sempat.”</p>
+<p>Respon: “Format rekaman bisa dicicil 20-30 menit, langsung praktik ke 1 produk dulu.”</p>
+<h3 id="type-4-self-belief-objection">Type 4 — Self-Belief Objection</h3>
+<p>Contoh: “Saya takut gak konsisten.”</p>
+<p>Respon: “Kita mulai dari quick win sederhana, plus WA group sebagai accountability ringan.”</p>
+<hr/>
+<h2 id="7-written-persuasion-7-section-sales-page-structure-full-copy">7) Written Persuasion — 7 Section Sales Page Structure (FULL COPY)</h2>
+<blockquote>
+<p>Bagian ini adalah struktur copy tertulis 7 section,<br/>siap adaptasi ke LP v2/v3.</p>
+</blockquote>
+<h2 id="section-1-hook-identification">Section 1 — Hook &amp; Identification</h2>
+<p>“Bunda, kalau jualan hijab terasa capek, tapi hasilnya masih susah ditebak, kemungkinan masalahnya bukan di kerja keras. Kemungkinan masalahnya ada di sistem keputusan.”</p>
+<h2 id="section-2-problem-diagnosis">Section 2 — Problem Diagnosis</h2>
+<p>“Di lapangan, ada 4 kebocoran yang paling sering kejadian:</p>
+<p>1) supplier tidak konsisten, 2) margin real terlalu tipis, 3) DM berhenti di tahap tanya harga, 4) omzet naik turun tanpa pola.</p>
+<p>Selama 4 ini belum dibereskan, kerja keras hanya mengulang siklus yang sama.”</p>
+<h2 id="section-3-mechanism-method">Section 3 — Mechanism &amp; Method</h2>
+<p>“Cuan Hijab Next Level dirancang untuk memutus siklus itu dengan 3 alat inti:</p>
+<ul>
+<li>checklist supplier 7 poin,</li>
+<li>template HPP otomatis,</li>
+<li>blueprint aksi 2 jalur (reseller/brand owner).</li>
+</ul>
+<p>Jadi langkah tidak lagi berdasarkan perasaan, melainkan data dan urutan.”</p>
+<h2 id="section-4-authority-trust">Section 4 — Authority &amp; Trust</h2>
+<p>“Mentor program ini, Iman Awaludin, ST, praktisi operasional industri hijab 20+ tahun dengan pengalaman jaringan distribusi 1.000+ mitra.</p>
+<p>Bunda belajar dari pengalaman lapangan, bukan teori lepas konteks.”</p>
+<h2 id="section-5-offer-stack">Section 5 — Offer Stack</h2>
+<p>“Yang Bunda dapat:</p>
+<ul>
+<li>Rekaman webinar full session,</li>
+<li>Ebook premium,</li>
+<li>Template HPP otomatis,</li>
+<li>Akses WA group.</li>
+</ul>
+<p>Total value Rp438.000. Hari ini batch awal Rp49.000.”</p>
+<h2 id="section-6-risk-reversal">Section 6 — Risk Reversal</h2>
+<p>“Masih ragu itu normal. Karena itu ada garansi 7 hari uang kembali.</p>
+<p>Kalau tidak relevan, refund. Sederhana.”</p>
+<h2 id="section-7-close-action">Section 7 — Close &amp; Action</h2>
+<p>“Kalau Bunda ingin bisnis hijab bergerak dengan sistem, bukan nebak, ini langkah kecil yang paling rasional untuk mulai.</p>
+<p>Klik, amankan akses, dan mulai dari 1 langkah hari ini.”</p>
+<hr/>
+<h2 id="8-emailwa-persuasion-sequence-5-pesan">8) Email/WA Persuasion Sequence (5 Pesan)</h2>
+<p>Sequence ini sinkron dengan flow WA group existing, namun dibuat lebih closing-oriented.</p>
+<h3 id="message-1-d0-after-optinvisit">Message 1 — D0 (After Optin/Visit)</h3>
+<p>Subjek/Opening: “Bunda, boleh jujur? Kebanyakan seller hijab mentok bukan karena malas.”</p>
+<p>Isi:</p>
+<p>“Yang bikin mentok biasanya keputusan yang diambil dalam gelap: supplier, harga, dan cara closing.</p>
+<p>Di CuanHijab, semua dipetakan jadi langkah. Kalau mau, saya kirim ringkasan isi dulu biar Bunda cek cocok atau tidak.”</p>
+<p>CTA: “Reply: RINGKAS untuk lihat isi paket.”</p>
+<h3 id="message-2-d1-problem-agitation-mechanism">Message 2 — D1 (Problem Agitation + Mechanism)</h3>
+<p>Opening: “Kenapa order kadang ramai tapi uang tidak terasa?”</p>
+<p>Isi:</p>
+<p>“Karena margin sering dihitung terlalu sederhana. Beli-jual doang. Padahal ada biaya tersembunyi.</p>
+<p>Itulah fungsi template HPP otomatis di CuanHijab: biar angka bicara jujur.”</p>
+<p>CTA: “Kalau mau, saya kirim contoh input HPP 1 produk.”</p>
+<h3 id="message-3-d2-authority-offer">Message 3 — D2 (Authority + Offer)</h3>
+<p>Opening: “Belajar bisnis hijab paling aman dari praktisi lapangan.”</p>
+<p>Isi:</p>
+<p>“Mentor CuanHijab punya pengalaman operasional 20+ tahun dan jaringan 1.000+ mitra.</p>
+<p>Isi paket: rekaman webinar, ebook premium, template HPP, WA group.</p>
+<p>Value Rp438K, batch awal Rp49K.”</p>
+<p>CTA: “Klik link ini untuk lock harga batch awal.”</p>
+<h3 id="message-4-d3-objection-handling">Message 4 — D3 (Objection Handling)</h3>
+<p>Opening: “Kalau masih ragu, ini 2 pertanyaan paling sering masuk.”</p>
+<p>Isi:</p>
+<p>“Q: ‘Bisa cari gratis di YouTube?’ A: Bisa insight, tapi biasanya tidak berurutan dan tidak ada template operasional.</p>
+<p>Q: ‘Takut gak kepakai.’ A: Mulai dari 1 produk dulu + ada garansi 7 hari.”</p>
+<p>CTA: “Kalau setuju mulai kecil, ambil akses Rp49K dulu.”</p>
+<h3 id="message-5-d4d5-urgency-soft-close">Message 5 — D4/D5 (Urgency + Soft Close)</h3>
+<p>Opening: “Pengingat terakhir harga batch awal.”</p>
+<p>Isi:</p>
+<p>“Rp49K berlaku untuk 500 pembeli pertama. Setelah itu kembali Rp99K.</p>
+<p>Kalau Bunda memang ingin beresin sistem supplier &amp; margin, lebih baik lock sekarang, belajarnya tetap bisa fleksibel nanti malam.”</p>
+<p>CTA: “Amankan akses CuanHijab sekarang.”</p>
+<hr/>
+<h2 id="9-social-copy-templates-10-post-igtiktokthreads">9) Social Copy Templates — 10 Post (IG/TikTok/Threads)</h2>
+<p>Semua template di bawah spesifik CuanHijab, bukan caption generik.</p>
+<h3 id="post-1-pain-supplier">Post 1 — Pain Supplier</h3>
+<p>Hook: “Supplier murah belum tentu murah di akhir bulan.”</p>
+<p>Body: “Kalau 1 dari 10 barang diretur, marginnya langsung bocor. Makanya di CuanHijab, sebelum transfer DP, cek dulu 7 poin supplier.”</p>
+<p>CTA: “Comment: CHECKLIST kalau mau list 7 poinnya.”</p>
+<h3 id="post-2-margin-reality">Post 2 — Margin Reality</h3>
+<p>Hook: “Order ramai belum tentu untung tebal.”</p>
+<p>Body: “Banyak seller hijab baru sadar margin asli setelah hitung HPP lengkap. Bukan cuma harga beli vs jual. Ada packing, retur, admin, promo.”</p>
+<p>CTA: “DM: HPP untuk contoh kalkulator mini.”</p>
+<h3 id="post-3-dm-ghosting">Post 3 — DM Ghosting</h3>
+<p>Hook: “Kenapa DM berhenti di ‘berapaan kak?’”</p>
+<p>Body: “Karena jawaban langsung harga sering tidak cukup. Pola yang lebih efektif: tanya kebutuhan, rekomendasi, manfaat, baru harga.”</p>
+<p>CTA: “Simpan post ini buat template balasan.”</p>
+<h3 id="post-4-authority-mentor">Post 4 — Authority Mentor</h3>
+<p>Hook: “Belajar bisnis hijab dari praktisi, bukan sekadar penonton industri.”</p>
+<p>Body: “CuanHijab dirancang dari pengalaman 20+ tahun operasional, bukan teori yang lepas dari lapangan.”</p>
+<p>CTA: “Klik bio untuk lihat isi paket.”</p>
+<h3 id="post-5-value-anchor">Post 5 — Value Anchor</h3>
+<p>Hook: “Value Rp438K, entry batch awal Rp49K.”</p>
+<p>Body: “Isi lengkap: rekaman webinar, ebook premium, template HPP, WA group. Cocok untuk reseller/agen/owner lokal yang ingin sistem.”</p>
+<p>CTA: “Cek detail sebelum batch naik harga.”</p>
+<h3 id="post-6-garansi">Post 6 — Garansi</h3>
+<p>Hook: “Takut gak cocok? Wajar.”</p>
+<p>Body: “Karena itu ada garansi 7 hari. Mulai kecil, ukur relevansi, lanjut kalau cocok.”</p>
+<p>CTA: “DM: GARANSI untuk mekanisme refund.”</p>
+<h3 id="post-7-brand-owner-aspiration">Post 7 — Brand Owner Aspiration</h3>
+<p>Hook: “Dari reseller ke brand owner, bisa kalau urutannya jelas.”</p>
+<p>Body: “Di blueprint ada jalur Sultan: konveksi, HKI, distribusi, branding.”</p>
+<p>CTA: “Comment: SULTAN kalau mau roadmap ringkas.”</p>
+<h3 id="post-8-omzet-terbaca">Post 8 — Omzet Terbaca</h3>
+<p>Hook: “Bukan soal omzet harus naik terus, tapi harus kebaca.”</p>
+<p>Body: “Saat data margin dan repeat buyer kebaca, keputusan jadi tenang, tidak reaktif.”</p>
+<p>CTA: “Simpan kalau relate.”</p>
+<h3 id="post-9-case-reflection">Post 9 — Case Reflection</h3>
+<p>Hook: “Kesalahan paling mahal di bisnis hijab itu bukan sepi, tapi salah hitung.”</p>
+<p>Body: “Salah hitung bikin promo terasa laris, padahal laba tipis. Mulai dari audit 1 SKU dulu.”</p>
+<p>CTA: “DM: AUDIT untuk format cek cepat.”</p>
+<h3 id="post-10-soft-closing">Post 10 — Soft Closing</h3>
+<p>Hook: “Kalau sudah capek nebak, mungkin waktunya pakai blueprint.”</p>
+<p>Body: “CuanHijab Next Level dibuka Rp49K untuk 500 pembeli awal, lalu kembali Rp99K.</p>
+<p>Mulai dari langkah kecil, biar keputusan bisnis lebih terukur.”</p>
+<p>CTA: “Link di bio untuk lock batch awal.”</p>
+<hr/>
+<h2 id="10-social-proof-framework-collection-deployment">10) Social Proof Framework (Collection + Deployment)</h2>
+<p>Asset proof yang sudah ada:</p>
+<ul>
+<li>27 buyers awal,</li>
+<li>kredensial 1.000+ mitra distribusi nasional.</li>
+</ul>
+<p>Target: ubah proof mentah menjadi proof yang mempengaruhi keputusan beli.</p>
+<h2 id="101-collection-strategy">10.1 Collection Strategy</h2>
+<h3 id="format-pengumpulan-testimoni-wajib-terstruktur">Format pengumpulan testimoni (wajib terstruktur)</h3>
+<p>Minta buyer mengisi 4 komponen:</p>
+<ol>
+<li>Kondisi sebelum.</li>
+<li>Insight/aksi yang dipakai.</li>
+<li>Perubahan yang dirasakan.</li>
+<li>Saran untuk buyer baru.</li>
+</ol>
+<p>Template chat:</p>
+<p>“Bunda, boleh bantu isi format singkat ini?</p>
+<p>Sebelum ikut CuanHijab saya... Setelah pakai [alat/materi] saya... Perubahan paling terasa... Pesan untuk reseller lain...</p>
+<p>Boleh plus screenshot jika berkenan.”</p>
+<h3 id="trigger-waktu-minta-testimoni">Trigger waktu minta testimoni</h3>
+<ul>
+<li>H+2 setelah pembelian (first impression),</li>
+<li>H+7 setelah implementasi awal,</li>
+<li>Setelah buyer join upsell 197K/497K.</li>
+</ul>
+<h2 id="102-deployment-strategy">10.2 Deployment Strategy</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Proof Type</th>
+<th>Penempatan</th>
+<th>Tujuan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Micro proof (1 kalimat)</td>
+<td>Ads caption, story</td>
+<td>Menambah trust cepat</td>
+</tr>
+<tr>
+<td>Screenshot proof</td>
+<td>LP section tengah</td>
+<td>Mengurangi skeptis</td>
+</tr>
+<tr>
+<td>Video proof 15-30 detik</td>
+<td>Reels + LP</td>
+<td>Human credibility</td>
+</tr>
+<tr>
+<td>Authority proof mentor</td>
+<td>Hero/above fold</td>
+<td>Validasi kompetensi</td>
+</tr>
+<tr>
+<td>Numeric proof (27 buyers/1000+ mitra)</td>
+<td>Offer + close</td>
+<td>Menambah certainty kolektif</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="103-social-proof-sequencing">10.3 Social proof sequencing</h2>
+<p>Urutan tampil proof di LP:</p>
+<ol>
+<li>Authority proof mentor,</li>
+<li>Problem-aligned testimonial,</li>
+<li>Implementation proof,</li>
+<li>Risk-reversal reminder,</li>
+<li>CTA final.</li>
+</ol>
+<h2 id="104-proof-hygiene-rules">10.4 Proof hygiene rules</h2>
+<ul>
+<li>Hindari klaim penghasilan berlebihan.</li>
+<li>Gunakan bahasa pengalaman, bukan janji.</li>
+<li>Sertakan konteks role testimoni (reseller/agen/owner).</li>
+<li>Blur data sensitif.</li>
+</ul>
+<hr/>
+<h2 id="11-persuasion-script-untuk-tim-wa-closing">11) Persuasion Script untuk Tim WA Closing</h2>
+<h3 id="script-pembuka-universal">Script pembuka universal</h3>
+<p>“Assalamu’alaikum Bun, makasih sudah cek CuanHijab. Biar saya arahkan tepat, sekarang Bunda lebih relate ke masalah supplier, margin, atau DM closing?”</p>
+<h3 id="script-diagnosa-3-pertanyaan">Script diagnosa 3 pertanyaan</h3>
+<ol>
+<li>“Omzet saat ini kisaran berapa dan bottleneck utamanya apa?”</li>
+<li>“Sudah pernah hitung HPP detail per produk?”</li>
+<li>“Kalau ada 1 hal yang paling ingin dibereskan minggu ini,</li>
+<p>apa itu?”</p>
+</ol>
+<h3 id="script-close-ringan">Script close ringan</h3>
+<p>“Kalau lihat jawaban Bunda, entry Rp49K ini paling pas untuk rapikan pondasi dulu. Mau saya kirim link checkout untuk lock batch awal?”</p>
+<h3 id="script-close-tegas-tapi-sopan">Script close tegas tapi sopan</h3>
+<p>“Daripada menunggu semua kondisi ideal, lebih aman mulai dari langkah kecil yang terukur. Bunda bisa lock sekarang, implementasi dicicil.”</p>
+<hr/>
+<h2 id="12-integration-dengan-wa-group-follow-up-existing">12) Integration dengan WA Group Follow-Up Existing</h2>
+<p>Aset existing sudah punya 10 hari pesan. Di blueprint ini, kita sinkronkan dengan persuasion objective.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari Existing</th>
+<th>Fokus Existing</th>
+<th>Penguatan Persuasion Baru</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Supplier checklist</td>
+<td>Tambah CTA mini audit 1 supplier</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Upsell mentoring</td>
+<td>Tambah loop objection “mahal”</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Margin asli</td>
+<td>Tambah capability certainty</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Komunitas premium</td>
+<td>Tambah brand certainty</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DM transfer</td>
+<td>Tambah quick win challenge</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Upgrade brand owner</td>
+<td>Tambah identity-based close</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Niche killer</td>
+<td>Tambah positioning certainty</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Bundle lanjutan</td>
+<td>Tambah urgency reasoned</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Scale up sederhana</td>
+<td>Tambah progress check</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Testimoni + final CTA</td>
+<td>Tambah straight-line final close</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="13-persuasion-metrics-dashboard">13) Persuasion Metrics Dashboard</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Layer</th>
+<th>Metric</th>
+<th>Target Awal</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Attention</td>
+<td>Hook hold rate / 3-second view</td>
+<td>&gt; 30%</td>
+</tr>
+<tr>
+<td>Interest</td>
+<td>CTR ads</td>
+<td>&gt; 2.5%</td>
+</tr>
+<tr>
+<td>Desire</td>
+<td>LP scroll &gt; 50%</td>
+<td>&gt; 60% sessions</td>
+</tr>
+<tr>
+<td>Decision</td>
+<td>Checkout initiation</td>
+<td>&gt; 8% LPV</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Purchase CVR</td>
+<td>sesuai CPA &lt; 25K</td>
+</tr>
+<tr>
+<td>Belief Lift</td>
+<td>WA reply rate</td>
+<td>&gt; 20% warm leads</td>
+</tr>
+<tr>
+<td>Upsell readiness</td>
+<td>197K take rate</td>
+<td>baseline naik bertahap</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="quality-signal-non-metric-yang-harus-dipantau">Quality signal (non-metric) yang harus dipantau</h3>
+<ul>
+<li>Pertanyaan prospek makin spesifik,</li>
+<p>bukan lagi “ini apa sih?”.</p>
+<li>Objection bergeser dari skeptis total ke pertimbangan teknis.</li>
+<li>Buyer mulai mengirim progress implementasi.</li>
+</ul>
+<hr/>
+<h2 id="14-14-hari-persuasion-deployment-plan">14) 14-Hari Persuasion Deployment Plan</h2>
+<p>Hari 1: Publish sales page v1 dengan 7 section persuasion.</p>
+<p>Hari 2: Aktifkan WA closing script diagnosa 3 pertanyaan.</p>
+<p>Hari 3: Masukkan 3 micro proof di LP.</p>
+<p>Hari 4: Tes CTA hero variant A/B.</p>
+<p>Hari 5: Aktifkan sequence 5 pesan untuk lead warm.</p>
+<p>Hari 6: Rekam 1 video mentor 30 detik (authority).</p>
+<p>Hari 7: Audit objection logs dari chat.</p>
+<p>Hari 8: Perbarui FAQ berdasarkan objection real.</p>
+<p>Hari 9: Deploy 5 social posts pertama.</p>
+<p>Hari 10: Deploy 5 social posts berikutnya.</p>
+<p>Hari 11: Uji loop script “nanti aja” di tim CS.</p>
+<p>Hari 12: Tambahkan 2 screenshot testimoni baru.</p>
+<p>Hari 13: Review certainty score update.</p>
+<p>Hari 14: Keputusan iterasi: scale copy winner, revisi copy loser.</p>
+<hr/>
+<h2 id="15-certainty-re-score-template-weekly">15) Certainty Re-Score Template (Weekly)</h2>
+<p>Gunakan tabel ini tiap minggu:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Product Certainty</th>
+<th>Brand Certainty</th>
+<th>Capability Certainty</th>
+<th>Catatan Perbaikan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Week 1</td>
+<td>7.8</td>
+<td>8.2</td>
+<td>6.9</td>
+<td>baseline awal</td>
+</tr>
+<tr>
+<td>Week 2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Target 30 hari:</p>
+<ul>
+<li>Product: ≥ 9.0</li>
+<li>Brand: ≥ 9.0</li>
+<li>Capability: ≥ 8.5</li>
+</ul>
+<hr/>
+<h2 id="16-faq-persuasion-block-ready-to-use">16) FAQ Persuasion Block (ready-to-use)</h2>
+<p>Q: “Saya masih kecil, cocok gak?” A: “Justru cocok jika ingin pondasi keputusan rapi sejak awal.”</p>
+<p>Q: “Kalau saya sudah jualan lama?” A: “Materi ini membantu upgrade dari pengalaman ke sistem yang konsisten.”</p>
+<p>Q: “Harus nonton sekaligus?” A: “Tidak, format rekaman bisa dicicil sesuai waktu.”</p>
+<p>Q: “Kalau tidak cocok?” A: “Ada garansi 7 hari uang kembali.”</p>
+<p>Q: “Ini teori atau praktik?” A: “Fokus praktik operasional: supplier, HPP, DM closing, dan scale path.”</p>
+<hr/>
+<h2 id="17-closing-narrative-master-untuk-halaman-akhircheckout-preframe">17) Closing Narrative Master (untuk halaman akhir/checkout preframe)</h2>
+<p>“Bunda, keputusan bisnis terbaik biasanya bukan yang paling heboh, tapi yang paling jelas langkahnya.</p>
+<p>Cuan Hijab Next Level dibuat untuk membuat keputusan Bunda lebih jelas:</p>
+<ul>
+<li>pilih supplier dengan standar,</li>
+<li>hitung margin dengan jujur,</li>
+<li>ubah chat jadi closing yang lebih sehat,</li>
+<li>dan siapkan jalur naik level saat waktunya tepat.</li>
+</ul>
+<p>Dengan entry Rp49.000 dan garansi 7 hari, ini adalah langkah kecil dengan potensi dampak besar pada cara Bunda ambil keputusan.</p>
+<p>Kalau Bunda merasa ini relate, lanjutkan sekarang. Lock batch awalnya, dan mulai dari satu langkah malam ini.”</p>
+<hr/>
+<h2 id="18-penutup-blueprint-persuasion">18) Penutup Blueprint Persuasion</h2>
+<p>Persuasion yang sehat bukan manipulasi. Persuasion yang sehat adalah memperjelas pilihan, meminimalkan kebingungan, dan membantu calon buyer membuat keputusan yang selaras dengan kebutuhannya.</p>
+<p>Untuk CuanHijab, itu berarti:</p>
+<ul>
+<li>bicara dengan bahasa pelaku hijab,</li>
+<li>memberi struktur pada masalah yang berulang,</li>
+<li>menunjukkan jalan yang realistis,</li>
+<li>dan menutup dengan ajakan yang tegas namun tetap manusiawi.</li>
+</ul>
+<p>Jika tim menjalankan blueprint ini konsisten, closing akan terasa lebih ringan, buyer lebih yakin, dan value ladder bisa tumbuh lebih stabil.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

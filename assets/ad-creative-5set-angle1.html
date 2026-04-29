@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ad Creative — Cuan Hijab Next Level</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"\2190  geser \2192 "; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Ad Creative — Cuan Hijab Next Level</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 29 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="5-set-angle-1-hasil-cepat-solusi-instan-format-copy-visual-brief" href="#5-set-angle-1-hasil-cepat-solusi-instan-format-copy-visual-brief">5 Set | Angle 1: Hasil Cepat &amp; Solusi Instan | Format: Copy + Visual Brief</a></li>
+<li><a data-target="ad-set-1-supplier-zonk" href="#ad-set-1-supplier-zonk">AD SET 1 — SUPPLIER ZONK</a></li>
+<li><a data-target="ad-set-2-margin-tipis" href="#ad-set-2-margin-tipis">AD SET 2 — MARGIN TIPIS</a></li>
+<li><a data-target="ad-set-3-authority-credential" href="#ad-set-3-authority-credential">AD SET 3 — AUTHORITY CREDENTIAL</a></li>
+<li><a data-target="ad-set-4-dm-ghosting" href="#ad-set-4-dm-ghosting">AD SET 4 — DM GHOSTING</a></li>
+<li><a data-target="ad-set-5-500-kuota-fomo" href="#ad-set-5-500-kuota-fomo">AD SET 5 — 500 KUOTA FOMO</a></li>
+<li><a data-target="checklist-sebelum-publish" href="#checklist-sebelum-publish">CHECKLIST SEBELUM PUBLISH</a></li>
+<li><a data-target="quick-reference-paste-ke-ads-manager" href="#quick-reference-paste-ke-ads-manager">QUICK REFERENCE — PASTE KE ADS MANAGER</a></li>
+<li><a data-target="variasi-ab-test-minggu-ke-2" href="#variasi-ab-test-minggu-ke-2">VARIASI A/B TEST (Minggu ke-2)</a></li>
+<li><a data-target="file-visual-yang-sudah-ada" href="#file-visual-yang-sudah-ada">FILE VISUAL YANG SUDAH ADA</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Ad Creative — Cuan Hijab Next Level</h1>
+<h2 id="5-set-angle-1-hasil-cepat-solusi-instan-format-copy-visual-brief">5 Set | Angle 1: Hasil Cepat &amp; Solusi Instan | Format: Copy + Visual Brief</h2>
+<blockquote>
+<p>Framework: ACUAN-AD-CREATIVE-META-ADS.md — Angle 1 (Hasil Cepat &amp; Solusi Instan)<br/>Formula Copy: PAS (Problem → Agitate → Solve)<br/>Target: Cold traffic — reseller/agen hijab, perempuan 25-55, Indonesia<br/>Harga: Rp49.000 (500 pembeli pertama) / Rp99.000 normal</p>
+</blockquote>
+<hr/>
+<h2 id="ad-set-1-supplier-zonk">AD SET 1 — SUPPLIER ZONK</h2>
+<p><strong>Adset:</strong> AS1 | <strong>Stage:</strong> Oblivious | <strong>Visual:</strong> cuanhijab_ad1_supplier</p>
+<h3 id="primary-text">Primary Text</h3>
+<p>Udah 3x ganti supplier hijab. Barangnya tetap beda sama foto.</p>
+<p>Ini bukan soal hoki. Ini soal checklist yang belum ada.</p>
+<p>Kebanyakan reseller pilih supplier dari harga paling murah atau foto yang &quot;kayaknya bagus&quot;. Hasilnya? Barang datang beda warna, bahan tipis, customer complain, dan kamu yang minta maaf.</p>
+<p>Iman Awaludin — 20+ tahun di industri hijab, eks operasional Nibras &amp; Rabbani — udah susun checklist 7 poin untuk evaluasi supplier tanpa drama. Hari ini bisa langsung kamu pakai.</p>
+<p>Semua ada di Rekaman Webinar + Ebook &quot;Cuan Hijab Next Level&quot;:</p>
+<ul>
+<li>Checklist supplier anti zonk (7 poin terstandar)</li>
+<li>Template HPP otomatis per produk</li>
+<li>Formula copywriting DM → transfer</li>
+<li>WA Group eksklusif + akses selamanya</li>
+</ul>
+<p>Rp49.000 untuk 500 pembeli pertama. Setelah itu Rp99.000. Garansi 7 hari uang kembali.</p>
+<h3 id="headline">Headline</h3>
+<pre><code>
+Supplier Zonk Itu Ada Checklistnya
+</code></pre>
+<h3 id="description">Description</h3>
+<pre><code>
+Pengalaman 20 Tahun. Rp49rb.
+</code></pre>
+<h3 id="cta-button">CTA Button</h3>
+<p><code>Learn More</code></p>
+<h3 id="visual-brief">Visual Brief</h3>
+<p><strong>Format:</strong> Feed 4:5 (1080&#215;1350px) — Static Image</p>
+<p><strong>Konsep:</strong> Split-screen emosional</p>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>Kiri (55%): Teks overlay di atas foto gelap</li>
+<li>Kanan (45%): Foto reseller hijab memegang HP + kain hijab yang berbeda dari foto di layar</li>
+</ul>
+<p><strong>Elemen Teks di Visual:</strong></p>
+<ul>
+<li>Headline besar (putih, bold): &quot;Udah 3x Ganti Supplier. Barangnya Tetap Beda Sama Foto.&quot;</li>
+<li>Sub-copy kecil (putih, regular): &quot;Bukan soal hoki. Ini soal checklist.&quot;</li>
+<li>Badge bawah (oranye/gold): &quot;Checklist 7 Poin &#183; Rp49rb &#183; Garansi 7 Hari&quot;</li>
+</ul>
+<p><strong>Warna:</strong> Background gelap (charcoal/navy), teks putih, aksen gold/oranye untuk badge CTA</p>
+<p><strong>Mood:</strong> Frustrasi yang divalidasi → ada solusinya. Bukan menghakimi, tapi mengerti.</p>
+<p><strong>Catatan:</strong> Ekspresi model harus &quot;kecewa tapi penasaran&quot; — bukan marah. Foto produk di HP harus jelas berbeda dengan kain yang dipegang.</p>
+<hr/>
+<h2 id="ad-set-2-margin-tipis">AD SET 2 — MARGIN TIPIS</h2>
+<p><strong>Adset:</strong> AS2 | <strong>Stage:</strong> Frustrated | <strong>Visual:</strong> cuanhijab_ad2_margin</p>
+<h3 id="primary-text-2">Primary Text</h3>
+<p>Orderan banyak, rekening gitu-gitu aja?</p>
+<p>Coba hitung HPP-nya. Beneran.</p>
+<p>Banyak reseller hijab ngitung margin di kepala: &quot;Beli 45rb, jual 65rb, untung 20rb.&quot; Tapi lupa ongkir, packing, return, dan waktu 6 jam per hari bales chat.</p>
+<p>Kalau dihitung beneran, marginnya sering cuma 8-12%.</p>
+<p>Iman Awaludin (20+ tahun industri hijab) udah siapkan Template HPP Otomatis — tinggal isi angka, langsung kelihatan margin asli per produk. Bukan tebak-tebakan.</p>
+<p>Dapat juga:</p>
+<ul>
+<li>Rekaman Webinar full session (akses selamanya)</li>
+<li>Ebook blueprint 2 jalur: Reseller + Brand Owner</li>
+<li>WA Group eksklusif untuk diskusi</li>
+</ul>
+<p>Rp49.000 &#183; 500 pembeli pertama &#183; Garansi 7 hari.</p>
+<h3 id="headline-2">Headline</h3>
+<pre><code>
+Marginmu 8% atau 30%? Hitung Dulu.
+</code></pre>
+<h3 id="description-2">Description</h3>
+<pre><code>
+Template HPP + Blueprint. Rp49rb.
+</code></pre>
+<h3 id="cta-button-2">CTA Button</h3>
+<p><code>Learn More</code></p>
+<h3 id="visual-brief-2">Visual Brief</h3>
+<p><strong>Format:</strong> Reels 9:16 (1080&#215;1920px) — Video 10-12 detik</p>
+<p><strong>Konsep:</strong> Screen recording demo Template HPP</p>
+<p><strong>Storyboard:</strong></p>
+<ul>
+<li><strong>0-2 detik:</strong> Teks besar di layar hitam: &quot;Orderan banyak, rekening gitu-gitu aja?&quot; (hook)</li>
+<li><strong>2-5 detik:</strong> Screen recording spreadsheet HPP kosong → tangan mengetik angka (harga beli, ongkir, packing)</li>
+<li><strong>5-9 detik:</strong> Angka margin muncul otomatis: &quot;Margin asli: 28%&quot; — zoom in ke angka</li>
+<li><strong>9-12 detik:</strong> End card: Logo/nama produk + &quot;Rp49.000 &#183; 500 Slot Pertama&quot; + CTA &quot;Lihat Isinya&quot;</li>
+</ul>
+<p><strong>Teks Overlay:</strong></p>
+<ul>
+<li>Frame 1: &quot;Orderan banyak, rekening gitu-gitu aja?&quot; (putih, bold)</li>
+<li>Frame 3: &quot;Margin asli kamu berapa?&quot; (putih, kecil)</li>
+<li>Frame 4: &quot;Cuan Hijab Next Level &#183; Rp49rb&quot; (gold)</li>
+</ul>
+<p><strong>Warna:</strong> Background gelap, aksen pink/magenta (#C2185B), teks putih, angka margin warna hijau/gold</p>
+<p><strong>Musik:</strong> Upbeat ringan, tidak mengganggu teks</p>
+<p><strong>Catatan:</strong> Jangan pakai angka &quot;8-12%&quot; di visual — itu di copy saja. Di visual cukup tunjukkan proses hitung dan hasil &quot;margin asli&quot; yang lebih tinggi setelah pakai template.</p>
+<hr/>
+<h2 id="ad-set-3-authority-credential">AD SET 3 — AUTHORITY CREDENTIAL</h2>
+<p><strong>Adset:</strong> AS3 | <strong>Stage:</strong> Hopeful | <strong>Visual:</strong> cuanhijab_ad3_authority</p>
+<h3 id="primary-text-3">Primary Text</h3>
+<p>20 tahun di industri hijab. Bukan content creator yang tiba-tiba ngajarin bisnis.</p>
+<p>Iman Awaludin, ST udah di industri busana muslim dari lantai produksi sampai ritel nasional. Eks operasional Nibras &amp; Rabbani. Mengelola 1.000+ titik distribusi mitra hijab.</p>
+<p>Sekarang, blueprint yang dia pakai selama 20 tahun dikemas dalam satu paket:</p>
+<ul>
+<li>Rekaman Webinar full session (akses selamanya)</li>
+<li>Ebook Premium — 2 jalur: Kilat (reseller) &amp; Sultan (brand owner)</li>
+<li>Template HPP otomatis per produk</li>
+<li>WA Group eksklusif</li>
+</ul>
+<p>Bukan teori YouTube. Ini sistem yang sudah dipakai di lapangan.</p>
+<p>Rp49.000 untuk 500 pembeli pertama. Setelah itu Rp99.000. Garansi 7 hari uang kembali. Zero risk.</p>
+<h3 id="headline-3">Headline</h3>
+<pre><code>
+Blueprint 20 Tahun, Harga 49rb
+</code></pre>
+<h3 id="description-3">Description</h3>
+<pre><code>
+Eks Nibras &amp; Rabbani. Rp49rb.
+</code></pre>
+<h3 id="cta-button-3">CTA Button</h3>
+<p><code>Learn More</code></p>
+<h3 id="visual-brief-3">Visual Brief</h3>
+<p><strong>Format:</strong> Feed 4:5 (1080&#215;1350px) — Static Image</p>
+<p><strong>Konsep:</strong> Authority card — foto mentor + credential badge</p>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>Background: Gelap (navy/charcoal) dengan subtle texture</li>
+<li>Tengah: Foto Iman Awaludin (profesional, bukan selfie) — setengah badan, ekspresi percaya diri</li>
+<li>Overlay kiri atas: Badge &quot;20 TAHUN INDUSTRI HIJAB&quot; (gold, bold)</li>
+<li>Overlay kanan bawah: Stack credential kecil:</li>
+<li>&quot;Eks Operasional Nibras &amp; Rabbani&quot;</li>
+<li>&quot;1.000+ Mitra Distribusi&quot;</li>
+<li>&quot;Blueprint Rp49rb&quot;</li>
+<li>Bottom bar: Nama produk + harga + CTA</li>
+</ul>
+<p><strong>Elemen Teks:</strong></p>
+<ul>
+<li>Headline (putih, besar): &quot;Blueprint 20 Tahun. Harga 49rb.&quot;</li>
+<li>Sub-copy (putih, kecil): &quot;Dari praktisi, bukan content creator.&quot;</li>
+<li>Badge (gold): &quot;Garansi 7 Hari&quot;</li>
+</ul>
+<p><strong>Warna:</strong> Navy/charcoal background, gold accent, putih untuk teks utama</p>
+<p><strong>Mood:</strong> Otoritatif tapi approachable. Bukan sombong — tapi &quot;orang ini tahu apa yang dia bicarakan.&quot;</p>
+<p><strong>Catatan:</strong> Foto mentor harus berkualitas tinggi. Kalau tidak ada foto profesional, pakai foto dengan background blur dan pencahayaan baik. Jangan pakai foto selfie atau foto event yang ramai.</p>
+<hr/>
+<h2 id="ad-set-4-dm-ghosting">AD SET 4 — DM GHOSTING</h2>
+<p><strong>Adset:</strong> AS4 | <strong>Stage:</strong> Frustrated | <strong>Visual:</strong> cuanhijab_ad4_ghosting</p>
+<h3 id="primary-text-4">Primary Text</h3>
+<p>&quot;Berapaan kak?&quot; &quot;85rb kak, free ongkir!&quot; <em>dibaca, gak dibales</em></p>
+<p>Familiar?</p>
+<p>Masalahnya bukan di produk. Bukan di harga. Masalahnya di urutan kata yang kamu pakai setelah &quot;berapaan kak?&quot;</p>
+<p>Ada formula copywriting yang bikin DM berujung transfer — bukan cuma nanya harga doang. Diajarin langsung sama Iman Awaludin (20+ tahun industri hijab) di Rekaman Webinar + Ebook &quot;Cuan Hijab Next Level&quot;.</p>
+<p>Dapat juga:</p>
+<ul>
+<li>Checklist supplier anti zonk (7 poin)</li>
+<li>Template HPP otomatis</li>
+<li>WA Group eksklusif</li>
+</ul>
+<p>Rp49.000 &#183; 500 pembeli pertama &#183; Garansi 7 hari.</p>
+<h3 id="headline-4">Headline</h3>
+<pre><code>
+DM Banyak, Transfer Sepi?
+</code></pre>
+<h3 id="description-4">Description</h3>
+<pre><code>
+Formula jualan hijab. Rp49rb.
+</code></pre>
+<h3 id="cta-button-4">CTA Button</h3>
+<p><code>Learn More</code></p>
+<h3 id="visual-brief-4">Visual Brief</h3>
+<p><strong>Format:</strong> Reels 9:16 (1080&#215;1920px) — Video 8-10 detik</p>
+<p><strong>Konsep:</strong> Chat bubble animation — simulasi percakapan DM</p>
+<p><strong>Storyboard:</strong></p>
+<ul>
+<li><strong>0-2 detik:</strong> Layar HP dengan chat bubble muncul: &quot;Berapaan kak?&quot; (hook visual)</li>
+<li><strong>2-4 detik:</strong> Bubble balasan: &quot;85rb kak, free ongkir!&quot; → centang biru (dibaca)</li>
+<li><strong>4-6 detik:</strong> Silence... loading dots... lalu hilang. Teks overlay: &quot;Familiar?&quot; (putih, besar)</li>
+<li><strong>6-8 detik:</strong> Teks: &quot;Masalahnya bukan di harga. Ini soal urutan kata.&quot;</li>
+<li><strong>8-10 detik:</strong> End card: &quot;Cuan Hijab Next Level &#183; Rp49rb &#183; 500 Slot Pertama&quot;</li>
+</ul>
+<p><strong>Teks Overlay:</strong></p>
+<ul>
+<li>Frame 1-3: Chat bubble style (font chat, background putih/abu)</li>
+<li>Frame 4: &quot;Familiar?&quot; (putih bold, background gelap)</li>
+<li>Frame 5: &quot;Formula DM → Transfer ada di sini&quot; (putih, kecil)</li>
+<li>Frame 6: Nama produk + harga (gold)</li>
+</ul>
+<p><strong>Warna:</strong> Transisi dari putih (chat) ke gelap (reveal) — kontras dramatis</p>
+<p><strong>Musik:</strong> Notifikasi chat sound di awal → silence → upbeat ringan di end card</p>
+<p><strong>Catatan:</strong> Chat bubble harus terlihat seperti WhatsApp asli (warna hijau/abu). Jangan terlalu polished — harus terasa relatable dan &quot;ini beneran terjadi ke aku.&quot;</p>
+<hr/>
+<h2 id="ad-set-5-500-kuota-fomo">AD SET 5 — 500 KUOTA FOMO</h2>
+<p><strong>Adset:</strong> AS5 | <strong>Stage:</strong> Fan/Warm | <strong>Visual:</strong> cuanhijab_ad5_fomo_v2</p>
+<h3 id="primary-text-5">Primary Text</h3>
+<p>Rp49.000 → Rp99.000.</p>
+<p>Bukan diskon palsu. Ini harga batch pertama yang beneran naik.</p>
+<p>&quot;Cuan Hijab Next Level&quot; dijual Rp49.000 HANYA untuk 500 pembeli pertama. Setelah 500 slot terisi, harga otomatis naik ke Rp99.000. Tanpa pengecualian. Tanpa &quot;perpanjangan&quot;.</p>
+<p>Yang kamu dapat:</p>
+<ul>
+<li>Rekaman webinar dari Iman Awaludin (20+ tahun industri hijab)</li>
+<li>Ebook premium — blueprint reseller + brand owner</li>
+<li>Template HPP otomatis per produk</li>
+<li>WA Group eksklusif (diskusi + update)</li>
+</ul>
+<p>Total value: Rp438.000. Hari ini: Rp49.000.</p>
+<p>Garansi 7 hari uang kembali. Kalau gak cocok, uang balik 100%.</p>
+<p>Slot sudah mulai terisi. Setelah penuh, harga naik.</p>
+<h3 id="headline-5">Headline</h3>
+<pre><code>
+500 Slot Rp49rb — Sudah Mulai Terisi
+</code></pre>
+<h3 id="description-5">Description</h3>
+<pre><code>
+Harga naik setelah 500 slot.
+</code></pre>
+<h3 id="cta-button-5">CTA Button</h3>
+<p><code>Learn More</code></p>
+<h3 id="visual-brief-5">Visual Brief</h3>
+<p><strong>Format:</strong> Feed 4:5 (1080&#215;1350px) — Static Image (atau versi animasi ringan)</p>
+<p><strong>Konsep:</strong> Offer card dengan progress bar scarcity</p>
+<p><strong>Layout (sesuai visual cuanhijab_ad5_fomo_v2 yang sudah ada):</strong></p>
+<ul>
+<li>Background: Dark navy dengan geometric accent (coral/red-orange di sudut)</li>
+<li>Tengah atas: Harga &quot;Rp49.000 → Rp99.000&quot; (hijau neon vs merah coret)</li>
+<li>Tengah: Teks besar &quot;500 Kuota Pertama. Sudah Mulai Terisi.&quot;</li>
+<li>Bawah: Progress bar (terisi ~60%) + &quot;Terisi: 312 / 500&quot;</li>
+<li>Bottom: Badge garansi + CTA</li>
+</ul>
+<p><strong>Elemen Teks:</strong></p>
+<ul>
+<li>Harga (hijau neon): &quot;Rp49.000&quot;</li>
+<li>Harga coret (merah): &quot;Rp99.000&quot;</li>
+<li>Headline (putih, bold): &quot;500 Kuota Pertama. Sudah Mulai Terisi.&quot;</li>
+<li>Progress bar label: &quot;Terisi: 312 / 500&quot;</li>
+<li>Badge: &quot;Garansi 7 Hari &#183; Akses Selamanya&quot;</li>
+</ul>
+<p><strong>Warna:</strong> Dark navy (#0A0E1A), neon green (#00FF88), coral red (#FF4444), putih</p>
+<p><strong>Catatan:</strong> Visual ini sudah ada di <code>cuanhijab_ad5_fomo_v2.png</code> — bisa langsung dipakai. Kalau mau update angka progress bar, edit di Canva atau tools desain.</p>
+<hr/>
+<h2 id="checklist-sebelum-publish">CHECKLIST SEBELUM PUBLISH</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Cek</th>
+<th>AS1</th>
+<th>AS2</th>
+<th>AS3</th>
+<th>AS4</th>
+<th>AS5</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hook muncul di 3 detik pertama</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Satu pesan utama, satu CTA</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bahasa natural, bukan formal</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Format sesuai placement</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Tidak ada klaim income absolut</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Tidak ada countdown/scarcity palsu</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Preview/demo produk terlihat</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>8</td>
+<td>CTA jelas dan tunggal</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Meta Policy compliant</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="quick-reference-paste-ke-ads-manager">QUICK REFERENCE — PASTE KE ADS MANAGER</h2>
+<h3 id="primary-text-per-adset">Primary Text (per adset)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Adset</th>
+<th>Opening Hook</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>AS1 Supplier Zonk</td>
+<td>&quot;Udah 3x ganti supplier hijab. Barangnya tetap beda sama foto.&quot;</td>
+</tr>
+<tr>
+<td>AS2 Margin Tipis</td>
+<td>&quot;Orderan banyak, rekening gitu-gitu aja?&quot;</td>
+</tr>
+<tr>
+<td>AS3 Authority</td>
+<td>&quot;20 tahun di industri hijab. Bukan content creator yang tiba-tiba ngajarin bisnis.&quot;</td>
+</tr>
+<tr>
+<td>AS4 DM Ghosting</td>
+<td>&quot;&#39;Berapaan kak?&#39; &#39;dibaca, gak dibales&#39; — Familiar?&quot;</td>
+</tr>
+<tr>
+<td>AS5 FOMO 500</td>
+<td>&quot;Rp49.000 → Rp99.000. Bukan diskon palsu.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="headline-pool">Headline Pool</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Headline</th>
+<th>Adset</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Supplier Zonk Itu Ada Checklistnya</td>
+<td>AS1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Marginmu 8% atau 30%? Hitung Dulu.</td>
+<td>AS2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Blueprint 20 Tahun, Harga 49rb</td>
+<td>AS3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DM Banyak, Transfer Sepi?</td>
+<td>AS4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>500 Slot Rp49rb — Sudah Mulai Terisi</td>
+<td>AS5</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="description-pool">Description Pool</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Description</th>
+<th>Adset</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pengalaman 20 Tahun. Rp49rb.</td>
+<td>AS1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Template HPP + Blueprint. Rp49rb.</td>
+<td>AS2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Eks Nibras &amp; Rabbani. Rp49rb.</td>
+<td>AS3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Formula jualan hijab. Rp49rb.</td>
+<td>AS4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Harga naik setelah 500 slot.</td>
+<td>AS5</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="format-per-adset">Format per Adset</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Adset</th>
+<th>Format</th>
+<th>Durasi/Tipe</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>AS1</td>
+<td>Feed 4:5</td>
+<td>Static Image</td>
+</tr>
+<tr>
+<td>AS2</td>
+<td>Reels 9:16</td>
+<td>Video 10-12 detik</td>
+</tr>
+<tr>
+<td>AS3</td>
+<td>Feed 4:5</td>
+<td>Static Image</td>
+</tr>
+<tr>
+<td>AS4</td>
+<td>Reels 9:16</td>
+<td>Video 8-10 detik</td>
+</tr>
+<tr>
+<td>AS5</td>
+<td>Feed 4:5</td>
+<td>Static Image (visual sudah ada)</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="variasi-ab-test-minggu-ke-2">VARIASI A/B TEST (Minggu ke-2)</h2>
+<p>Kalau ada adset yang CTR bagus tapi CPA belum optimal, coba variasi ini:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Adset</th>
+<th>Variasi A (Original)</th>
+<th>Variasi B (Test)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>AS1</td>
+<td>Hook masalah dulu</td>
+<td>Hook solusi dulu: &quot;Checklist 7 poin ini bikin supplier gak bisa zonk kamu lagi.&quot;</td>
+</tr>
+<tr>
+<td>AS2</td>
+<td>Screen recording HPP</td>
+<td>Before-after: rekening sepi vs rekening setelah hitung HPP beneran</td>
+</tr>
+<tr>
+<td>AS3</td>
+<td>Foto mentor + credential</td>
+<td>Video mentor bicara 10 detik (talking-head)</td>
+</tr>
+<tr>
+<td>AS4</td>
+<td>Chat bubble animation</td>
+<td>Talking-head: reseller cerita pengalaman DM ghosting</td>
+</tr>
+<tr>
+<td>AS5</td>
+<td>Progress bar statis</td>
+<td>Animasi progress bar naik + countdown</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="file-visual-yang-sudah-ada">FILE VISUAL YANG SUDAH ADA</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>File</th>
+<th>Adset</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>cuanhijab_ad1_supplier_1776904045458.png</code></td>
+<td>AS1</td>
+<td>Siap pakai</td>
+</tr>
+<tr>
+<td><code>cuanhijab_ad2_margin_1776904066742.png</code></td>
+<td>AS2</td>
+<td>Siap pakai (atau buat video)</td>
+</tr>
+<tr>
+<td><code>cuanhijab_ad3_authority_1776904079924.png</code></td>
+<td>AS3</td>
+<td>Siap pakai</td>
+</tr>
+<tr>
+<td><code>cuanhijab_ad4_ghosting_1776904095218.png</code></td>
+<td>AS4</td>
+<td>Siap pakai (atau buat video)</td>
+</tr>
+<tr>
+<td><code>cuanhijab_ad5_fomo_v2.png</code></td>
+<td>AS5</td>
+<td>Siap pakai</td>
+</tr>
+<tr>
+<td><code>cuanhijab_ad6_scaleup_1777200988679.png</code></td>
+<td>Cadangan</td>
+<td>Rotasi minggu ke-3</td>
+</tr>
+<tr>
+<td><code>cuanhijab_ad7_brand_1777200988679.png</code></td>
+<td>Cadangan</td>
+<td>Rotasi minggu ke-3</td>
+</tr>
+<tr>
+<td><code>cuanhijab_ad8_omzet_1777200988679.png</code></td>
+<td>Cadangan</td>
+<td>Rotasi minggu ke-3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Semua file ada di: <code>D:\Iklan Otak Reptil\Produk\CuanHijab\</code></p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

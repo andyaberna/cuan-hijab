@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Content Strategy &amp; Attention Growth — Cuan Hijab</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Content Strategy &amp; Attention Growth — Cuan Hijab</h1>
+<p class="subtitle">Blueprint eksekusi Content Strategy untuk produk Cuan Hijab Next Level agar konten harian terhubung ke konversi low-ticket dan ascension upsell.</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="ringkasan-produk-positioning" href="#ringkasan-produk-positioning">Ringkasan Produk &amp; Positioning</a></li>
+<li><a data-target="icp-pain-dan-outcome" href="#icp-pain-dan-outcome">ICP, Pain, dan Outcome</a></li>
+<li><a data-target="framework-4-pilar-content-strategy-1-authority" href="#framework-4-pilar-content-strategy-1-authority">Framework 4 Pilar Content Strategy + 1 Authority</a></li>
+<li><a data-target="jab-right-hook-8020-weekly-cadence" href="#jab-right-hook-8020-weekly-cadence">Jab-Right-Hook 80:20 (Weekly Cadence)</a></li>
+<li><a data-target="document-dont-create" href="#document-dont-create">Document, Don&#39;t Create</a></li>
+<li><a data-target="content-pyramid-1-webinar-30-pieces" href="#content-pyramid-1-webinar-30-pieces">Content Pyramid: 1 Webinar -&gt; 30+ Pieces</a></li>
+<li><a data-target="volume-strategy-per-platform" href="#volume-strategy-per-platform">Volume Strategy per Platform</a></li>
+<li><a data-target="5-pilar-personal-brand-iman-awaludin" href="#5-pilar-personal-brand-iman-awaludin">5 Pilar Personal Brand Iman Awaludin</a></li>
+<li><a data-target="content-mix-40302010" href="#content-mix-40302010">Content Mix 40/30/20/10</a></li>
+<li><a data-target="platform-native-execution" href="#platform-native-execution">Platform-Native Execution</a></li>
+<li><a data-target="30-content-ideas-ready-to-post" href="#30-content-ideas-ready-to-post">30 Content Ideas Ready to Post</a></li>
+<li><a data-target="kpi-dashboard" href="#kpi-dashboard">KPI Dashboard</a></li>
+<li><a data-target="4-week-calendar" href="#4-week-calendar">4-Week Calendar</a></li>
+<li><a data-target="sop-eksekusi-harian" href="#sop-eksekusi-harian">SOP Eksekusi Harian</a></li>
+<li><a data-target="integrasi-dengan-campaign-existing" href="#integrasi-dengan-campaign-existing">Integrasi dengan Campaign Existing</a></li>
+<li><a data-target="risk-register-mitigasi" href="#risk-register-mitigasi">Risk Register + Mitigasi</a></li>
+<li><a data-target="lampiran-hook-bank-30-hook-unik-per-pilar" href="#lampiran-hook-bank-30-hook-unik-per-pilar">Lampiran Hook Bank (30 Hook Unik per Pilar)</a></li>
+<li><a data-target="lampiran-cta-bank-15-cta-unik-per-channel" href="#lampiran-cta-bank-15-cta-unik-per-channel">Lampiran CTA Bank (15 CTA Unik per Channel)</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Content Strategy &amp; Attention Growth — Cuan Hijab</h1>
+<h2 id="ringkasan-produk-positioning">Ringkasan Produk &amp; Positioning</h2>
+<p>Cuan Hijab Next Level adalah digital product entry-level berisi Rekaman Webinar + Ebook Premium + Template HPP Otomatis + WA Group Eksklusif. Harga launch Rp49.000 untuk 500 pembeli pertama, lalu kembali ke harga normal Rp99.000. Mentor utama Iman Awaludin, ST membawa kredibilitas 20+ tahun industri hijab dan jejaring 1.000+ mitra distribusi nasional. Strategi konten difokuskan ke perempuan 25-55 tahun yang sudah jualan hijab minimal 3 bulan dan sedang stuck di omzet/margin/conversion DM.</p>
+<h2 id="icp-pain-dan-outcome">ICP, Pain, dan Outcome</h2>
+<h3 id="segmen-icp">Segmen ICP</h3>
+<ul>
+<li>Reseller hijab dengan omzet naik-turun tanpa pola.</li>
+<li>Agen hijab yang pernah kena supplier zonk dan kehilangan repeat order.</li>
+<li>Pemilik brand hijab lokal yang margin tipis 8-12%.</li>
+<li>Seller yang DM ramai tetapi banyak ghosting sebelum transfer.</li>
+</ul>
+<h3 id="pain-yang-menjadi-bahan-narasi-harian">Pain yang menjadi bahan narasi harian</h3>
+<ul>
+<li>Supplier zonk (kualitas tidak konsisten, lead time meleset)</li>
+<li>Margin tipis 8-12% sehingga capek jualan</li>
+<li>DM ghosting dan follow-up tidak terstruktur</li>
+<li>Omzet naik-turun karena tidak punya sistem</li>
+</ul>
+<h3 id="outcome-yang-dijanjikan-konten">Outcome yang dijanjikan konten</h3>
+<ul>
+<li>Cara screening supplier lebih aman</li>
+<li>Cara hitung HPP agar margin sehat</li>
+<li>Script DM untuk menaikkan transfer rate</li>
+<li>Ritme operasional sederhana agar omzet lebih stabil</li>
+</ul>
+<h2 id="framework-4-pilar-content-strategy-1-authority">Framework 4 Pilar Content Strategy + 1 Authority</h2>
+<h3 id="pilar-1-supplier-intelligence">Pilar 1: Supplier Intelligence</h3>
+<ul>
+<li>Fokus: Konten tentang checklist supplier, quality control, negosiasi lead time, dan mitigasi retur.</li>
+<li>Format unggulan: Reels behind-the-scene kunjungan supplier, carousel checklist 7 poin, WA voice note tips singkat.</li>
+<li>Tujuan bisnis: membangun awareness bahwa masalah supplier bisa dicegah dengan sistem — jembatan ke produk Rp49K.</li>
+</ul>
+<h3 id="pilar-2-margin-hpp-mastery">Pilar 2: Margin &amp; HPP Mastery</h3>
+<ul>
+<li>Fokus: Konten tentang hitung biaya nyata, simulasi promo, bundling yang tetap untung.</li>
+<li>Format unggulan: Carousel step-by-step HPP, TikTok &quot;margin reality check&quot;, WA broadcast simulasi angka.</li>
+<li>Tujuan bisnis: membuat audiens sadar margin mereka bocor — trigger download template HPP di produk Rp49K.</li>
+</ul>
+<h3 id="pilar-3-dm-conversion-playbook">Pilar 3: DM Conversion Playbook</h3>
+<ul>
+<li>Fokus: Konten script chat, urutan follow-up, handling objection, dan closing halus via WA/DM.</li>
+<li>Format unggulan: Reels screenshot chat (tersensor), carousel 3-step follow-up, TikTok role-play closing.</li>
+<li>Tujuan bisnis: menunjukkan bahwa DM ghosting bisa diatasi dengan script — dorong ke blueprint lengkap Rp49K.</li>
+</ul>
+<h3 id="pilar-4-brand-lokal-growth">Pilar 4: Brand Lokal Growth</h3>
+<ul>
+<li>Fokus: Konten diferensiasi brand hijab lokal agar tidak terjebak perang harga.</li>
+<li>Format unggulan: Reels storytelling brand journey, carousel roadmap reseller-ke-owner, FB Group thread diskusi.</li>
+<li>Tujuan bisnis: menarik segmen brand owner ke jalur Sultan di blueprint — jembatan ke upsell Bedah Bisnis Rp497K.</li>
+</ul>
+<h3 id="pilar-5-mentor-authority">Pilar 5: Mentor Authority</h3>
+<ul>
+<li>Fokus: Konten dokumentasi lapangan Iman Awaludin untuk menaikkan trust dan perceived certainty.</li>
+<li>Format unggulan: Reels vlog lapangan, IG Story Q&amp;A spontan, WA voice note insight harian.</li>
+<li>Tujuan bisnis: menaikkan brand certainty sehingga prospek percaya mentor layak diikuti — memperkuat conversion di semua level.</li>
+</ul>
+<h2 id="jab-right-hook-8020-weekly-cadence">Jab-Right-Hook 80:20 (Weekly Cadence)</h2>
+<p>Rasio default: 80% edukasi/insight/story (jab), 20% CTA penjualan (right hook).</p>
+<pre><code>
+Senin : Jab - Supplier tips
+Selasa : Jab - Margin/HPP
+Rabu : Jab - DM conversion
+Kamis : Jab - Brand building
+Jumat : Right Hook - promo Rp49K + scarcity
+Sabtu : Jab - case study/member wins
+Minggu : Jab ringan - personal mentor + recap
+</code></pre>
+<h2 id="document-dont-create">Document, Don&#39;t Create</h2>
+<h3 id="aktivitas-mentor-yang-wajib-didokumentasikan">Aktivitas mentor yang wajib didokumentasikan</h3>
+<ul>
+<li>Kunjungan supplier (cek bahan, jahitan, packing, lead time)</li>
+<li>Review template HPP dari kasus reseller minggu berjalan</li>
+<li>Pembahasan chat ghosting dan revisi script follow-up</li>
+<li>Momen troubleshooting komplain buyer</li>
+<li>Diskusi strategi repeat order dengan mitra</li>
+<li>Catatan kesalahan operasional yang sering terulang</li>
+<li>Sesi mini coaching di WA Group</li>
+<li>Rekap before/after reseller yang menerapkan SOP</li>
+</ul>
+<h3 id="format-dokumentasi-mentah">Format dokumentasi mentah</h3>
+<ul>
+<li>Video vertikal 30-90 detik</li>
+<li>Voice note 2-5 menit</li>
+<li>Screenshot chat tersensor</li>
+<li>Foto checklist lapangan</li>
+<li>Catatan angka HPP dan margin</li>
+</ul>
+<h2 id="content-pyramid-1-webinar-30-pieces">Content Pyramid: 1 Webinar -&gt; 30+ Pieces</h2>
+<p>Sumber pilar adalah rekaman webinar CuanHijab yang kemudian diatomisasi lintas platform.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Aset Sumber</th>
+<th>Turunan Konten</th>
+<th>Jumlah</th>
+<th>Tujuan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1 Rekaman webinar 60-90 menit</td>
+<td>Reels edukasi</td>
+<td>8</td>
+<td>Reach + save</td>
+</tr>
+<tr>
+<td>1 Rekaman webinar 60-90 menit</td>
+<td>TikTok short</td>
+<td>8</td>
+<td>Awareness + komentar niat</td>
+</tr>
+<tr>
+<td>1 Rekaman webinar 60-90 menit</td>
+<td>Carousel IG</td>
+<td>6</td>
+<td>Edukasi step-by-step</td>
+</tr>
+<tr>
+<td>1 Rekaman webinar 60-90 menit</td>
+<td>WA broadcast lesson</td>
+<td>4</td>
+<td>Activation ke LP</td>
+</tr>
+<tr>
+<td>1 Rekaman webinar 60-90 menit</td>
+<td>Thread FB Group</td>
+<td>2</td>
+<td>Nurture komunitas</td>
+</tr>
+<tr>
+<td>1 Rekaman webinar 60-90 menit</td>
+<td>Live recap</td>
+<td>2</td>
+<td>Authority + QnA</td>
+</tr>
+<tr>
+<td>1 Rekaman webinar 60-90 menit</td>
+<td>Quote graphics</td>
+<td>4</td>
+<td>Reminder mindset</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>Semua turunan</td>
+<td>34</td>
+<td>Siklus 4 minggu</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="volume-strategy-per-platform">Volume Strategy per Platform</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Platform</th>
+<th>Minimum Viable</th>
+<th>Elite</th>
+<th>Catatan Spesifik CuanHijab</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>IG Reels/Carousel</td>
+<td>5 post/minggu</td>
+<td>10-12 post/minggu</td>
+<td>Reels pain-driven, carousel checklist praktis</td>
+</tr>
+<tr>
+<td>TikTok</td>
+<td>5 video/minggu</td>
+<td>14 video/minggu</td>
+<td>Hook 1 detik, subtitle tegas, CTA keyword</td>
+</tr>
+<tr>
+<td>WA Broadcast</td>
+<td>3x/minggu</td>
+<td>6x/minggu</td>
+<td>Segmentasi buyer vs non-buyer</td>
+</tr>
+<tr>
+<td>Facebook Group</td>
+<td>2 thread/minggu</td>
+<td>5 thread/minggu</td>
+<td>Fokus diskusi dan bukti implementasi</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-pilar-personal-brand-iman-awaludin">5 Pilar Personal Brand Iman Awaludin</h2>
+<h3 id="1-authenticity">1. Authenticity</h3>
+<ul>
+<li>Implementasi: Tunjukkan proses lapangan real, termasuk tantangan supplier dan operasional.</li>
+</ul>
+<h3 id="2-expertise">2. Expertise</h3>
+<ul>
+<li>Implementasi: Ajarkan framework sederhana: supplier check, HPP map, DM script.</li>
+</ul>
+<h3 id="3-consistency">3. Consistency</h3>
+<ul>
+<li>Implementasi: Pesan utama konsisten: jualan hijab harus untung sehat dan sistematis.</li>
+</ul>
+<h3 id="4-vulnerability">4. Vulnerability</h3>
+<ul>
+<li>Implementasi: Bagikan pelajaran dari kegagalan agar audiens merasa relevan.</li>
+</ul>
+<h3 id="5-value">5. Value</h3>
+<ul>
+<li>Implementasi: Setiap konten memberi langkah yang bisa dikerjakan hari ini.</li>
+</ul>
+<h2 id="content-mix-40302010">Content Mix 40/30/20/10</h2>
+<pre><code>
+40% Educational : supplier, HPP, DM flow
+30% Inspirational : kisah bangkit reseller
+20% Personal : behind-the-scenes mentor
+10% Promotional : CTA produk Rp49K + bonus + garansi
+</code></pre>
+<p>Saat launch 7 hari, porsi promo boleh naik menjadi 20% asalkan tetap berbasis bukti.</p>
+<h2 id="platform-native-execution">Platform-Native Execution</h2>
+<h3 id="ig-reels">IG Reels</h3>
+<ul>
+<li>Playbook: Hook visual 1 detik, caption percakapan, CTA komentar keyword.</li>
+<li>Kunci kualitas: durasi 15-30 detik, subtitle besar, nada bicara seperti ngobrol dengan teman sesama seller.</li>
+</ul>
+<h3 id="ig-carousel">IG Carousel</h3>
+<ul>
+<li>Playbook: Slide 1 pain, slide 2-6 solusi, slide akhir CTA tindakan.</li>
+<li>Kunci kualitas: maksimal 7 slide, font besar readable di HP, warna konsisten brand CuanHijab.</li>
+</ul>
+<h3 id="tiktok">TikTok</h3>
+<ul>
+<li>Playbook: Hook -&gt; 2 poin -&gt; mini bukti -&gt; CTA DM/komentar.</li>
+<li>Kunci kualitas: hook 1 detik pertama harus bikin berhenti scroll, gunakan teks overlay tebal, hindari musik terlalu keras.</li>
+</ul>
+<h3 id="wa-broadcast">WA Broadcast</h3>
+<ul>
+<li>Playbook: 80-180 kata: problem -&gt; insight -&gt; CTA jelas.</li>
+<li>Kunci kualitas: kirim di jam 10.00 atau 19.00, segmentasi buyer vs non-buyer, hindari link panjang tanpa konteks.</li>
+</ul>
+<h3 id="facebook-group">Facebook Group</h3>
+<ul>
+<li>Playbook: Thread 300-600 kata + polling + recap mingguan.</li>
+<li>Kunci kualitas: ajak diskusi dengan pertanyaan spesifik, pin thread terbaik, recap insight member setiap Minggu.</li>
+</ul>
+<h2 id="30-content-ideas-ready-to-post">30 Content Ideas Ready to Post</h2>
+<p>Setiap ide memuat hook, format terbaik, CTA spesifik, dan jenis bukti yang disarankan.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Judul Ide</th>
+<th>Format Terbaik</th>
+<th>CTA</th>
+<th>Bukti/Pendukung</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Checklist supplier 7 menit sebelum transfer DP</td>
+<td>Carousel IG (7 slide = 7 poin)</td>
+<td>Comment: CHECKLIST</td>
+<td>Screenshot checklist kosong vs terisi</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Kenapa margin 8-12% bikin terasa capek jualan</td>
+<td>TikTok 20 detik + teks overlay angka</td>
+<td>DM: HPP untuk kalkulator mini</td>
+<td>Simulasi angka HPP real 1 produk</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3 pembuka chat anti ghosting di DM</td>
+<td>Reels role-play 2 orang</td>
+<td>Simpan post ini</td>
+<td>Screenshot chat before/after (sensor)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Supplier murah vs supplier sehat: beda jangka panjang</td>
+<td>Carousel perbandingan 2 kolom</td>
+<td>Comment: SUPPLIER</td>
+<td>Data retur rate supplier murah vs standar</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Case reseller Bandung naik 2.3x setelah rapikan HPP</td>
+<td>Reels storytelling + angka di screen</td>
+<td>Klik bio untuk blueprint</td>
+<td>Screenshot margin before/after</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3 tanda Anda jualan tanpa sistem</td>
+<td>TikTok listicle cepat</td>
+<td>DM: SISTEM untuk checklist</td>
+<td>Polling IG Story &quot;Anda relate yang mana?&quot;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Cara menentukan harga bundling tetap untung</td>
+<td>Carousel step-by-step 6 slide</td>
+<td>Comment: BUNDLING</td>
+<td>Tabel simulasi harga bundling</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Kesalahan follow-up hari ke-2 yang bikin buyer kabur</td>
+<td>Reels monolog + teks</td>
+<td>Simpan untuk template</td>
+<td>Statistik reply rate D1 vs D2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Apa yang dicek saat supplier visit</td>
+<td>Reels vlog lapangan mentor</td>
+<td>Comment: VISIT</td>
+<td>Foto/video real kunjungan supplier</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Mitos diskon besar pasti menaikkan laba</td>
+<td>TikTok debunk format</td>
+<td>DM: MARGIN untuk simulasi</td>
+<td>Grafik margin vs diskon</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Script jawab objection &quot;kemahalan&quot;</td>
+<td>Carousel 5 slide (5 variasi jawaban)</td>
+<td>Simpan + share</td>
+<td>Contoh chat real (tersensor)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Efek foto produk tidak konsisten ke trust buyer</td>
+<td>Reels side-by-side foto bagus vs jelek</td>
+<td>Comment: FOTO</td>
+<td>Screenshot review negatif karena beda foto</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Agen trauma supplier: cara bangun percaya lagi</td>
+<td>WA broadcast 150 kata + CTA</td>
+<td>Reply: PULIH untuk panduan</td>
+<td>Mini cerita agen yang recover</td>
+</tr>
+<tr>
+<td>14</td>
+<td>5 komponen HPP yang sering kelupaan</td>
+<td>Carousel infografis</td>
+<td>DM: HPP untuk template</td>
+<td>Daftar 5 komponen + contoh angka</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Konten yang bukan cuma ramai like tapi bikin DM masuk</td>
+<td>TikTok tips format</td>
+<td>Comment: KONTEN</td>
+<td>Perbandingan reach vs DM intent</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Menahan omzet naik-turun dengan repeat order</td>
+<td>Reels whiteboard sederhana</td>
+<td>Klik bio</td>
+<td>Grafik omzet stabil vs fluktuatif</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Behind the scene menyusun materi webinar</td>
+<td>IG Story dokumentasi</td>
+<td>Swipe up / link sticker</td>
+<td>Foto/video proses kerja mentor</td>
+</tr>
+<tr>
+<td>18</td>
+<td>3 red flag supplier dari gaya chat WA</td>
+<td>TikTok listicle + screenshot</td>
+<td>Comment: REDFLAG</td>
+<td>Screenshot chat supplier (sensor)</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Kenapa DM ramai tapi transfer sepi</td>
+<td>Reels analisis + solusi</td>
+<td>DM: TRANSFER untuk script</td>
+<td>Diagram funnel DM → transfer</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Cara brand lokal hijab menang tanpa perang harga</td>
+<td>Carousel roadmap 6 slide</td>
+<td>Comment: BRAND</td>
+<td>Contoh brand lokal yang berhasil</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Tes produk baru tanpa bakar modal</td>
+<td>TikTok tips singkat</td>
+<td>DM: TES untuk framework</td>
+<td>Langkah pre-order / sample test</td>
+</tr>
+<tr>
+<td>22</td>
+<td>FAQ garansi 7 hari uang kembali</td>
+<td>IG Story Q&amp;A format</td>
+<td>Klik bio untuk checkout</td>
+<td>Screenshot kebijakan garansi</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Pelajaran dari 1.000+ mitra distribusi</td>
+<td>Reels mentor storytelling</td>
+<td>Comment: MITRA</td>
+<td>Foto jaringan distribusi</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Kesalahan menentukan MOQ</td>
+<td>Carousel edukasi</td>
+<td>DM: MOQ untuk panduan</td>
+<td>Tabel simulasi MOQ vs margin</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Framework chat 3 tahap: qualify-clarify-close</td>
+<td>Reels role-play</td>
+<td>Simpan post ini</td>
+<td>Diagram 3 tahap visual</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Kapan saat tepat naik dari reseller ke brand</td>
+<td>Carousel decision tree</td>
+<td>Comment: NAIKLEVEL</td>
+<td>Checklist readiness assessment</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Checklist live selling hijab</td>
+<td>TikTok before-during-after</td>
+<td>DM: LIVE untuk checklist</td>
+<td>Screenshot persiapan live</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Omzet naik tapi laba turun: bedah kasus</td>
+<td>Reels analisis angka</td>
+<td>Klik bio untuk template HPP</td>
+<td>Simulasi angka kasus nyata</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Cara memanfaatkan WA Group eksklusif</td>
+<td>WA broadcast + IG Story</td>
+<td>Reply: GRUP untuk info</td>
+<td>Screenshot aktivitas WA Group</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Last call promo 500 buyer pertama</td>
+<td>Reels urgency + countdown</td>
+<td>Klik bio SEKARANG</td>
+<td>Counter sisa kuota real</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="kpi-dashboard">KPI Dashboard</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Definisi</th>
+<th>Target Mingguan</th>
+<th>Aksi Jika Turun</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Reach IG</td>
+<td>Akun terjangkau IG</td>
+<td>35000</td>
+<td>Tambah 2 Reels + evaluasi hook</td>
+</tr>
+<tr>
+<td>Save Rate</td>
+<td>Save dibanding reach</td>
+<td>2.5%</td>
+<td>Tambah konten checklist dan carousel</td>
+</tr>
+<tr>
+<td>Intent Comments</td>
+<td>Komentar berniat beli</td>
+<td>80</td>
+<td>Perjelas CTA dan respons cepat</td>
+</tr>
+<tr>
+<td>CTR ke LP</td>
+<td>Klik link menuju LP</td>
+<td>1.8%</td>
+<td>Ubah wording CTA + penempatan link</td>
+</tr>
+<tr>
+<td>LP CVR</td>
+<td>Buyer dibanding visitor</td>
+<td>3.5%</td>
+<td>Perbaiki hero, bukti, FAQ</td>
+</tr>
+<tr>
+<td>CPA</td>
+<td>Biaya akuisisi per buyer</td>
+<td>&lt;25000</td>
+<td>Pause adset boros</td>
+</tr>
+<tr>
+<td>WA Reply Rate</td>
+<td>Reply dari broadcast</td>
+<td>18%</td>
+<td>Segmentasi ulang pesan</td>
+</tr>
+<tr>
+<td>Upsell Rp197K</td>
+<td>Konversi dari buyer Rp49K</td>
+<td>8%</td>
+<td>Tambah social proof konsultasi</td>
+</tr>
+<tr>
+<td>Upsell Rp497K</td>
+<td>Konversi dari buyer konsultasi</td>
+<td>18%</td>
+<td>Perketat qualification call</td>
+</tr>
+<tr>
+<td>Refund Rate</td>
+<td>Refund 7 hari</td>
+<td>&lt;=6%</td>
+<td>Sinkronkan ekspektasi di onboarding</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-week-calendar">4-Week Calendar</h2>
+<h3 id="minggu-1">Minggu 1</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Fokus</th>
+<th>Platform</th>
+<th>CTA</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Senin</td>
+<td>Supplier</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Selasa</td>
+<td>Supplier</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Rabu</td>
+<td>HPP</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Kamis</td>
+<td>DM</td>
+<td>IG+TikTok</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Jumat</td>
+<td>Promo</td>
+<td>IG+WA</td>
+<td>Klik LP</td>
+</tr>
+<tr>
+<td>Sabtu</td>
+<td>Case</td>
+<td>WA+FB</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Minggu</td>
+<td>Recap</td>
+<td>WA+FB</td>
+<td>Reply</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="minggu-2">Minggu 2</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Fokus</th>
+<th>Platform</th>
+<th>CTA</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Senin</td>
+<td>Pain</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Selasa</td>
+<td>Supplier</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Rabu</td>
+<td>HPP</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Kamis</td>
+<td>Objection</td>
+<td>IG+TikTok</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Jumat</td>
+<td>Promo</td>
+<td>IG+WA</td>
+<td>Klik LP</td>
+</tr>
+<tr>
+<td>Sabtu</td>
+<td>FAQ</td>
+<td>WA+FB</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Minggu</td>
+<td>Personal</td>
+<td>WA+FB</td>
+<td>Reply</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="minggu-3">Minggu 3</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Fokus</th>
+<th>Platform</th>
+<th>CTA</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Senin</td>
+<td>Repeat</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Selasa</td>
+<td>Bundling</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Rabu</td>
+<td>Chat</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Kamis</td>
+<td>Brand</td>
+<td>IG+TikTok</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Jumat</td>
+<td>Promo</td>
+<td>IG+WA</td>
+<td>Klik LP</td>
+</tr>
+<tr>
+<td>Sabtu</td>
+<td>Live</td>
+<td>WA+FB</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Minggu</td>
+<td>Recap</td>
+<td>WA+FB</td>
+<td>Reply</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="minggu-4">Minggu 4</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Fokus</th>
+<th>Platform</th>
+<th>CTA</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Senin</td>
+<td>Review</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Selasa</td>
+<td>Supplier</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Rabu</td>
+<td>Margin</td>
+<td>IG+TikTok</td>
+<td>Komentar keyword</td>
+</tr>
+<tr>
+<td>Kamis</td>
+<td>Follow-up</td>
+<td>IG+TikTok</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Jumat</td>
+<td>Last Call</td>
+<td>IG+WA</td>
+<td>Klik LP</td>
+</tr>
+<tr>
+<td>Sabtu</td>
+<td>Testimoni</td>
+<td>WA+FB</td>
+<td>DM</td>
+</tr>
+<tr>
+<td>Minggu</td>
+<td>Wrap</td>
+<td>WA+FB</td>
+<td>Reply</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sop-eksekusi-harian">SOP Eksekusi Harian</h2>
+<ul>
+<li>05:30 kumpulkan dokumentasi raw</li>
+<li>06:30 produksi konten utama</li>
+<li>08:00 publish slot pagi</li>
+<li>12:00 publish slot siang (opsional)</li>
+<li>16:00 siapkan WA broadcast</li>
+<li>19:00 publish slot malam</li>
+<li>21:00 input metrik harian</li>
+</ul>
+<h2 id="integrasi-dengan-campaign-existing">Integrasi dengan Campaign Existing</h2>
+<ul>
+<li>Konten organik pemenang menjadi sumber creative testing Meta Ads.</li>
+<li>Jumat right hook disejajarkan dengan dorongan budget adset terbaik.</li>
+<li>WA 10-day sequence dipakai untuk edukasi lalu upsell bertahap.</li>
+</ul>
+<h2 id="risk-register-mitigasi">Risk Register + Mitigasi</h2>
+<ul>
+<li>Burnout tim: Batching konten dan dokumentasi harian</li>
+<li>Konten over-promosi: Audit rasio 80:20 tiap pekan</li>
+<li>Engagement tinggi buyer rendah: Perjelas CTA ke LP</li>
+<li>Klaim berlebihan: Wajib bukti untuk setiap klaim</li>
+<li>Spam WA: Segmentasi dan jadwal adaptif</li>
+</ul>
+<h2 id="lampiran-hook-bank-30-hook-unik-per-pilar">Lampiran Hook Bank (30 Hook Unik per Pilar)</h2>
+<h3 id="hook-pilar-supplier-6-hook">Hook Pilar Supplier (6 hook)</h3>
+<ol>
+<li>&quot;Udah ganti supplier 3 kali, masalah tetap sama?&quot;</li>
+<li>&quot;Supplier bilang ready stock, ternyata indent 2 minggu.&quot;</li>
+<li>&quot;Barang datang beda warna dari sample — pernah?&quot;</li>
+<li>&quot;Jangan transfer DP sebelum cek 7 poin ini.&quot;</li>
+<li>&quot;Supplier murah belum tentu murah di akhir bulan.&quot;</li>
+<li>&quot;Retur naik bukan karena buyer rewel, tapi QC supplier lemah.&quot;</li>
+</ol>
+<h3 id="hook-pilar-marginhpp-6-hook">Hook Pilar Margin/HPP (6 hook)</h3>
+<ol>
+<li>&quot;Order ramai tapi uang di rekening gak nambah?&quot;</li>
+<li>&quot;Margin 8% itu bukan untung — itu gaji kurir.&quot;</li>
+<li>&quot;Hitung HPP bukan cuma harga beli + ongkir.&quot;</li>
+<li>&quot;Promo besar-besaran tapi ternyata nombok — pernah?&quot;</li>
+<li>&quot;Satu kesalahan HPP bisa makan laba 3 bulan.&quot;</li>
+<li>&quot;Omzet Rp10 juta tapi laba cuma Rp800 ribu — ada yang salah.&quot;</li>
+</ol>
+<h3 id="hook-pilar-dm-conversion-6-hook">Hook Pilar DM Conversion (6 hook)</h3>
+<ol>
+<li>&quot;DM nanya harga terus hilang — bukan nasib, ini polanya.&quot;</li>
+<li>&quot;Kenapa chat &#39;berapaan kak?&#39; selalu berakhir ghosting?&quot;</li>
+<li>&quot;Follow-up hari ke-2 itu kunci — kebanyakan seller skip.&quot;</li>
+<li>&quot;3 kalimat pembuka yang bikin buyer lanjut chat.&quot;</li>
+<li>&quot;Jangan jawab harga langsung — ini alasannya.&quot;</li>
+<li>&quot;Chat closing bukan soal maksa, tapi soal urutan.&quot;</li>
+</ol>
+<h3 id="hook-pilar-brand-growth-6-hook">Hook Pilar Brand Growth (6 hook)</h3>
+<ol>
+<li>&quot;Reseller selamanya atau mau punya brand sendiri?&quot;</li>
+<li>&quot;Brand lokal hijab bisa menang tanpa perang diskon.&quot;</li>
+<li>&quot;Kapan waktu tepat naik dari reseller ke owner?&quot;</li>
+<li>&quot;Punya brand bukan soal modal besar, tapi sistem.&quot;</li>
+<li>&quot;Diferensiasi brand hijab dimulai dari sini.&quot;</li>
+<li>&quot;Jangan bikin brand sebelum margin reseller Anda sehat.&quot;</li>
+</ol>
+<h3 id="hook-pilar-authority-mentor-6-hook">Hook Pilar Authority Mentor (6 hook)</h3>
+<ol>
+<li>&quot;20 tahun di industri hijab — ini yang saya pelajari.&quot;</li>
+<li>&quot;Dari 1.000+ mitra, kesalahan paling mahal selalu ini.&quot;</li>
+<li>&quot;Bukan teori marketing — ini dari lantai produksi.&quot;</li>
+<li>&quot;Saya pernah rugi ratusan juta karena supplier — ini cara pulihnya.&quot;</li>
+<li>&quot;Coaching bareng Budi Isman mengubah cara saya lihat bisnis hijab.&quot;</li>
+<li>&quot;Pengalaman lapangan tidak bisa di-copy dari YouTube.&quot;</li>
+</ol>
+<h2 id="lampiran-cta-bank-15-cta-unik-per-channel">Lampiran CTA Bank (15 CTA Unik per Channel)</h2>
+<h3 id="cta-untuk-komentar-igtiktok">CTA untuk Komentar IG/TikTok</h3>
+<ol>
+<li>Comment &quot;HPP&quot; untuk dapat template hitung margin gratis.</li>
+<li>Comment &quot;SUPPLIER&quot; untuk checklist 7 poin audit supplier.</li>
+<li>Comment &quot;SCRIPT&quot; untuk contoh chat closing anti ghosting.</li>
+<li>Ketik &quot;MAU&quot; di komentar, admin kirim link blueprint.</li>
+<li>Tag teman reseller yang perlu lihat ini.</li>
+</ol>
+<h3 id="cta-untuk-dm-wa">CTA untuk DM / WA</h3>
+<ol>
+<li>DM &quot;CUAN&quot; untuk info lengkap paket Rp49.000.</li>
+<li>Reply &quot;AUDIT&quot; untuk format cek margin cepat 1 produk.</li>
+<li>Kirim &quot;MULAI&quot; untuk panduan langkah pertama hari ini.</li>
+<li>Reply dengan kendala utama Anda, saya bantu arahkan materi yang tepat.</li>
+<li>Mau saya kirim ringkasan isi blueprint sebelum Anda putuskan?</li>
+</ol>
+<h3 id="cta-untuk-landing-page-checkout">CTA untuk Landing Page / Checkout</h3>
+<ol>
+<li>Amankan akses Cuan Hijab Next Level — Rp49.000 untuk 500 pembeli pertama.</li>
+<li>Klik tombol di bawah untuk lock harga batch awal sebelum naik ke Rp99.000.</li>
+<li>Ya, saya mau rapikan supplier dan margin mulai hari ini.</li>
+</ol>
+<h3 id="cta-untuk-upsell-ascension">CTA untuk Upsell / Ascension</h3>
+<ol>
+<li>Sudah pakai template HPP? Lanjut ke konsultasi 30 menit untuk diagnosa personal.</li>
+<li>Siap naik level? Booking slot Bedah Bisnis 3 sesi untuk rencana implementasi menyeluruh.</li>
+</ol></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

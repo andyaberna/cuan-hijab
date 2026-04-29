@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offer Creation &amp; Value Optimization — Cuan Hijab</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Offer Creation &amp; Value Optimization — Cuan Hijab</h1>
+<p class="subtitle">Blueprint Offer Creation untuk Cuan Hijab Next Level agar offer lebih kuat, conversion naik, AOV membaik, dan LTV terstruktur.</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="1-ringkasan-produk-dan-posisi-offer-saat-ini" href="#1-ringkasan-produk-dan-posisi-offer-saat-ini">1. Ringkasan Produk dan Posisi Offer Saat Ini</a></li>
+<li><a data-target="2-value-equation-4-variabel-scoring-khusus-cuanhijab" href="#2-value-equation-4-variabel-scoring-khusus-cuanhijab">2. Value Equation (4 Variabel) — Scoring Khusus CuanHijab</a></li>
+<li><a data-target="3-grand-slam-offer-6-komponen-full-offer-design" href="#3-grand-slam-offer-6-komponen-full-offer-design">3. Grand Slam Offer (6 Komponen) — Full Offer Design</a></li>
+<li><a data-target="4-pricing-ladder-entry-ke-premium-map-ke-ladder-existing" href="#4-pricing-ladder-entry-ke-premium-map-ke-ladder-existing">4. Pricing Ladder — Entry ke Premium (Map ke Ladder Existing)</a></li>
+<li><a data-target="5-competitive-offer-analysis" href="#5-competitive-offer-analysis">5. Competitive Offer Analysis</a></li>
+<li><a data-target="6-ltv-maximization-4-lever-cuanhijab-plan" href="#6-ltv-maximization-4-lever-cuanhijab-plan">6. LTV Maximization (4 Lever) — CuanHijab Plan</a></li>
+<li><a data-target="7-8-step-offer-creation-process-walkthrough-penuh" href="#7-8-step-offer-creation-process-walkthrough-penuh">7. 8-Step Offer Creation Process — Walkthrough Penuh</a></li>
+<li><a data-target="8-bonus-stack-existing-tambahan-yang-disarankan" href="#8-bonus-stack-existing-tambahan-yang-disarankan">8. Bonus Stack — Existing + Tambahan yang Disarankan</a></li>
+<li><a data-target="9-pricing-psychology-anchoring-rp49k-scarcity-500-kuota" href="#9-pricing-psychology-anchoring-rp49k-scarcity-500-kuota">9. Pricing Psychology — Anchoring Rp49K + Scarcity 500 Kuota</a></li>
+<li><a data-target="10-message-pillars-untuk-konsistensi-offer" href="#10-message-pillars-untuk-konsistensi-offer">10. Message Pillars untuk Konsistensi Offer</a></li>
+<li><a data-target="11-offer-copy-blocks-siap-pakai" href="#11-offer-copy-blocks-siap-pakai">11. Offer Copy Blocks (Siap Pakai)</a></li>
+<li><a data-target="12-kpi-validasi-offer-30-hari" href="#12-kpi-validasi-offer-30-hari">12. KPI Validasi Offer (30 Hari)</a></li>
+<li><a data-target="13-faq-offer-anti-friction-khusus-cuanhijab" href="#13-faq-offer-anti-friction-khusus-cuanhijab">13. FAQ Offer (Anti-friction khusus CuanHijab)</a></li>
+<li><a data-target="14-decision-summary" href="#14-decision-summary">14. Decision Summary</a></li>
+<li><a data-target="15-offer-execution-tracker-checklist-operasional" href="#15-offer-execution-tracker-checklist-operasional">15. Offer Execution Tracker (Checklist Operasional)</a></li>
+<li><a data-target="16-roadmap-offer-optimization-120-hari" href="#16-roadmap-offer-optimization-120-hari">16. Roadmap Offer Optimization 120 Hari</a></li>
+<li><a data-target="17-lampiran-rumus-ltv" href="#17-lampiran-rumus-ltv">17. Lampiran Rumus LTV</a></li>
+<li><a data-target="18-penutup" href="#18-penutup">18. Penutup</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Offer Creation &amp; Value Optimization — Cuan Hijab</h1>
+<h2 id="1-ringkasan-produk-dan-posisi-offer-saat-ini">1. Ringkasan Produk dan Posisi Offer Saat Ini</h2>
+<ul>
+<li>Nama produk: <strong>Cuan Hijab Next Level — Blueprint Praktisi 20 Tahun</strong>.</li>
+<li>Bentuk: Rekaman Webinar + Ebook Premium + Template HPP Otomatis + WA Group Eksklusif.</li>
+<li>Harga front-end: <strong>Rp49.000</strong> (500 pembeli pertama), normal Rp99.000.</li>
+<li>Total value stack saat ini: <strong>Rp438.000</strong>.</li>
+<li>Garansi: <strong>7 hari uang kembali</strong>.</li>
+<li>ICP utama: reseller, agen, brand owner hijab lokal (perempuan 25-55) yang sudah jualan min 3 bulan.</li>
+</ul>
+<h2 id="2-value-equation-4-variabel-scoring-khusus-cuanhijab">2. Value Equation (4 Variabel) — Scoring Khusus CuanHijab</h2>
+<h3 id="21-formula">2.1 Formula</h3>
+<pre><code>
+Perceived Value = (Dream Outcome x Likelihood of Achievement) / (Time Delay x Effort &amp; Sacrifice)
+</code></pre>
+<h3 id="22-scoring-awal">2.2 Scoring awal</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Variabel</th>
+<th>Skor (1-10)</th>
+<th>Alasan spesifik CuanHijab</th>
+<th>Action upgrade</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Dream Outcome</td>
+<td>8.8</td>
+<td>Outcome nyambung langsung ke pain hijab (supplier, margin, transfer, stabilitas)</td>
+<td>Tambahkan target angka per segmen</td>
+</tr>
+<tr>
+<td>Likelihood</td>
+<td>8.3</td>
+<td>Mentor punya otoritas kuat (20+ tahun, 1.000+ mitra)</td>
+<td>Tambah mini-case kuantitatif</td>
+</tr>
+<tr>
+<td>Time Delay</td>
+<td>7.5</td>
+<td>Produk digital bisa akses cepat</td>
+<td>Buat quick win 24 jam pertama</td>
+</tr>
+<tr>
+<td>Effort &amp; Sacrifice</td>
+<td>7.1</td>
+<td>Sudah ada template HPP, tapi eksekusi tetap terasa &quot;harus mikir&quot;</td>
+<td>Tambah worksheet langkah-harian</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="23-variabel-terlemah-yang-diprioritaskan">2.3 Variabel terlemah yang diprioritaskan</h3>
+<ul>
+<li>Variabel paling lemah: <strong>Effort &amp; Sacrifice (7.1)</strong>.</li>
+<li>Artinya: sebagian calon buyer masih takut &quot;saya nggak sanggup eksekusi&quot;.</li>
+<li>Implikasi strategis: sebelum menaikkan harga, turunkan beban eksekusi dulu.</li>
+</ul>
+<h2 id="3-grand-slam-offer-6-komponen-full-offer-design">3. Grand Slam Offer (6 Komponen) — Full Offer Design</h2>
+<h3 id="31-komponen-a-problems-solutions-list">3.1 Komponen A — Problems &amp; Solutions List</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Problem spesifik ICP hijab</th>
+<th>Solusi dalam offer</th>
+<th>Bentuk deliverable</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Supplier zonk (barang beda foto)</td>
+<td>Framework verifikasi supplier 5 lapis</td>
+<td>Modul webinar + checklist</td>
+</tr>
+<tr>
+<td>Margin bocor 8-12%</td>
+<td>Template HPP otomatis anti-bocor</td>
+<td>Spreadsheet + video tutorial</td>
+</tr>
+<tr>
+<td>DM ramai transfer sepi</td>
+<td>Script DM-to-transfer</td>
+<td>Ebook + contoh percakapan</td>
+</tr>
+<tr>
+<td>Omzet tidak stabil</td>
+<td>Sistem ritme penjualan mingguan</td>
+<td>Worksheet + SOP monitoring</td>
+</tr>
+<tr>
+<td>Bingung prioritas implementasi</td>
+<td>Rencana aksi 7 hari</td>
+<td>Action sheet praktis</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="32-komponen-b-core-offer-statement">3.2 Komponen B — Core Offer statement</h3>
+<blockquote>
+<p>Cuan Hijab Next Level adalah sistem praktis berbasis pengalaman lapangan 20+ tahun untuk membantu pelaku bisnis hijab memperbaiki margin, menurunkan risiko supplier, dan meningkatkan conversion DM menjadi transfer lewat materi dan toolkit siap pakai.</p>
+</blockquote>
+<h3 id="33-komponen-c-guarantee">3.3 Komponen C — Guarantee</h3>
+<ul>
+<li>Jenis: Unconditional 7-day money-back guarantee.</li>
+<li>Penempatan wajib: checkout page, CTA WA, FAQ email.</li>
+<li>Fungsi: menurunkan risiko persepsi untuk pembeli first-time digital product.</li>
+</ul>
+<h3 id="34-komponen-d-scarcity-urgency">3.4 Komponen D — Scarcity &amp; Urgency</h3>
+<ul>
+<li>Scarcity: 500 kuota harga perkenalan Rp49.000.</li>
+<li>Urgency: harga naik ke Rp99.000 setelah kuota habis.</li>
+<li>Rule: tidak ada fake extension tanpa justifikasi nyata.</li>
+</ul>
+<h3 id="35-komponen-e-bonus-stack-existing">3.5 Komponen E — Bonus stack existing</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Komponen</th>
+<th>Value label</th>
+<th>Kontribusi ke Value Equation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Rekaman Webinar</td>
+<td>Rp197K</td>
+<td>Naikkan Dream Outcome + Likelihood</td>
+</tr>
+<tr>
+<td>Ebook Premium</td>
+<td>Rp97K</td>
+<td>Kurangi Time Delay (rujukan cepat)</td>
+</tr>
+<tr>
+<td>Template HPP Otomatis</td>
+<td>Rp47K</td>
+<td>Turunkan Effort implementasi</td>
+</tr>
+<tr>
+<td>WA Group Eksklusif</td>
+<td>Rp97K</td>
+<td>Naikkan Likelihood lewat support</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>Rp438K</strong></td>
+<td>Value multiple kuat vs harga Rp49K</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="36-komponen-f-naming-mechanism">3.6 Komponen F — Naming mechanism</h3>
+<p>Nama utama sudah relevan. Tambahan branded mechanism untuk memperkuat memorability:</p>
+<ul>
+<li>Metode <strong>Anti-Zonk Supplier Shield</strong>.</li>
+<li>Sistem <strong>Margin Clarity HPP</strong>.</li>
+<li>Formula <strong>DM-to-Transfer Hijab Flow</strong>.</li>
+</ul>
+<h2 id="4-pricing-ladder-entry-ke-premium-map-ke-ladder-existing">4. Pricing Ladder — Entry ke Premium (Map ke Ladder Existing)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Tier</th>
+<th>Nama Offer</th>
+<th>Harga</th>
+<th>Tujuan bisnis</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Entry</td>
+<td>Cuan Hijab Next Level</td>
+<td>Rp49K -&gt; Rp99K</td>
+<td>Buyer acquisition</td>
+</tr>
+<tr>
+<td>Order Bump</td>
+<td>Audit HPP Kilat 1 SKU</td>
+<td>Rp29K-Rp49K</td>
+<td>Naikkan AOV checkout</td>
+</tr>
+<tr>
+<td>OTO #1</td>
+<td>Konsultasi 30 menit</td>
+<td>Rp197K</td>
+<td>Fast-win personal guidance</td>
+</tr>
+<tr>
+<td>OTO #2</td>
+<td>Bedah Bisnis 3 Sesi</td>
+<td>Rp497K</td>
+<td>Problem-solving terstruktur</td>
+</tr>
+<tr>
+<td>Membership</td>
+<td>Klub Implementasi Bulanan</td>
+<td>Rp97K-Rp147K/bulan</td>
+<td>Frequency + retention</td>
+</tr>
+<tr>
+<td>Premium</td>
+<td>Retainer Pendampingan Pabrik</td>
+<td>&gt;= Rp2.500.000</td>
+<td>Margin &amp; depth service tertinggi</td>
+</tr>
+</tbody>
+</table></div>
+<p>Catatan mapping ke ladder existing user:</p>
+<ul>
+<li>Existing ladder: 49K -&gt; 197K -&gt; 497K -&gt; Retainer.</li>
+<li>Penguatan yang disarankan: sisipkan order bump + membership sebagai jembatan retention.</li>
+</ul>
+<h2 id="5-competitive-offer-analysis">5. Competitive Offer Analysis</h2>
+<h3 id="51-vs-youtube-tutorials-gratis">5.1 Vs YouTube tutorials gratis</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Aspek</th>
+<th>YouTube gratis</th>
+<th>CuanHijab Next Level</th>
+<th>Keunggulan CuanHijab</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Struktur materi</td>
+<td>Terpisah-pisah</td>
+<td>Jalur implementasi bertahap</td>
+<td>Lebih actionable</td>
+</tr>
+<tr>
+<td>Fokus niche hijab</td>
+<td>Campur niche</td>
+<td>Spesifik hijab</td>
+<td>Relevansi tinggi</td>
+</tr>
+<tr>
+<td>Tool implementasi</td>
+<td>Jarang ada</td>
+<td>Ada template HPP + worksheet</td>
+<td>Effort lebih rendah</td>
+</tr>
+<tr>
+<td>Akuntabilitas</td>
+<td>Tidak ada</td>
+<td>WA Group + ladder lanjut</td>
+<td>Likelihood lebih tinggi</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="52-vs-generic-ebook-bisnis-online">5.2 Vs generic ebook bisnis online</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Aspek</th>
+<th>Ebook generic</th>
+<th>CuanHijab</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Kedalaman pain supplier</td>
+<td>Umum</td>
+<td>Spesifik supplier hijab zonk</td>
+</tr>
+<tr>
+<td>HPP</td>
+<td>Teori umum</td>
+<td>Template otomatis siap pakai</td>
+</tr>
+<tr>
+<td>Conversion DM</td>
+<td>Tip umum</td>
+<td>Script DM dengan konteks hijab</td>
+</tr>
+<tr>
+<td>Kredibilitas</td>
+<td>Variatif</td>
+<td>Mentor praktisi 20+ tahun</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="53-vs-paid-course-umum-marketing">5.3 Vs paid course umum marketing</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Aspek</th>
+<th>Course umum</th>
+<th>CuanHijab</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Entry price</td>
+<td>Relatif lebih tinggi</td>
+<td>Rp49K (barrier rendah)</td>
+</tr>
+<tr>
+<td>Time-to-value</td>
+<td>Sering lebih panjang</td>
+<td>Quick implementation dengan toolkit</td>
+</tr>
+<tr>
+<td>Tangga nilai</td>
+<td>Kadang tidak jelas</td>
+<td>Sudah ada ladder jelas hingga retainer</td>
+</tr>
+</tbody>
+</table></div>
+<p>Competitive gap yang dikunci:</p>
+<ul>
+<li>Niche hijab + implementasi praktis + harga entry sangat rendah + ascension jelas.</li>
+</ul>
+<h2 id="6-ltv-maximization-4-lever-cuanhijab-plan">6. LTV Maximization (4 Lever) — CuanHijab Plan</h2>
+<h3 id="61-lever-frequency">6.1 Lever Frequency</h3>
+<ul>
+<li>Launch membership bulanan (clinic HPP, supplier review, conversion clinic).</li>
+<li>Target: &gt;= 18% buyer entry masuk membership dalam 45 hari.</li>
+</ul>
+<h3 id="62-lever-aov">6.2 Lever AOV</h3>
+<ul>
+<li>Tambah order bump di checkout.</li>
+<li>Tambah bundle script closing setelah pembelian entry.</li>
+</ul>
+<h3 id="63-lever-margin">6.3 Lever Margin</h3>
+<ul>
+<li>Pertahankan delivery digital terotomasi.</li>
+<li>Segmentasi support berdasarkan tier agar biaya support terkontrol.</li>
+</ul>
+<h3 id="64-lever-retention">6.4 Lever Retention</h3>
+<ul>
+<li>Challenge implementasi 14 hari.</li>
+<li>Live review hasil member berkala.</li>
+<li>Target churn membership &lt; 8% per bulan.</li>
+</ul>
+<h2 id="7-8-step-offer-creation-process-walkthrough-penuh">7. 8-Step Offer Creation Process — Walkthrough Penuh</h2>
+<ol>
+<li>Definisikan dream outcome terukur per segmen (reseller/agen/brand owner).</li>
+<li>Petakan semua bottleneck implementasi yang membuat buyer menunda.</li>
+<li>Rancang solusi spesifik per bottleneck (bukan solusi generik).</li>
+<li>Paketkan deliverables agar urutan konsumsi jelas (apa dikerjakan dulu).</li>
+<li>Benchmark kompetitor (YouTube, ebook generic, course umum).</li>
+<li>Tambahkan risk reversal dengan garansi 7 hari yang jelas.</li>
+<li>Susun bonus stack yang menurunkan effort dan mempercepat hasil.</li>
+<li>Terapkan scarcity + urgency yang real dan enforceable.</li>
+</ol>
+<h2 id="8-bonus-stack-existing-tambahan-yang-disarankan">8. Bonus Stack — Existing + Tambahan yang Disarankan</h2>
+<h3 id="81-existing-stack-dipertahankan">8.1 Existing stack (dipertahankan)</h3>
+<ul>
+<li>Rekaman Webinar (Rp197K).</li>
+<li>Ebook Premium (Rp97K).</li>
+<li>Template HPP Otomatis (Rp47K).</li>
+<li>WA Group Eksklusif (Rp97K).</li>
+</ul>
+<h3 id="82-bonus-tambahan-tetap-clark-specific-non-generic">8.2 Bonus tambahan (tetap CLARK-specific, non-generic)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Bonus tambahan</th>
+<th>Format</th>
+<th>Dampak</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Swipe file DM-to-Transfer Hijab</td>
+<td>PDF + template chat</td>
+<td>Turunkan effort closing</td>
+</tr>
+<tr>
+<td>Checklist Audit Supplier 15 Menit</td>
+<td>One-page worksheet</td>
+<td>Turunkan risiko supplier</td>
+</tr>
+<tr>
+<td>Kalender Konten Hijab 30 Hari</td>
+<td>Spreadsheet</td>
+<td>Kurangi kebingungan eksekusi</td>
+</tr>
+<tr>
+<td>Dashboard Stabilizer Omzet</td>
+<td>Sheet template</td>
+<td>Naikkan kontrol ritme revenue</td>
+</tr>
+<tr>
+<td>Video Quick Win 24 Jam</td>
+<td>Video short</td>
+<td>Turunkan time delay outcome</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rule bonus stack:</p>
+<ul>
+<li>Maksimum 5 bonus tambahan agar tidak overload.</li>
+<li>Semua bonus harus bisa dipakai &lt;=24 jam.</li>
+<li>Semua bonus harus terkait langsung ke pain hijab.</li>
+</ul>
+<h2 id="9-pricing-psychology-anchoring-rp49k-scarcity-500-kuota">9. Pricing Psychology — Anchoring Rp49K + Scarcity 500 Kuota</h2>
+<pre><code>
+Price paid : Rp49.000
+Perceived value: Rp438.000
+Value multiple : 8,94x
+</code></pre>
+<p>Framing psikologis yang dipakai secara etis:</p>
+<ul>
+<li>&quot;Harga entry ini lebih kecil dari 1 kali kesalahan HPP yang sering kejadian.&quot;</li>
+<li>&quot;Satu supplier zonk bisa menyebabkan rugi lebih besar dari biaya produk ini.&quot;</li>
+<li>&quot;Garansi 7 hari membuat downside risk sangat kecil.&quot;</li>
+</ul>
+<p>Guardrail etika:</p>
+<ul>
+<li>Tidak menggunakan fake countdown.</li>
+<li>Tidak mengarang hasil ekstrem tanpa bukti.</li>
+<li>Tidak menyembunyikan syarat refund.</li>
+</ul>
+<h2 id="10-message-pillars-untuk-konsistensi-offer">10. Message Pillars untuk Konsistensi Offer</h2>
+<ol>
+<li><strong>Anti-Zonk Supplier</strong>: lindungi modal dan reputasi penjual hijab.</li>
+<li><strong>Margin Clarity</strong>: naikkan laba bersih dengan HPP yang tepat.</li>
+<li><strong>DM-to-Transfer</strong>: ubah percakapan jadi transaksi.</li>
+<li><strong>Omzet Stabil</strong>: jalankan ritme penjualan yang bisa diprediksi.</li>
+</ol>
+<h2 id="11-offer-copy-blocks-siap-pakai">11. Offer Copy Blocks (Siap Pakai)</h2>
+<h3 id="111-one-liner">11.1 One-liner</h3>
+<blockquote>
+<p>Blueprint praktis untuk pelaku hijab yang ingin keluar dari supplier zonk, margin tipis, dan transfer seret — dengan langkah yang langsung bisa diterapkan.</p>
+</blockquote>
+<h3 id="112-stack-line">11.2 Stack line</h3>
+<blockquote>
+<p>Dapatkan paket implementasi senilai Rp438K dengan harga promo Rp49K + garansi 7 hari uang kembali.</p>
+</blockquote>
+<h3 id="113-cta-line">11.3 CTA line</h3>
+<blockquote>
+<p>Amankan kuota promo Anda sekarang sebelum harga kembali ke Rp99K.</p>
+</blockquote>
+<h2 id="12-kpi-validasi-offer-30-hari">12. KPI Validasi Offer (30 Hari)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Alarm</th>
+<th>Tindakan jika alarm</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Checkout CVR</td>
+<td>&gt;= 5%</td>
+<td>&lt; 3.5%</td>
+<td>Perbaiki message-match + friction checkout</td>
+</tr>
+<tr>
+<td>Refund rate</td>
+<td>&lt;= 8%</td>
+<td>&gt; 10%</td>
+<td>Re-align ekspektasi + onboarding clarity</td>
+</tr>
+<tr>
+<td>Take rate konsultasi</td>
+<td>&gt;= 12%</td>
+<td>&lt; 8%</td>
+<td>Perkuat bridge offer pasca pembelian</td>
+</tr>
+<tr>
+<td>Take rate bedah</td>
+<td>&gt;= 5%</td>
+<td>&lt; 3%</td>
+<td>Perkuat diagnosis pain di konsultasi</td>
+</tr>
+<tr>
+<td>Bukti hasil member</td>
+<td>&gt;= 30 bukti</td>
+<td>&lt; 10</td>
+<td>Aktifkan challenge implementasi</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="13-faq-offer-anti-friction-khusus-cuanhijab">13. FAQ Offer (Anti-friction khusus CuanHijab)</h2>
+<p><strong>Q1: Kenapa harganya hanya Rp49K?</strong> A: Karena ini entry offer untuk mempercepat adopsi dan membantu pelaku hijab merasakan quick win sebelum naik ke pendampingan level berikutnya.</p>
+<p><strong>Q2: Apakah cocok untuk pemula total?</strong> A: Paling optimal untuk yang sudah jualan minimal 3 bulan, karena materi fokus optimasi praktik, bukan teori dasar dari nol.</p>
+<p><strong>Q3: Bagaimana jika belum dapat hasil?</strong> A: Tersedia garansi 7 hari uang kembali sesuai ketentuan yang transparan.</p>
+<h2 id="14-decision-summary">14. Decision Summary</h2>
+<ul>
+<li>Value offer sudah kuat; fokus upgrade utama ada di variabel effort dan time delay.</li>
+<li>Ladder existing sudah benar; perlu order bump + membership untuk memperpanjang LTV.</li>
+<li>Scarcity 500 kuota harus dijaga real untuk mempertahankan trust.</li>
+<li>Messaging wajib tetap niche hijab, tidak boleh melebar jadi bisnis umum.</li>
+</ul>
+<h2 id="15-offer-execution-tracker-checklist-operasional">15. Offer Execution Tracker (Checklist Operasional)</h2>
+<p>Gunakan checklist ini setiap minggu untuk memastikan semua elemen offer berjalan optimal.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Area</th>
+<th>Aksi</th>
+<th>Status</th>
+<th>PIC</th>
+<th>Deadline</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Value Equation</td>
+<td>Turunkan effort implementasi — sediakan template HPP siap isi, bukan hanya penjelasan</td>
+<td>☐</td>
+<td>-</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Social Proof</td>
+<td>Tambah proof berbasis angka: margin naik dari X% ke Y% dari buyer nyata</td>
+<td>☐</td>
+<td>-</td>
+<td>W2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Quick Win</td>
+<td>Pastikan ada 1 hasil yang bisa dirasakan dalam 24 jam pertama setelah beli</td>
+<td>☐</td>
+<td>-</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ascension Bridge</td>
+<td>Perkuat jembatan dari entry Rp49K ke konsultasi Rp197K di thank-you page</td>
+<td>☐</td>
+<td>-</td>
+<td>W2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Objection FAQ</td>
+<td>Tambah FAQ khusus: Kenapa tidak cukup cari di YouTube? dengan jawaban spesifik</td>
+<td>☐</td>
+<td>-</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Scarcity Consistency</td>
+<td>Pastikan counter 500 kuota tampil konsisten di LP, WA broadcast, dan iklan</td>
+<td>☐</td>
+<td>-</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CTA Alignment</td>
+<td>Samakan CTA di semua touchpoint: iklan ke LP ke WA ke checkout (satu pesan, satu arah)</td>
+<td>☐</td>
+<td>-</td>
+<td>W2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Value Stack Display</td>
+<td>Tampilkan Rp438K vs Rp49K secara visual di LP — bukan hanya teks</td>
+<td>☐</td>
+<td>-</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Onboarding</td>
+<td>Rapikan welcome message WA Group agar buyer langsung tahu langkah pertama</td>
+<td>☐</td>
+<td>-</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Claim Specificity</td>
+<td>Perkuat klaim anti-zonk supplier dengan contoh kasus hijab nyata (bukan generic)</td>
+<td>☐</td>
+<td>-</td>
+<td>W2</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Review cadence:</strong> Setiap Senin pagi, 15 menit. Tandai selesai, update deadline yang meleset.</p>
+<h2 id="16-roadmap-offer-optimization-120-hari">16. Roadmap Offer Optimization 120 Hari</h2>
+<h3 id="fase-1-validasi-hari-130">Fase 1 — Validasi (Hari 1–30)</h3>
+<p><strong>Fokus:</strong> Offer-message fit. Apakah pesan yang disampaikan cocok dengan pain market?</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W1 (H1-7)</td>
+<td>Launch ABO 5 adset, pasang pixel, aktifkan WA Group</td>
+<td>CTR &gt; 2.5%, 0 refund</td>
+</tr>
+<tr>
+<td>W2 (H8-14)</td>
+<td>Evaluasi adset pertama, kill CTR &lt; 1.5%, scale winner</td>
+<td>CPA &lt; Rp25K di 1 adset</td>
+</tr>
+<tr>
+<td>W3 (H15-21)</td>
+<td>A/B test headline LP (pain vs authority angle)</td>
+<td>LP CVR &gt; 3%</td>
+</tr>
+<tr>
+<td>W4 (H22-30)</td>
+<td>Audit WA Group engagement, kirim 10-day sequence penuh</td>
+<td>Open rate WA &gt; 60%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Keputusan di akhir Fase 1:</strong> Apakah ada 1 winning angle? Jika tidak, pivot message sebelum scale.</p>
+<hr/>
+<h3 id="fase-2-optimasi-hari-3160">Fase 2 — Optimasi (Hari 31–60)</h3>
+<p><strong>Fokus:</strong> Checkout friction dan objection handling. Konversi sudah ada, sekarang naikkan rate-nya.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W5 (H31-37)</td>
+<td>Audit checkout flow — cek drop-off di payment page</td>
+<td>Checkout completion &gt; 70%</td>
+</tr>
+<tr>
+<td>W6 (H38-44)</td>
+<td>Tambah order bump Rp147K di checkout, test copy bump</td>
+<td>Bump take-rate &gt; 20%</td>
+</tr>
+<tr>
+<td>W7 (H45-51)</td>
+<td>Aktifkan OTO Rp197K (konsultasi 30 menit) di thank-you page</td>
+<td>OTO take-rate &gt; 10%</td>
+</tr>
+<tr>
+<td>W8 (H52-60)</td>
+<td>Kumpulkan 10 testimoni dengan angka spesifik (margin, closing rate)</td>
+<td>10 proof terverifikasi</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Keputusan di akhir Fase 2:</strong> Apakah AOV naik minimal 30%? Jika tidak, perkuat copy bump/OTO.</p>
+<hr/>
+<h3 id="fase-3-scale-hari-6190">Fase 3 — Scale (Hari 61–90)</h3>
+<p><strong>Fokus:</strong> Scale winning campaign, perkuat ascension ke Bedah Bisnis Rp497K.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W9 (H61-67)</td>
+<td>Pindah ke CBO/ASC+, naikkan budget 20% per 2 hari jika ROAS &gt; 2x</td>
+<td>ROAS &gt; 2x stabil</td>
+</tr>
+<tr>
+<td>W10 (H68-74)</td>
+<td>Launch retargeting campaign (stage progression)</td>
+<td>Retarget CPA &lt; Rp15K</td>
+</tr>
+<tr>
+<td>W11 (H75-81)</td>
+<td>Soft-sell Bedah Bisnis Rp497K ke buyer aktif WA Group</td>
+<td>5 booking Bedah Bisnis</td>
+</tr>
+<tr>
+<td>W12 (H82-90)</td>
+<td>Review LTV aktual vs proyeksi, update pricing ladder jika perlu</td>
+<td>LTV &gt; Rp150K/customer</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Keputusan di akhir Fase 3:</strong> Apakah ada 10+ buyer Bedah Bisnis? Jika ya, siapkan Retainer Pabrik pitch.</p>
+<hr/>
+<h3 id="fase-4-stabilisasi-dan-premium-hari-91120">Fase 4 — Stabilisasi dan Premium (Hari 91–120)</h3>
+<p><strong>Fokus:</strong> Sistem berjalan tanpa intervensi harian. Bangun pipeline Retainer Pendampingan Pabrik.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>W13 (H91-97)</td>
+<td>Dokumentasi SOP campaign, WA Group, dan onboarding</td>
+<td>SOP lengkap, bisa didelegasi</td>
+</tr>
+<tr>
+<td>W14 (H98-104)</td>
+<td>Buka slot Retainer Pendampingan Pabrik (high-ticket)</td>
+<td>1-2 prospect qualified</td>
+</tr>
+<tr>
+<td>W15 (H105-111)</td>
+<td>Refresh creative iklan (rotasi visual baru, hindari ad fatigue)</td>
+<td>CTR tidak turun lebih dari 20%</td>
+</tr>
+<tr>
+<td>W16 (H112-120)</td>
+<td>Review full 120 hari: LTV, CAC, ROAS, ascension rate</td>
+<td>Laporan 120-hari final</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Target akhir 120 hari:</strong> 500 buyer entry, 100+ buyer bump/OTO, 10+ Bedah Bisnis, 1-2 Retainer.</p>
+<h2 id="17-lampiran-rumus-ltv">17. Lampiran Rumus LTV</h2>
+<pre><code>
+Expected Upsell Revenue = SUM(price_i x take_rate_i)
+LTV 90 hari = Entry Revenue + Expected Upsell Revenue
+Gross Profit LTV = LTV x Gross Margin Ratio
+Batas CAC sehat naik jika Gross Profit LTV naik
+</code></pre>
+<h2 id="18-penutup">18. Penutup</h2>
+<p>Blueprint ini memastikan CuanHijab tidak hanya “murah”, tetapi benar-benar terasa bernilai tinggi dan mudah dijalankan. Saat value equation naik secara seimbang, conversion membaik tanpa perang diskon, dan tangga penawaran menghasilkan LTV yang semakin kuat.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

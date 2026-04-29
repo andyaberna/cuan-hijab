@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SOP Harian Meta Ads — Cuan Hijab Next Level</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"\2190  geser \2192 "; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>SOP Harian Meta Ads — Cuan Hijab Next Level</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="budget-rp150000hari-5-adset-rp30000" href="#budget-rp150000hari-5-adset-rp30000">Budget: Rp150.000/hari | 5 Adset &#215; Rp30.000</a></li>
+<li><a data-target="quick-reference" href="#quick-reference">Quick Reference</a></li>
+<li><a data-target="struktur-campaign-di-ads-manager" href="#struktur-campaign-di-ads-manager">Struktur Campaign di Ads Manager</a></li>
+<li><a data-target="naming-convention" href="#naming-convention">Naming Convention</a></li>
+<li><a data-target="utm-parameters" href="#utm-parameters">UTM Parameters</a></li>
+<li><a data-target="pixel-tracking-setup" href="#pixel-tracking-setup">Pixel &amp; Tracking Setup</a></li>
+<li><a data-target="sop-harian-step-by-step" href="#sop-harian-step-by-step">SOP HARIAN — Step by Step</a></li>
+<li><a data-target="diagnostic-matrix-kalau-hasilnya-jelek" href="#diagnostic-matrix-kalau-hasilnya-jelek">Diagnostic Matrix — Kalau Hasilnya Jelek</a></li>
+<li><a data-target="phase-2-scale-mulai-hari-ke-8" href="#phase-2-scale-mulai-hari-ke-8">Phase 2: SCALE (Mulai Hari ke-8)</a></li>
+<li><a data-target="phase-3-retarget-mulai-hari-ke-15" href="#phase-3-retarget-mulai-hari-ke-15">Phase 3: RETARGET (Mulai Hari ke-15)</a></li>
+<li><a data-target="sop-monitoring-harian-setelah-launch" href="#sop-monitoring-harian-setelah-launch">SOP Monitoring Harian (Setelah Launch)</a></li>
+<li><a data-target="creative-rotation-anti-ad-fatigue" href="#creative-rotation-anti-ad-fatigue">Creative Rotation — Anti Ad Fatigue</a></li>
+<li><a data-target="budget-breakdown-30-hari" href="#budget-breakdown-30-hari">Budget Breakdown — 30 Hari</a></li>
+<li><a data-target="contingency-plan" href="#contingency-plan">Contingency Plan</a></li>
+<li><a data-target="checklist-sebelum-publish" href="#checklist-sebelum-publish">Checklist Sebelum Publish</a></li>
+<li><a data-target="file-reference" href="#file-reference">File Reference</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>SOP Harian Meta Ads — Cuan Hijab Next Level</h1>
+<h2 id="budget-rp150000hari-5-adset-rp30000">Budget: Rp150.000/hari | 5 Adset &#215; Rp30.000</h2>
+<hr/>
+<h2 id="quick-reference">Quick Reference</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Item</th>
+<th>Detail</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Produk</strong></td>
+<td>Cuan Hijab Next Level — Blueprint Praktisi 20 Tahun</td>
+</tr>
+<tr>
+<td><strong>Harga</strong></td>
+<td>Rp49.000 (500 pembeli pertama) / Rp99.000 normal</td>
+</tr>
+<tr>
+<td><strong>Margin/unit</strong></td>
+<td>~Rp43.000 (88% margin digital)</td>
+</tr>
+<tr>
+<td><strong>CPA Target</strong></td>
+<td>&lt; Rp25.000 (break-even Rp43K)</td>
+</tr>
+<tr>
+<td><strong>ROAS Target</strong></td>
+<td>&gt; 2x</td>
+</tr>
+<tr>
+<td><strong>Budget Harian</strong></td>
+<td>Rp150.000 (5 adset &#215; Rp30K)</td>
+</tr>
+<tr>
+<td><strong>Checkout</strong></td>
+<td>https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-co</td>
+</tr>
+<tr>
+<td><strong>LP</strong></td>
+<td>https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-v2</td>
+</tr>
+<tr>
+<td><strong>Garansi</strong></td>
+<td>7 hari uang kembali</td>
+</tr>
+<tr>
+<td><strong>Mentor</strong></td>
+<td>Iman Awaludin, ST — 20+ tahun industri hijab</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="struktur-campaign-di-ads-manager">Struktur Campaign di Ads Manager</h2>
+<h3 id="campaign-level">Campaign Level</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Setting</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Campaign Name</strong></td>
+<td><code>[SANDBOX] CuanHijab ABO Test</code></td>
+</tr>
+<tr>
+<td><strong>Objective</strong></td>
+<td>Sales → Purchase</td>
+</tr>
+<tr>
+<td><strong>Budget Type</strong></td>
+<td>ABO (Adset Budget Optimization)</td>
+</tr>
+<tr>
+<td><strong>Schedule</strong></td>
+<td>Midnight launch (00:00 WIB) — biar algoritma dapet data 24 jam penuh di hari pertama</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="adset-level-setting-global">Adset Level — Setting Global</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Setting</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Targeting</strong></td>
+<td>Broad / Advantage+ Audience</td>
+</tr>
+<tr>
+<td><strong>Usia</strong></td>
+<td>25–55 tahun</td>
+</tr>
+<tr>
+<td><strong>Gender</strong></td>
+<td>Perempuan</td>
+</tr>
+<tr>
+<td><strong>Lokasi</strong></td>
+<td>Indonesia</td>
+</tr>
+<tr>
+<td><strong>Placements</strong></td>
+<td>Advantage+ Placements</td>
+</tr>
+<tr>
+<td><strong>Budget per Adset</strong></td>
+<td>Rp30.000/hari</td>
+</tr>
+<tr>
+<td><strong>Optimization</strong></td>
+<td>Purchase / Conversions</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="5-adset-mapping-angle">5 Adset — Mapping Angle</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Adset</th>
+<th>Angle</th>
+<th>Stage</th>
+<th>Hook Utama</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Adset 1</strong></td>
+<td>Supplier Zonk</td>
+<td>Oblivious</td>
+<td>&quot;Udah 3x ganti supplier hijab. Barangnya tetap beda sama foto.&quot;</td>
+</tr>
+<tr>
+<td><strong>Adset 2</strong></td>
+<td>Margin Tipis</td>
+<td>Frustrated</td>
+<td>&quot;Kok orderan banyak tapi rekeningnya gitu-gitu aja?&quot;</td>
+</tr>
+<tr>
+<td><strong>Adset 3</strong></td>
+<td>Authority</td>
+<td>Hopeful</td>
+<td>&quot;20 tahun di industri hijab. Eks pimpinan Nibras &amp; Rabbani.&quot;</td>
+</tr>
+<tr>
+<td><strong>Adset 4</strong></td>
+<td>DM Ghosting</td>
+<td>Frustrated</td>
+<td>&quot;&#39;Berapaan kak?&#39; → dibaca, gak dibales. Familiar?&quot;</td>
+</tr>
+<tr>
+<td><strong>Adset 5</strong></td>
+<td>500 Kuota FOMO</td>
+<td>Fan/Warm</td>
+<td>&quot;Rp49.000 → Rp99.000. Bukan diskon palsu.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="creative-per-adset-dco-322">Creative per Adset — DCO 3:2:2</h3>
+<p>Setiap adset pakai Dynamic Creative Optimization:</p>
+<ul>
+<li><strong>3 Visual</strong> (1:1 ratio)</li>
+<li>Visual A: Pain focus (sesuai angle adset)</li>
+<li>Visual B: Authority (foto mentor + credential)</li>
+<li>Visual C: Lifestyle (reseller hijab sukses)</li>
+<li><strong>2 Primary Text</strong></li>
+<li>Primary sesuai angle adset (dari Ad Copy brief)</li>
+<li>Primary variasi (angle berbeda sebagai kontrol)</li>
+<li><strong>2 Headline</strong></li>
+<li>Headline sesuai angle</li>
+<li>Headline generic value prop</li>
+</ul>
+<h3 id="visual-files-siap-upload">Visual Files — Siap Upload</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Adset</th>
+<th>Visual File</th>
+<th>Angle</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>cuanhijab_ad1_supplier_1776904045458.png</code></td>
+<td>Supplier Zonk</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cuanhijab_ad2_margin_1776904066742.png</code></td>
+<td>Margin Tipis</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>cuanhijab_ad3_authority_1776904079924.png</code></td>
+<td>Authority</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>cuanhijab_ad4_ghosting_1776904095218.png</code></td>
+<td>DM Ghosting</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>cuanhijab_ad5_fomo_v2.png</code></td>
+<td>500 Kuota FOMO</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cadangan: <code>cuanhijab_ad5_fomo_1776904109780.png</code> (versi lama), <code>cuanhijab_ad6_scaleup</code>, <code>cuanhijab_ad7_brand</code>, <code>cuanhijab_ad8_omzet</code> — bisa dipakai untuk rotasi creative minggu ke-2.</p>
+<hr/>
+<h2 id="naming-convention">Naming Convention</h2>
+<p>Pakai format ini biar gampang filter dan analisa:</p>
+<pre><code>
+Campaign:  [SANDBOX] CuanHijab ABO Test
+Adset:     CH_AS1_SupplierZonk_Oblivious_30K
+           CH_AS2_MarginTipis_Frustrated_30K
+           CH_AS3_Authority_Hopeful_30K
+           CH_AS4_DMGhosting_Frustrated_30K
+           CH_AS5_FOMO500_FanWarm_30K
+Ad:        CH_AS1_VisA_PrimA_HdlA
+           CH_AS1_VisB_PrimA_HdlB
+           (dst — DCO otomatis generate kombinasi)
+</code></pre>
+<hr/>
+<h2 id="utm-parameters">UTM Parameters</h2>
+<p>Tempel di setiap link CTA:</p>
+<pre><code>
+?utm_source=meta&amp;utm_medium=paid&amp;utm_campaign=cuanhijab_sandbox&amp;utm_content={adset_name}
+</code></pre>
+<p>Contoh lengkap:</p>
+<pre><code>
+https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-co?utm_source=meta&amp;utm_medium=paid&amp;utm_campaign=cuanhijab_sandbox&amp;utm_content=CH_AS1_SupplierZonk
+</code></pre>
+<hr/>
+<h2 id="pixel-tracking-setup">Pixel &amp; Tracking Setup</h2>
+<p>Sebelum launch, pastikan ini semua hijau:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Checklist</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Meta Pixel terpasang di LP (ScaleV)</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Purchase event firing di Event Manager</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>CAPI aktif (cek ScaleV support)</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Test event: klik &quot;Test Events&quot; di Event Manager, buka LP, cek event muncul</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>LP loading &lt; 3 detik (test di mobile)</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>UTM parameters terpasang di semua link</td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="sop-harian-step-by-step">SOP HARIAN — Step by Step</h2>
+<h3 id="hari-1-launch">Hari 1: LAUNCH</h3>
+<p><strong>Waktu: 23:30 WIB malam sebelumnya</strong></p>
+<ol>
+<li>Buka Ads Manager → Create Campaign</li>
+<li>Pilih objective: Sales → Purchase</li>
+<li>Set campaign name: <code>[SANDBOX] CuanHijab ABO Test</code></li>
+<li>Budget type: ABO</li>
+<li>Buat 5 adset sesuai tabel di atas</li>
+<li>Setiap adset:</li>
+</ol>
+<ul>
+<li>Budget: Rp30.000/hari</li>
+<li>Targeting: Broad, 25-55, Perempuan, Indonesia</li>
+<li>Placements: Advantage+</li>
+<li>Upload 3 visual + 2 primary text + 2 headline (DCO ON)</li>
+<li>Masukkan link checkout + UTM</li>
+</ul>
+<ol>
+<li>Schedule: Start besok 00:00 WIB</li>
+<li>Review → Publish</li>
+<li><strong>Cek Event Manager</strong> — pastikan pixel firing</li>
+</ol>
+<p><strong>Setelah publish: JANGAN SENTUH.</strong></p>
+<h3 id="hari-13-learning-phase-jangan-sentuh">Hari 1–3: LEARNING PHASE (Jangan Sentuh!)</h3>
+<p>Ini aturan keras. Selama 72 jam pertama:</p>
+<ul>
+<li>Jangan pause adset</li>
+<li>Jangan edit teks/visual</li>
+<li>Jangan ubah budget</li>
+<li>Jangan tambah adset</li>
+<li>Jangan ganti targeting</li>
+</ul>
+<p>Kenapa? Learning phase Meta sangat sensitif. Perubahan sekecil apapun = reset total. Data jadi sampah.</p>
+<p><strong>Yang boleh dilakukan:</strong></p>
+<ul>
+<li>Lihat dashboard (read-only)</li>
+<li>Screenshot metrik untuk catatan</li>
+<li>Siapkan angle cadangan untuk minggu ke-2</li>
+</ul>
+<h3 id="hari-4-evaluasi-pertama">Hari 4: EVALUASI PERTAMA</h3>
+<p><strong>Waktu: Pagi, 08:00-09:00 WIB</strong></p>
+<p>Buka Ads Manager → pilih kolom:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Kolom</th>
+<th>Cara Lihat</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CTR (Link Click-Through Rate)</td>
+<td>Columns → Performance → CTR</td>
+</tr>
+<tr>
+<td>CPM (Cost per 1000 Impressions)</td>
+<td>Columns → Performance → CPM</td>
+</tr>
+<tr>
+<td>CPA (Cost per Purchase)</td>
+<td>Columns → Performance → Cost per Result</td>
+</tr>
+<tr>
+<td>Link Clicks</td>
+<td>Columns → Performance → Link Clicks</td>
+</tr>
+<tr>
+<td>Purchases</td>
+<td>Columns → Performance → Results</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Tabel Keputusan — Per Adset:</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Metrik</th>
+<th>Benchmark</th>
+<th>Keputusan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CTR &gt; 2.5%</td>
+<td>Hook menarik</td>
+<td>KEEP — lanjut monitor</td>
+</tr>
+<tr>
+<td>CTR 1.5–2.5%</td>
+<td>Biasa aja</td>
+<td>HOLD — tunggu sampai hari ke-7</td>
+</tr>
+<tr>
+<td>CTR &lt; 1.5%</td>
+<td>Hook gagal</td>
+<td>KILL — matikan adset ini</td>
+</tr>
+<tr>
+<td>CPM &lt; Rp20.000</td>
+<td>Audience sehat</td>
+<td>Bagus, lanjut</td>
+</tr>
+<tr>
+<td>CPM &gt; Rp40.000</td>
+<td>Audience saturated</td>
+<td>Cek targeting, mungkin terlalu sempit</td>
+</tr>
+<tr>
+<td>CPA &lt; Rp25.000</td>
+<td>WINNER</td>
+<td>Tandai — siap scale minggu depan</td>
+</tr>
+<tr>
+<td>CPA Rp25–40K</td>
+<td>Borderline</td>
+<td>Lanjut monitor, jangan scale dulu</td>
+</tr>
+<tr>
+<td>CPA &gt; Rp40.000</td>
+<td>Margin habis</td>
+<td>KILL — margin cuma Rp43K</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Catat hasilnya di tabel ini:</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Adset</th>
+<th>Spend</th>
+<th>CTR</th>
+<th>CPM</th>
+<th>CPA</th>
+<th>Purchase</th>
+<th>Keputusan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>AS1 Supplier Zonk</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AS2 Margin Tipis</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AS3 Authority</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AS4 DM Ghosting</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AS5 FOMO 500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hari-56-monitor">Hari 5–6: MONITOR</h3>
+<p><strong>Waktu: Pagi 08:00 + Sore 17:00 (2x sehari)</strong></p>
+<p>Cek metrik yang sama. Update tabel.</p>
+<p>Kalau ada adset yang di-KILL di hari 4:</p>
+<ul>
+<li>Matikan adset tersebut</li>
+<li>Budget-nya JANGAN dipindah ke adset lain (biar data bersih)</li>
+<li>Total spend turun — itu normal</li>
+</ul>
+<p>Kalau semua adset masih jalan:</p>
+<ul>
+<li>Perhatikan tren: CTR naik atau turun?</li>
+<li>CPA stabil atau melonjak?</li>
+<li>Ada purchase baru?</li>
+</ul>
+<h3 id="hari-7-final-decision">Hari 7: FINAL DECISION</h3>
+<p><strong>Waktu: Pagi 08:00 WIB</strong></p>
+<p>Ini hari penentuan. Buka data 7 hari penuh.</p>
+<p><strong>Skenario A: Ada 1-2 Winner (CPA &lt; Rp25K)</strong> → Tandai winner → Catat Post ID iklan winner (klik ad → lihat Post ID di URL) → Besok masuk Phase 2: Scale</p>
+<p><strong>Skenario B: Ada yang CTR bagus tapi belum purchase</strong> → Cek LP: apakah ada masalah loading/checkout? → Lanjut 3 hari lagi (sampai hari ke-10) → Kalau tetap gak convert → kill, buat angle baru</p>
+<p><strong>Skenario C: Semua jelek (CTR &lt; 1.5%, CPA &gt; Rp40K)</strong> → Matikan semua → Analisa: angle mana yang paling mendekati? → Buat 3 angle baru dari Ad 6/7/8 (Scale Up, Brand Sendiri, Omzet Konsisten) → Ulangi sandbox dengan budget yang sama</p>
+<hr/>
+<h2 id="diagnostic-matrix-kalau-hasilnya-jelek">Diagnostic Matrix — Kalau Hasilnya Jelek</h2>
+<p>Jangan langsung bilang &quot;ads-nya jelek&quot;. Baca datanya dulu:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Gejala</th>
+<th>Kemungkinan Masalah</th>
+<th>Yang Harus Dilakukan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CTR rendah di Adset 1 (Oblivious)</td>
+<td>Hook supplier zonk kurang tajam, visual gak bikin berhenti</td>
+<td>Rewrite hook — perjelas gejala supplier, buat 3 hook baru</td>
+</tr>
+<tr>
+<td>CTR rendah di Adset 2/4 (Frustrated)</td>
+<td>Pain point kurang spesifik atau udah terlalu sering dipakai</td>
+<td>Ubah angle: coba &quot;false solution&quot; atau &quot;salah diagnosis&quot;</td>
+</tr>
+<tr>
+<td>CTR rendah di Adset 3 (Hopeful)</td>
+<td>Framework/credential belum terasa relevan</td>
+<td>Ganti hook ke &quot;simpler process&quot; atau &quot;anti nebak&quot;</td>
+</tr>
+<tr>
+<td>CTR bagus tapi LP gak convert</td>
+<td>Ad dan LP gak nyambung, LP lambat, atau clickbait</td>
+<td>Samakan headline LP dengan hook ad, cek speed</td>
+</tr>
+<tr>
+<td>CTR + LP bagus tapi checkout jelek</td>
+<td>Trust kurang, offer lemah, CTA kabur, friction checkout</td>
+<td>Audit LP: naikkan trust, sederhanakan CTA</td>
+</tr>
+<tr>
+<td>Adset 5 (Fan) gak gerak</td>
+<td>Audience belum cukup warm, offer kurang kuat</td>
+<td>Tunggu data retarget — jangan scale Fan ke cold</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="phase-2-scale-mulai-hari-ke-8">Phase 2: SCALE (Mulai Hari ke-8)</h2>
+<p>Hanya kalau ada winner dari Phase 1.</p>
+<h3 id="setup-campaign-baru">Setup Campaign Baru</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Setting</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Campaign Name</strong></td>
+<td><code>[SCALE] CuanHijab CBO</code></td>
+</tr>
+<tr>
+<td><strong>Objective</strong></td>
+<td>Sales → Purchase</td>
+</tr>
+<tr>
+<td><strong>Budget Type</strong></td>
+<td>CBO (Campaign Budget Optimization)</td>
+</tr>
+<tr>
+<td><strong>Daily Budget</strong></td>
+<td>Rp150.000/hari (sama dengan testing)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="3-adset-dari-winner">3 Adset dari Winner</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Adset</th>
+<th>Isi</th>
+<th>Perbedaan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Scale 1</td>
+<td>Winning angle (original)</td>
+<td>Copy Post ID dari Sandbox — social proof utuh</td>
+</tr>
+<tr>
+<td>Scale 2</td>
+<td>Winning angle (variasi umur)</td>
+<td>Ubah range: misal 28-45</td>
+</tr>
+<tr>
+<td>Scale 3</td>
+<td>Winning angle (broader)</td>
+<td>Lookalike 1% dari buyer</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cara-copy-post-id">Cara Copy Post ID</h3>
+<ol>
+<li>Buka campaign Sandbox</li>
+<li>Klik ad yang menang</li>
+<li>Di preview, klik &quot;Facebook Post with Comments&quot;</li>
+<li>Copy angka di URL setelah <code>/posts/</code></li>
+<li>Di campaign Scale, pilih &quot;Use Existing Post&quot; → paste Post ID</li>
+</ol>
+<p>Ini penting — likes, comments, shares dari Sandbox ikut terbawa. Social proof = conversion booster.</p>
+<h3 id="budget-scaling-rules">Budget Scaling Rules</h3>
+<pre><code>
+Minggu 1:  Rp150.000/hari (baseline)
+Minggu 2:  Rp180.000/hari (+20%) — HANYA kalau ROAS &gt; 2x
+Minggu 3:  Rp216.000/hari (+20%)
+Minggu 4:  Rp260.000/hari (+20%)
+</code></pre>
+<p>Aturan naik budget:</p>
+<ul>
+<li>Naikkan MAKSIMAL 20% per 2 hari</li>
+<li>Cek ROAS sebelum naikkan — harus &gt; 2x</li>
+<li>Kalau ROAS turun di bawah 1.5x → turunkan budget 30%, tunggu 3 hari</li>
+<li>Jangan naikkan budget lebih dari 1x dalam sehari</li>
+</ul>
+<hr/>
+<h2 id="phase-3-retarget-mulai-hari-ke-15">Phase 3: RETARGET (Mulai Hari ke-15)</h2>
+<h3 id="audience-retarget">Audience Retarget</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Audience</th>
+<th>Source</th>
+<th>Window</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Website Visitors</td>
+<td>Pixel — LP Cuan Hijab</td>
+<td>7 hari</td>
+</tr>
+<tr>
+<td>Video Viewers 75%+</td>
+<td>Video ad viewers</td>
+<td>14 hari</td>
+</tr>
+<tr>
+<td>Engaged Users</td>
+<td>IG/FB page interaction</td>
+<td>30 hari</td>
+</tr>
+<tr>
+<td>Lookalike 1%</td>
+<td>Dari buyer data</td>
+<td>Ongoing</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="retarget-dorong-ke-stage-berikutnya">Retarget = Dorong ke Stage Berikutnya</h3>
+<p>Jangan ulang pesan yang sama. Dorong mereka maju:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Audience Asal</th>
+<th>Retarget Dengan</th>
+<th>Copy</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Klik Adset 1 (Oblivious)</td>
+<td>Frustrated angle</td>
+<td>&quot;Supplier zonk itu bukan soal hoki. Ada checklistnya.&quot;</td>
+</tr>
+<tr>
+<td>Klik Adset 2/4 (Frustrated)</td>
+<td>Hopeful angle</td>
+<td>&quot;20 tahun pengalaman Nibras &amp; Rabbani. Dikemas jadi blueprint Rp49rb.&quot;</td>
+</tr>
+<tr>
+<td>Klik Adset 3 (Hopeful)</td>
+<td>Shopper angle</td>
+<td>&quot;Ebook + rekaman webinar + template HPP + WA Group. Semua akses selamanya.&quot;</td>
+</tr>
+<tr>
+<td>LP Visitors belum beli</td>
+<td>Fan angle</td>
+<td>&quot;Kuota Rp49rb tinggal sedikit. Garansi 7 hari.&quot;</td>
+</tr>
+<tr>
+<td>ATC tapi belum checkout</td>
+<td>Close angle</td>
+<td>&quot;Gak cocok? Uang balik 100%. Zero risk.&quot;</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="sop-monitoring-harian-setelah-launch">SOP Monitoring Harian (Setelah Launch)</h2>
+<p><strong>Waktu: Setiap hari, 08:00 WIB (5-10 menit)</strong></p>
+<h3 id="checklist-harian">Checklist Harian</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>No</th>
+<th>Cek</th>
+<th>Aksi Kalau Bermasalah</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Buka Ads Manager → lihat spend hari ini</td>
+<td>Kalau spend = 0 padahal aktif → cek ad rejection</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cek CTR per adset</td>
+<td>&lt; 1.5% selama 3 hari berturut → kill</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cek CPA per adset</td>
+<td>&gt; Rp40K selama 3 hari → kill</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cek frequency</td>
+<td>&gt; 3.0 → audience mulai jenuh, siapkan creative baru</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cek ad rejection/policy issue</td>
+<td>Kalau ada → fix copy, resubmit</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cek LP (buka di HP)</td>
+<td>Loading &gt; 3 detik → hubungi ScaleV</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Cek Event Manager → pixel firing?</td>
+<td>Kalau mati → PAUSE campaign, fix dulu</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="weekly-review-setiap-senin">Weekly Review (Setiap Senin)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Metrik</th>
+<th>Minggu Ini</th>
+<th>Target</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Total Spend</td>
+<td></td>
+<td>Rp1.050.000 (7 &#215; Rp150K)</td>
+<td></td>
+</tr>
+<tr>
+<td>Total Purchase</td>
+<td></td>
+<td>Min 42 (CPA Rp25K)</td>
+<td></td>
+</tr>
+<tr>
+<td>Avg CPA</td>
+<td></td>
+<td>&lt; Rp25.000</td>
+<td></td>
+</tr>
+<tr>
+<td>ROAS</td>
+<td></td>
+<td>&gt; 2x</td>
+<td></td>
+</tr>
+<tr>
+<td>Best Adset</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Worst Adset</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Frequency (avg)</td>
+<td></td>
+<td>&lt; 3.0</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="creative-rotation-anti-ad-fatigue">Creative Rotation — Anti Ad Fatigue</h2>
+<p>Frequency &gt; 3.0 artinya orang udah lihat iklan kamu terlalu sering. Saatnya rotasi.</p>
+<h3 id="minggu-1-2-pakai-ad-1-5-sesuai-adset">Minggu 1-2: Pakai Ad 1-5 (sesuai adset)</h3>
+<h3 id="minggu-3-4-rotasi-ke-ad-6-8">Minggu 3-4: Rotasi ke Ad 6-8</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Visual Cadangan</th>
+<th>File</th>
+<th>Angle</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Scale Up Nasional</td>
+<td><code>cuanhijab_ad6_scaleup_1777200988679.png</code></td>
+<td>Hopeful — aspirasi distribusi</td>
+</tr>
+<tr>
+<td>Brand Sendiri</td>
+<td><code>cuanhijab_ad7_brand_1777200988679.png</code></td>
+<td>Hopeful — transformasi identitas</td>
+</tr>
+<tr>
+<td>Omzet Konsisten</td>
+<td><code>cuanhijab_ad8_omzet_1777200988679.png</code></td>
+<td>Frustrated — data/angka</td>
+</tr>
+</tbody>
+</table></div>
+<p>Copy lengkap untuk Ad 6-8 sudah ada di <code>CuanHijab_Ad_Copy_MetaAds.md</code>.</p>
+<hr/>
+<h2 id="budget-breakdown-30-hari">Budget Breakdown — 30 Hari</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Fase</th>
+<th>Hari</th>
+<th>Budget/Hari</th>
+<th>Total</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Sandbox ABO</td>
+<td>1-7</td>
+<td>Rp150.000</td>
+<td>Rp1.050.000</td>
+</tr>
+<tr>
+<td>Scale CBO</td>
+<td>8-21</td>
+<td>Rp150-180K</td>
+<td>Rp2.100-2.520K</td>
+</tr>
+<tr>
+<td>Scale + Retarget</td>
+<td>22-30</td>
+<td>Rp180-216K</td>
+<td>Rp1.620-1.944K</td>
+</tr>
+<tr>
+<td><strong>TOTAL 30 HARI</strong></td>
+<td></td>
+<td></td>
+<td><strong>Rp4.770-5.514K</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="break-even-analysis">Break-Even Analysis</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Skenario</th>
+<th>CPA</th>
+<th>Purchase/Hari</th>
+<th>Revenue/Hari</th>
+<th>Profit/Hari</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Best case</td>
+<td>Rp15K</td>
+<td>10</td>
+<td>Rp490K</td>
+<td>Rp340K</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>Rp25K</td>
+<td>6</td>
+<td>Rp294K</td>
+<td>Rp144K</td>
+</tr>
+<tr>
+<td>Break-even</td>
+<td>Rp43K</td>
+<td>3.5</td>
+<td>Rp171K</td>
+<td>Rp21K</td>
+</tr>
+<tr>
+<td>Worst case</td>
+<td>Rp50K+</td>
+<td>3</td>
+<td>Rp147K</td>
+<td>-Rp3K (rugi)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kalau CPA konsisten di bawah Rp25K → profit Rp144K/hari dari spend Rp150K. ROAS 1.96x. Kalau CPA di bawah Rp20K → profit Rp200K+/hari. Sweet spot.</p>
+<hr/>
+<h2 id="contingency-plan">Contingency Plan</h2>
+<h3 id="kalau-cpa-meledak-rp40k-selama-3-hari">Kalau CPA Meledak (&gt; Rp40K selama 3 hari)</h3>
+<ol>
+<li>Pause semua adset kecuali yang CPA paling rendah</li>
+<li>Cek LP: loading speed, checkout flow, mobile experience</li>
+<li>Cek frequency: &gt; 3.0 = audience jenuh</li>
+<li>Buat 3 angle baru dari Ad 6/7/8</li>
+<li>Launch sandbox baru dengan budget Rp90K/hari (3 adset &#215; Rp30K)</li>
+</ol>
+<h3 id="kalau-ad-ditolak-meta">Kalau Ad Ditolak Meta</h3>
+<ol>
+<li>Baca rejection reason di Ads Manager</li>
+<li>Biasanya: &quot;misleading claims&quot; atau &quot;personal attributes&quot;</li>
+<li>Fix: hapus kalimat yang menyerang personal, ganti ke blame sistem</li>
+<li>Resubmit — biasanya approved dalam 24 jam</li>
+<li>Kalau tetap ditolak → appeal, atau rewrite total</li>
+</ol>
+<h3 id="kalau-pixel-mati">Kalau Pixel Mati</h3>
+<ol>
+<li>PAUSE campaign segera — jangan buang budget tanpa tracking</li>
+<li>Cek Event Manager → Test Events</li>
+<li>Buka LP di browser → cek apakah pixel firing</li>
+<li>Hubungi ScaleV support kalau pixel error</li>
+<li>Baru resume campaign setelah pixel confirmed hijau</li>
+</ol>
+<hr/>
+<h2 id="checklist-sebelum-publish">Checklist Sebelum Publish</h2>
+<h3 id="technical">Technical</h3>
+<ul>
+<li>[ ] Meta Pixel terpasang di LP — firing hijau di Event Manager</li>
+<li>[ ] Purchase event terdaftar</li>
+<li>[ ] UTM parameters di setiap link</li>
+<li>[ ] LP loading &lt; 3 detik (test di mobile)</li>
+<li>[ ] Checkout flow berjalan (test beli sendiri)</li>
+</ul>
+<h3 id="creative">Creative</h3>
+<ul>
+<li>[ ] 5 visual sudah upload (1 per adset)</li>
+<li>[ ] 5 primary text sudah paste (dari Ad Copy brief)</li>
+<li>[ ] 5 headline sudah paste</li>
+<li>[ ] 2 description sudah paste</li>
+<li>[ ] Semua copy lolos Meta Policy (zero violation)</li>
+</ul>
+<h3 id="campaign">Campaign</h3>
+<ul>
+<li>[ ] 5 adset sudah dibuat di ABO campaign</li>
+<li>[ ] Budget Rp30.000/adset/hari sudah diset</li>
+<li>[ ] Schedule: midnight launch</li>
+<li>[ ] Advantage+ Placements aktif</li>
+<li>[ ] Broad targeting (25-55, Perempuan, Indonesia)</li>
+</ul>
+<h3 id="rules">Rules</h3>
+<ul>
+<li>[ ] JANGAN edit campaign 72 jam pertama</li>
+<li>[ ] JANGAN campur objective dalam 1 campaign</li>
+<li>[ ] JANGAN pakai message Fan ke cold audience</li>
+<li>[ ] Evaluasi pertama: Hari ke-4</li>
+<li>[ ] Final decision: Hari ke-7</li>
+<li>[ ] Scale ke CBO: Hari ke-8 (kalau ada winner)</li>
+</ul>
+<hr/>
+<h2 id="file-reference">File Reference</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>File</th>
+<th>Lokasi</th>
+<th>Isi</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Product Brief</td>
+<td><code>D:\Iklan Otak Reptil\Produk\CuanHijab\Product_Brief.md</code></td>
+<td>Data produk lengkap</td>
+</tr>
+<tr>
+<td>Ad Copy (8 set)</td>
+<td><code>D:\Iklan Otak Reptil\Produk\CuanHijab\CuanHijab_Ad_Copy_MetaAds.md</code></td>
+<td>Primary text + headline + description</td>
+</tr>
+<tr>
+<td>Campaign Setup</td>
+<td><code>D:\Iklan Otak Reptil\Produk\CuanHijab\CuanHijab_Campaign_Setup_MetaAds_2026.md</code></td>
+<td>Struktur campaign original</td>
+</tr>
+<tr>
+<td>WA Follow-Up</td>
+<td><code>D:\Iklan Otak Reptil\Produk\CuanHijab\WA_Group_Follow_Up.md</code></td>
+<td>10-day WA sequence</td>
+</tr>
+<tr>
+<td>Visual Ad 1-5</td>
+<td><code>D:\Iklan Otak Reptil\Produk\CuanHijab\cuanhijab_ad*.png</code></td>
+<td>8 visual siap upload</td>
+</tr>
+<tr>
+<td>DR Blueprint</td>
+<td><code>PROJECTS\03-cuanhijab-next-level\skill5-direct-response\blueprint.md</code></td>
+<td>Full campaign strategy</td>
+</tr>
+</tbody>
+</table></div></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>
