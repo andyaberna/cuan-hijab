@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cuan Hijab Next Level — Capstone Campaign Report</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Cuan Hijab Next Level — Capstone Campaign Report</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 29 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="table-of-contents" href="#table-of-contents">Table of Contents</a></li>
+<li><a data-target="1-executive-summary" href="#1-executive-summary">1. Executive Summary</a></li>
+<li><a data-target="2-brand-context-profile-summary" href="#2-brand-context-profile-summary">2. Brand Context Profile (Summary)</a></li>
+<li><a data-target="3-brand-mini-kit" href="#3-brand-mini-kit">3. Brand Mini Kit</a></li>
+<li><a data-target="4-landing-page-copy-and-structure" href="#4-landing-page-copy-and-structure">4. Landing Page — Copy and Structure</a></li>
+<li><a data-target="5-seo-content-strategy" href="#5-seo-content-strategy">5. SEO Content Strategy</a></li>
+<li><a data-target="6-advertising-creatives" href="#6-advertising-creatives">6. Advertising Creatives</a></li>
+<li><a data-target="7-marketing-plan" href="#7-marketing-plan">7. Marketing Plan</a></li>
+<li><a data-target="8-presentation-slides" href="#8-presentation-slides">8. Presentation Slides</a></li>
+<li><a data-target="9-brand-audit-results" href="#9-brand-audit-results">9. Brand Audit Results</a></li>
+<li><a data-target="10-next-steps-and-recommendations" href="#10-next-steps-and-recommendations">10. Next Steps and Recommendations</a></li>
+<li><a data-target="active-links" href="#active-links">Active Links</a></li>
+<li><a data-target="how-to-export-as-pdf" href="#how-to-export-as-pdf">How to Export as PDF</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Cuan Hijab Next Level — Capstone Campaign Report</h1>
+<blockquote>
+<p><strong>Generated by:</strong> Brand Context Engine | MODE: CAPSTONE<br/><strong>Date:</strong> 28 April 2026<br/><strong>Prepared for:</strong> CAMS Capstone Assignment<br/><strong>Product Owner:</strong> Iman Awaludin, ST — SmartPlus Accelerator<br/><strong>Version:</strong> 1.0</p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li>[Executive Summary](#1-executive-summary)</li>
+<li>[Brand Context Profile (Summary)](#2-brand-context-profile-summary)</li>
+<li>[Brand Mini Kit](#3-brand-mini-kit)</li>
+<li>[Landing Page — Copy and Structure](#4-landing-page--copy-and-structure)</li>
+<li>[SEO Content Strategy](#5-seo-content-strategy)</li>
+</ol>
+<ul>
+<li>5.1 [Article 1: Cara Memilih Supplier Hijab Anti Zonk](#51-article-1)</li>
+<li>5.2 [Article 2: Cara Menghitung HPP Hijab yang Benar](#52-article-2)</li>
+</ul>
+<ol>
+<li>[Advertising Creatives](#6-advertising-creatives)</li>
+</ol>
+<ul>
+<li>6.1 [Creative 1: Meta Ads — Supplier Zonk (Static)](#61-creative-1)</li>
+<li>6.2 [Creative 2: Meta Ads — DM Ghosting (Video)](#62-creative-2)</li>
+</ul>
+<ol>
+<li>[Marketing Plan](#7-marketing-plan)</li>
+</ol>
+<ul>
+<li>7.1 [Channel Strategy](#71-channel-strategy)</li>
+<li>7.2 [Budget Allocation](#72-budget-allocation)</li>
+<li>7.3 [30/60/90 Day Timeline](#73-306090-day-timeline)</li>
+<li>7.4 [KPIs and Measurement](#74-kpis-and-measurement)</li>
+<li>7.5 [Content Calendar](#75-content-calendar)</li>
+</ul>
+<ol>
+<li>[Presentation Slides](#8-presentation-slides)</li>
+<li>[Brand Audit Results](#9-brand-audit-results)</li>
+<li>[Next Steps and Recommendations](#10-next-steps-and-recommendations)</li>
+</ol>
+<hr/>
+<h2 id="1-executive-summary">1. Executive Summary</h2>
+<p><strong>Cuan Hijab Next Level</strong> adalah produk digital (Rekaman Webinar + Ebook Premium) seharga Rp49.000 yang berisi blueprint bisnis hijab dari Iman Awaludin, ST — praktisi dengan 20+ tahun pengalaman di industri busana muslim, eks operasional Nibras &amp; Rabbani.</p>
+<p><strong>Problem yang diselesaikan:</strong> Reseller hijab di Indonesia stuck karena 3 masalah utama — supplier zonk (barang beda dari foto), margin tipis (ternyata cuma 8-12%), dan DM ghosting (chat banyak, transfer sepi).</p>
+<p><strong>Target market:</strong> Perempuan 25-55 tahun, reseller/agen hijab, pemilik brand lokal. Sudah jualan minimal 3 bulan tapi omzet mentok.</p>
+<p><strong>Strategi campaign:</strong></p>
+<ul>
+<li><strong>Paid:</strong> Meta Ads ABO, 5 adset berdasarkan awareness stage, budget Rp150K/hari</li>
+<li><strong>Organic:</strong> SEO articles targeting long-tail keywords hijab business</li>
+<li><strong>Nurture:</strong> WA Group 10-hari follow-up selang-seling edukasi/upsell</li>
+<li><strong>Ascension:</strong> Rp49K → Konsultasi Rp197K → Bedah Bisnis Rp497K → Retainer Pabrik</li>
+</ul>
+<p><strong>Target KPI:</strong> CPA &lt; Rp25K, ROAS &gt; 2x, 500 pembeli pertama dalam 30 hari.</p>
+<hr/>
+<h2 id="2-brand-context-profile-summary">2. Brand Context Profile (Summary)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Brand Name</td>
+<td>Cuan Hijab Next Level</td>
+</tr>
+<tr>
+<td>Mentor</td>
+<td>Iman Awaludin, ST — CEO SmartPlus Accelerator</td>
+</tr>
+<tr>
+<td>Mission</td>
+<td>Membantu reseller hijab keluar dari stuck omzet melalui blueprint operasional teruji</td>
+</tr>
+<tr>
+<td>Problem Solved</td>
+<td>Supplier zonk, margin tipis 8-12%, DM ghosting</td>
+</tr>
+<tr>
+<td>Elevator Pitch</td>
+<td>Blueprint 20 tahun dari eks Nibras &amp; Rabbani — checklist supplier, template HPP, formula scale up</td>
+</tr>
+<tr>
+<td>Target Personas</td>
+<td>PERSONA_01: Reseller Stuck (Jalur Kilat) / PERSONA_02: Aspiring Brand Owner (Jalur Sultan)</td>
+</tr>
+<tr>
+<td>Brand Voice</td>
+<td>Praktisi, blak-blakan, edukatif, ramah. Sapaan: Bunda/Sister/Kakak</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Rp49.000 (500 pertama) / Rp99.000 normal</td>
+</tr>
+<tr>
+<td>Value Anchor</td>
+<td>Rp438.000 (Webinar + Ebook + Template HPP + WA Group)</td>
+</tr>
+<tr>
+<td>Guarantee</td>
+<td>7 hari uang kembali 100%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Full Brand Context Profile:</strong> Tersedia sebagai JSON file terpisah (315 lines) — mencakup 2 persona detail, brand voice rules, banned words, power words, 8 copy snippets, CTA library, tech stack, dan campaign setup.</p>
+<hr/>
+<h2 id="3-brand-mini-kit">3. Brand Mini Kit</h2>
+<h3 id="color-palette">Color Palette</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Role</th>
+<th>Hex Code</th>
+<th>Usage</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Primary</td>
+<td>#8B1A4A</td>
+<td>Background utama, header, CTA button</td>
+</tr>
+<tr>
+<td>Secondary</td>
+<td>#C2185B</td>
+<td>Aksen, highlight, hover state</td>
+</tr>
+<tr>
+<td>Accent 1</td>
+<td>#E91E63</td>
+<td>Badge, notification, urgency</td>
+</tr>
+<tr>
+<td>Accent 2</td>
+<td>#D4AF37</td>
+<td>Gold — premium feel, credential badge, harga</td>
+</tr>
+<tr>
+<td>Background Dark</td>
+<td>#0A0E1A</td>
+<td>Ad creative background, dark sections</td>
+</tr>
+<tr>
+<td>Text Light</td>
+<td>#FFFFFF</td>
+<td>Body text di dark background</td>
+</tr>
+<tr>
+<td>Text Dark</td>
+<td>#1A1A2E</td>
+<td>Body text di light background</td>
+</tr>
+<tr>
+<td>Success</td>
+<td>#00FF88</td>
+<td>Harga promo, positive indicator</td>
+</tr>
+<tr>
+<td>Danger</td>
+<td>#FF4444</td>
+<td>Harga coret, urgency counter</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="typography">Typography</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Role</th>
+<th>Font</th>
+<th>Fallback</th>
+<th>Usage</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Heading</td>
+<td>Poppins Bold</td>
+<td>sans-serif</td>
+<td>Judul, headline iklan, CTA</td>
+</tr>
+<tr>
+<td>Sub-heading</td>
+<td>Poppins SemiBold</td>
+<td>sans-serif</td>
+<td>Sub-judul, label section</td>
+</tr>
+<tr>
+<td>Body</td>
+<td>Inter Regular</td>
+<td>sans-serif</td>
+<td>Paragraf, deskripsi, copy panjang</td>
+</tr>
+<tr>
+<td>Accent</td>
+<td>Playfair Display Italic</td>
+<td>serif</td>
+<td>Quote, testimoni, tagline</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="visual-mood">Visual Mood</h3>
+<p><strong>Keyword:</strong> Terpercaya, Praktis, Membumi, Profesional tapi Hangat</p>
+<p>Kombinasi dark background (navy/charcoal) dengan aksen gold dan pink/magenta. Bukan mewah berlebihan — tapi  orang ini serius dan tahu apa yang dia bicarakan. Foto-foto menggunakan tone warm, natural lighting, setting kerja nyata (bukan studio).</p>
+<p><strong>Mood Board Direction:</strong></p>
+<ul>
+<li>Hijab berkualitas di flat lay dengan pencahayaan warm</li>
+<li>Screenshot chat WA yang relatable (bukan mockup sempurna)</li>
+<li>Angka-angka konkret (margin %, checklist poin) sebagai visual element</li>
+<li>Foto mentor profesional tapi approachable</li>
+</ul>
+<h3 id="logo-brief">Logo Brief</h3>
+<p><strong>Konsep:</strong> Wordmark CUAN HIJAB dengan aksen hijab silhouette terintegrasi di huruf H. Warna utama magenta (#C2185B) dengan gold (#D4AF37) untuk aksen.</p>
+<p><strong>Variasi yang dibutuhkan:</strong></p>
+<ol>
+<li>Logo utama (horizontal) — untuk header LP dan presentasi</li>
+<li>Logo icon (square) — untuk profile picture WA Group dan social media</li>
+<li>Logo monochrome (putih) — untuk overlay di dark background ad creative</li>
+</ol>
+<p><strong>Style:</strong> Clean, modern, tanpa ornamen berlebihan. Harus terbaca jelas di ukuran kecil (mobile). Font: Poppins Bold untuk CUAN HIJAB, Inter untuk tagline Blueprint Praktisi 20 Tahun.</p>
+<h3 id="photography-and-imagery-direction">Photography and Imagery Direction</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Tipe</th>
+<th>Deskripsi</th>
+<th>Penggunaan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Mentor Portrait</td>
+<td>Foto Iman Awaludin, profesional, background blur, pencahayaan warm</td>
+<td>Authority section LP, ad creative AS3</td>
+</tr>
+<tr>
+<td>Product Flat Lay</td>
+<td>Hijab berkualitas di atas meja/kain, warm tone</td>
+<td>Hero image, social media</td>
+</tr>
+<tr>
+<td>Lifestyle</td>
+<td>Reseller hijab bekerja dari rumah (HP + produk)</td>
+<td>Ad creative, testimoni section</td>
+</tr>
+<tr>
+<td>Screenshot</td>
+<td>Chat WA, spreadsheet HPP, dashboard</td>
+<td>Proof element, ad creative AS2/AS4</td>
+</tr>
+<tr>
+<td>Before-After</td>
+<td>Visual perbandingan (stuck vs growth)</td>
+<td>LP section, carousel</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="4-landing-page-copy-and-structure">4. Landing Page — Copy and Structure</h2>
+<p><strong>Live URL:</strong> https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-v2</p>
+<p><strong>Platform:</strong> Scalev (myscalev.com) — hosted, payment integrated</p>
+<p><strong>Struktur Landing Page (12 Section):</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Section</th>
+<th>Fungsi</th>
+<th>Hook/Copy</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hero + CTA</td>
+<td>First impression + immediate action</td>
+<td><code>Reseller Hijab, Mau Belajar Langsung dari Eks Pimpinan Nibras &amp; Rabbani?</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Social Proof Bar</td>
+<td>Trust signal</td>
+<td>20+ Tahun / 1.000+ Mitra / 2 Brand Nasional / Rp49rb</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cocok Untuk Siapa</td>
+<td>Qualify audience</td>
+<td>3 persona cards: Reseller Stuck, Agen Supplier Zonk, Brand Owner</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Problem Section</td>
+<td>Agitate pain</td>
+<td><code>Masalahnya Bukan Kurang Usaha — Tapi Fondasi yang Bocor</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Mentor Authority</td>
+<td>Build trust</td>
+<td>Foto + credential Iman Awaludin + 4 bullet proof</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Testimoni</td>
+<td>Social proof</td>
+<td>4 screenshot chat nyata dari peserta</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Transparansi Upsell</td>
+<td>Overcome objection</td>
+<td>4-step value ladder (jujur, bukan hidden)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Before vs After</td>
+<td>Visualize transformation</td>
+<td>4 pain vs 4 outcome side-by-side</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Isi Paket</td>
+<td>Show deliverables</td>
+<td>4 cards: Webinar + Ebook + Template HPP + WA Group</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2 Jalur Blueprint</td>
+<td>Differentiate paths</td>
+<td>Jalur Kilat (Reseller) vs Jalur Sultan (Brand Owner)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Pricing + Value Stack</td>
+<td>Close the deal</td>
+<td>Value Rp488K → Harga Rp49K (90% OFF) + Garansi 7 Hari</td>
+</tr>
+<tr>
+<td>12</td>
+<td>FAQ + Final CTA</td>
+<td>Handle objections</td>
+<td>5 FAQ + scarcity counter (473/500 slot tersisa)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Conversion Elements:</strong></p>
+<ul>
+<li>Sticky bottom bar (mobile):  Rp49.000 &#183; Sisa 473 slot + CTA button</li>
+<li>3x CTA placement (hero, mid-page, bottom)</li>
+<li>Scarcity counter real-time</li>
+<li>Garansi badge di setiap CTA section</li>
+</ul>
+<hr/>
+<h2 id="5-seo-content-strategy">5. SEO Content Strategy</h2>
+<h3 id="51-article-1-cara-memilih-supplier-hijab-anti-zonk-checklist-7-poin-dari-praktisi">5.1 Article 1: Cara Memilih Supplier Hijab Anti Zonk — Checklist 7 Poin dari Praktisi</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Meta Field</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Target Keyword</td>
+<td>cara memilih supplier hijab</td>
+</tr>
+<tr>
+<td>Secondary Keywords</td>
+<td>supplier hijab terpercaya, supplier hijab anti zonk, checklist supplier hijab</td>
+</tr>
+<tr>
+<td>Meta Title</td>
+<td>Cara Memilih Supplier Hijab Anti Zonk — Checklist 7 Poin dari Praktisi 20 Tahun</td>
+</tr>
+<tr>
+<td>Meta Description</td>
+<td>Sering kecewa sama supplier hijab? Barang beda dari foto, kualitas naik-turun? Ini checklist 7 poin dari praktisi 20+ tahun industri hijab untuk evaluasi supplier tanpa drama.</td>
+</tr>
+<tr>
+<td>Word Count</td>
+<td>~1.500 kata</td>
+</tr>
+<tr>
+<td>CTA</td>
+<td>Soft-sell ke blueprint Cuan Hijab Next Level</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Outline Artikel:</strong></p>
+<p><strong>[H1] Cara Memilih Supplier Hijab Anti Zonk — Checklist 7 Poin dari Praktisi</strong></p>
+<p><strong>[Intro — 150 kata]</strong> Kamu pasti pernah ngalamin ini: order hijab dari supplier baru, foto di katalog cantik banget. Pas barang datang? Warna beda, bahan tipis, jahitan berantakan. Customer complain, kamu yang minta maaf.</p>
+<p>Masalahnya bukan di hoki. Masalahnya di cara kamu evaluasi supplier.</p>
+<p>Artikel ini berisi checklist 7 poin yang dipakai oleh Iman Awaludin — praktisi 20+ tahun di industri hijab, eks operasional Nibras &amp; Rabbani — untuk menyeleksi supplier tanpa drama.</p>
+<p><strong>[H2] Kenapa Banyak Reseller Kena Supplier Zonk? — 200 kata</strong></p>
+<ul>
+<li>Pilih berdasarkan harga termurah</li>
+<li>Tidak pernah minta sample dulu</li>
+<li>Tidak cek track record supplier</li>
+<li>Tidak punya standar kualitas tertulis</li>
+</ul>
+<p><strong>[H2] Checklist 7 Poin Evaluasi Supplier Hijab — 700 kata</strong></p>
+<p><strong>[H3] Poin 1: Minta Sample Sebelum Order Bulk</strong> Jangan pernah order ratusan pcs tanpa pegang sample dulu. Minta 3-5 pcs dari varian yang berbeda. Bandingkan dengan foto katalog. Cek: warna, ketebalan bahan, jahitan, dan packaging.</p>
+<p><strong>[H3] Poin 2: Cek Konsistensi Kualitas Antar Batch</strong> Supplier bagus = kualitas batch ke-1 sama dengan batch ke-10. Tanya: Apakah bahan dan warna konsisten antar produksi? Minta foto dari batch berbeda.</p>
+<p><strong>[H3] Poin 3: Tanya Kapasitas Produksi dan Lead Time</strong> Supplier yang overload order = kualitas turun. Tanya kapasitas bulanan dan lead time realistis. Kalau janji 3 hari tapi kapasitas penuh, itu red flag.</p>
+<p><strong>[H3] Poin 4: Cek Kebijakan Return dan Komplain</strong> Supplier profesional punya SOP return yang jelas. Tanya: Kalau barang cacat, prosesnya gimana? Kalau jawabannya menghindar, skip.</p>
+<p><strong>[H3] Poin 5: Verifikasi Legalitas dan Alamat Fisik</strong> Cek apakah supplier punya alamat workshop/gudang yang bisa dikunjungi. Supplier yang cuma punya akun Instagram tanpa alamat fisik = risiko tinggi.</p>
+<p><strong>[H3] Poin 6: Bandingkan Minimal 3 Supplier</strong> Jangan langsung jatuh cinta sama supplier pertama. Bandingkan minimal 3 supplier dari segi harga, kualitas sample, responsivitas, dan kebijakan return.</p>
+<p><strong>[H3] Poin 7: Test Order Kecil Sebelum Commit</strong> Sebelum order 500 pcs, test dulu dengan 50 pcs. Lihat bagaimana mereka handle: packaging, ketepatan waktu, komunikasi, dan kualitas.</p>
+<p><strong>[H2] Red Flag Supplier yang Harus Dihindari — 200 kata</strong></p>
+<ul>
+<li>Tidak mau kasih sample (langsung order aja, Kak&quot;)</li>
+<li>Harga jauh di bawah pasaran (too good to be true)</li>
+<li>Tidak responsif setelah transfer</li>
+<li>Foto katalog terlalu sempurna (kemungkinan foto orang lain)</li>
+</ul>
+<p><strong>[H2] Template Evaluasi Supplier (Gratis) — 100 kata</strong> Tabel sederhana yang bisa di-copy: 7 poin + skor 1-5 + catatan. Bisa dipakai langsung untuk evaluasi supplier berikutnya.</p>
+<p><strong>[CTA Section — 100 kata]</strong> Checklist 7 poin ini adalah salah satu modul dari blueprint &quot;Cuan Hijab Next Level — disusun oleh Iman Awaludin (20+ tahun industri hijab). Di dalam blueprint lengkapnya, kamu juga dapat: Template HPP otomatis, formula copywriting DM yang berujung transfer, dan strategi scale up yang sudah teruji di 1.000+ mitra.</p>
+<p>Harga Rp49.000 untuk 500 pembeli pertama. [Link ke LP]</p>
+<hr/>
+<h3 id="52-article-2-cara-menghitung-hpp-hijab-yang-benar-biar-margin-gak-cuma-8">5.2 Article 2: Cara Menghitung HPP Hijab yang Benar — Biar Margin Gak Cuma 8%</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Meta Field</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Target Keyword</td>
+<td>cara menghitung HPP hijab</td>
+</tr>
+<tr>
+<td>Secondary Keywords</td>
+<td>HPP hijab, margin jualan hijab, hitung untung jualan hijab, template HPP</td>
+</tr>
+<tr>
+<td>Meta Title</td>
+<td>Cara Menghitung HPP Hijab yang Benar — Biar Margin Gak Cuma 8%</td>
+</tr>
+<tr>
+<td>Meta Description</td>
+<td>Banyak reseller hijab ngira untung 20rb per pcs. Padahal setelah dihitung ongkir, packing, return — marginnya cuma 8-12%. Ini cara hitung HPP yang benar + template gratis.</td>
+</tr>
+<tr>
+<td>Word Count</td>
+<td>~1.500 kata</td>
+</tr>
+<tr>
+<td>CTA</td>
+<td>Soft-sell ke blueprint + Template HPP</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Outline Artikel:</strong></p>
+<p><strong>[H1] Cara Menghitung HPP Hijab yang Benar — Biar Margin Gak Cuma 8%</strong></p>
+<p><strong>[Intro — 150 kata]</strong> Beli 45rb, jual 65rb, untung 20rb. Familiar? Kebanyakan reseller hijab ngitung margin di kepala. Hasilnya kelihatan untung — tapi rekening gak nambah-nambah.</p>
+<p>Kenapa? Karena ada biaya yang gak kelihatan: ongkir, packing, return, waktu bales chat 6 jam/hari, dan pulsa/kuota. Kalau semua dihitung, margin asli sering cuma 8-12%.</p>
+<p>Artikel ini bahas cara hitung HPP (Harga Pokok Penjualan) hijab yang benar — termasuk komponen yang sering dilupakan.</p>
+<p><strong>[H2] Apa Itu HPP dan Kenapa Penting? — 200 kata</strong> HPP = total biaya yang kamu keluarkan untuk menjual 1 produk. Bukan cuma harga beli dari supplier. Termasuk semua biaya sampai produk diterima customer.</p>
+<p>Kenapa penting: Kalau HPP salah hitung, kamu bisa jualan ribuan pcs tapi tetap gak punya tabungan. Omzet besar, profit kecil.</p>
+<p><strong>[H2] Komponen HPP yang Sering Dilupakan — 300 kata</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Komponen</th>
+<th>Contoh</th>
+<th>Sering Dilupakan?</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Harga beli produk</td>
+<td>Rp45.000/pcs</td>
+<td>Tidak</td>
+</tr>
+<tr>
+<td>Ongkir dari supplier</td>
+<td>Rp3.000/pcs (kalau beli 100 pcs, ongkir Rp300K)</td>
+<td>Ya</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td>Rp2.000/pcs (plastik + stiker + thank you card)</td>
+<td>Ya</td>
+</tr>
+<tr>
+<td>Return/refund rate</td>
+<td>5% dari total order</td>
+<td>Ya</td>
+</tr>
+<tr>
+<td>Biaya marketplace/platform</td>
+<td>3-5% per transaksi</td>
+<td>Ya</td>
+</tr>
+<tr>
+<td>Pulsa/kuota</td>
+<td>Rp100K/bulan dibagi jumlah order</td>
+<td>Ya</td>
+</tr>
+<tr>
+<td>Waktu kerja</td>
+<td>6 jam/hari &#215; 30 hari = berapa per pcs?</td>
+<td>Hampir selalu</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>[H2] Cara Hitung HPP Step by Step — 400 kata</strong></p>
+<p><strong>[H3] Step 1: Kumpulkan Semua Biaya per Bulan</strong> List semua pengeluaran yang berhubungan dengan jualan hijab. Jangan skip yang kecil-kecil.</p>
+<p><strong>[H3] Step 2: Bagi Total Biaya dengan Jumlah Unit Terjual</strong> HPP per unit = Total biaya bulanan / Jumlah unit terjual. Ini angka yang sebenarnya.</p>
+<p><strong>[H3] Step 3: Hitung Margin Asli</strong> Margin = (Harga jual - HPP) / Harga jual x 100%. Kalau hasilnya di bawah 20%, kamu perlu evaluasi: naikkan harga, turunkan biaya, atau ganti supplier.</p>
+<p><strong>[H3] Step 4: Simulasi dengan Template</strong> Contoh tabel simulasi HPP untuk 1 produk hijab — dari harga beli sampai margin asli.</p>
+<p><strong>[H2] Studi Kasus: Reseller yang Kira Untung 30%, Ternyata Cuma 11% — 200 kata</strong> Cerita Bunda Siti (nama samaran) — jualan hijab 200 pcs/bulan, harga beli Rp45K, jual Rp65K. Dikira untung Rp20K/pcs = Rp4jt/bulan. Setelah hitung HPP beneran: ongkir Rp600K, packing Rp400K, return 10 pcs, pulsa Rp150K. Margin asli: 11%. Profit bersih: Rp1.4jt untuk kerja 180 jam/bulan.</p>
+<p><strong>[H2] Template HPP Gratis — 100 kata</strong> Tabel sederhana yang bisa di-copy ke spreadsheet. Kolom: Komponen biaya, Nominal/bulan, Per unit. Auto-hitung margin.</p>
+<p><strong>[CTA Section — 100 kata]</strong> Template HPP di atas adalah versi sederhana. Di blueprint Cuan Hijab Next Level, kamu dapat Template HPP Otomatis (spreadsheet) yang tinggal isi angka — langsung kelihatan margin asli per produk, per supplier, per varian.</p>
+<p>Plus: checklist supplier anti zonk, formula copywriting DM, dan strategi scale up dari praktisi 20+ tahun.</p>
+<p>Rp49.000 untuk 500 pembeli pertama. [Link ke LP]</p>
+<hr/>
+<h2 id="6-advertising-creatives">6. Advertising Creatives</h2>
+<h3 id="61-creative-1-meta-ads-supplier-zonk-static-image">6.1 Creative 1: Meta Ads — Supplier Zonk (Static Image)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Platform</td>
+<td>Meta Ads (Feed)</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Static Image 4:5 (1080x1350px)</td>
+</tr>
+<tr>
+<td>Angle</td>
+<td>Supplier Zonk — Forbidden Knowledge</td>
+</tr>
+<tr>
+<td>Headline</td>
+<td>Supplier Zonk Itu Ada Checklistnya</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Pengalaman 20 Tahun. Rp49rb.</td>
+</tr>
+<tr>
+<td>CTA Button</td>
+<td>Learn More</td>
+</tr>
+<tr>
+<td>Target Persona</td>
+<td>PERSONA_01 (Reseller Stuck)</td>
+</tr>
+<tr>
+<td>Ad Objective</td>
+<td>Sales / Purchase</td>
+</tr>
+<tr>
+<td>Adset Stage</td>
+<td>Oblivious</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Primary Text:</strong></p>
+<p>Udah 3x ganti supplier hijab. Barangnya tetap beda sama foto.</p>
+<p>Ini bukan soal hoki. Ini soal checklist yang belum ada.</p>
+<p>Kebanyakan reseller pilih supplier dari harga paling murah atau foto yang  kayaknya bagus. Hasilnya? Barang datang beda warna, bahan tipis, customer complain, dan kamu yang minta maaf.</p>
+<p>Iman Awaludin — 20+ tahun di industri hijab, eks operasional Nibras &amp; Rabbani — udah susun checklist 7 poin untuk evaluasi supplier tanpa drama. Hari ini bisa langsung kamu pakai.</p>
+<p>Semua ada di Rekaman Webinar + Ebook Cuan Hijab Next Level:</p>
+<ul>
+<li>Checklist supplier anti zonk (7 poin terstandar)</li>
+<li>Template HPP otomatis per produk</li>
+<li>Formula copywriting DM yang berujung transfer</li>
+<li>WA Group eksklusif + akses selamanya</li>
+</ul>
+<p>Rp49.000 untuk 500 pembeli pertama. Setelah itu Rp99.000. Garansi 7 hari uang kembali.</p>
+<p><strong>Visual Direction:</strong></p>
+<p>Konsep: Split-screen emosional</p>
+<ul>
+<li>Kiri (55%): Teks overlay di atas background gelap</li>
+<li>Kanan (45%): Foto reseller hijab memegang HP + kain hijab yang berbeda dari foto di layar</li>
+<li>Headline besar (putih, bold): Udah 3x Ganti Supplier. Barangnya Tetap Beda Sama Foto.</li>
+<li>Badge bawah (gold): Checklist 7 Poin - Rp49rb - Garansi 7 Hari</li>
+<li>Warna: Charcoal/navy background, teks putih, aksen gold</li>
+<li>Mood: Frustrasi yang divalidasi, ada solusinya</li>
+</ul>
+<p><strong>Visual File:</strong> cuanhijab_ad1_supplier_1776904045458.png (sudah tersedia)</p>
+<hr/>
+<h3 id="62-creative-2-meta-ads-dm-ghosting-video">6.2 Creative 2: Meta Ads — DM Ghosting (Video)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Platform</td>
+<td>Meta Ads (Reels)</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Video 9:16 (1080x1920px) — 8-10 detik</td>
+</tr>
+<tr>
+<td>Angle</td>
+<td>DM Ghosting — Pain Point</td>
+</tr>
+<tr>
+<td>Headline</td>
+<td>DM Banyak, Transfer Sepi?</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Formula jualan hijab. Rp49rb.</td>
+</tr>
+<tr>
+<td>CTA Button</td>
+<td>Learn More</td>
+</tr>
+<tr>
+<td>Target Persona</td>
+<td>PERSONA_01 (Reseller Stuck)</td>
+</tr>
+<tr>
+<td>Ad Objective</td>
+<td>Sales / Purchase</td>
+</tr>
+<tr>
+<td>Adset Stage</td>
+<td>Frustrated</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Primary Text:</strong></p>
+<p>Berapaan kak? 85rb kak, free ongkir! <em>dibaca, gak dibales</em></p>
+<p>Familiar?</p>
+<p>Masalahnya bukan di produk. Bukan di harga. Masalahnya di urutan kata yang kamu pakai setelah berapaan kak?</p>
+<p>Ada formula copywriting yang bikin DM berujung transfer — bukan cuma nanya harga doang. Diajarin langsung sama Iman Awaludin (20+ tahun industri hijab) di Rekaman Webinar + Ebook Cuan Hijab Next Level.</p>
+<p>Dapat juga:</p>
+<ul>
+<li>Checklist supplier anti zonk (7 poin)</li>
+<li>Template HPP otomatis</li>
+<li>WA Group eksklusif</li>
+</ul>
+<p>Rp49.000 - 500 pembeli pertama - Garansi 7 hari.</p>
+<p><strong>Visual Direction (Storyboard):</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Detik</th>
+<th>Visual</th>
+<th>Teks Overlay</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>0-2</td>
+<td>Layar HP dengan chat bubble: Berapaan kak?</td>
+<td>(chat bubble style)</td>
+</tr>
+<tr>
+<td>2-4</td>
+<td>Bubble balasan: 85rb kak, free ongkir! lalu centang biru (dibaca)</td>
+<td>(chat bubble style)</td>
+</tr>
+<tr>
+<td>4-6</td>
+<td>Silence... loading dots... hilang</td>
+<td>Familiar? (putih, bold, center)</td>
+</tr>
+<tr>
+<td>6-8</td>
+<td>Transisi ke dark background</td>
+<td>Masalahnya bukan di harga. Ini soal urutan kata.</td>
+</tr>
+<tr>
+<td>8-10</td>
+<td>End card</td>
+<td>Cuan Hijab Next Level - Rp49rb - 500 Slot Pertama (gold)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>Warna: Transisi putih (chat) ke gelap (reveal) — kontras dramatis</li>
+<li>Audio: Notifikasi chat di awal, silence, upbeat ringan di end card</li>
+<li>Chat bubble harus mirip WhatsApp asli (hijau/abu)</li>
+</ul>
+<p><strong>Visual File:</strong> cuanhijab_ad4_ghosting_1776904095218.png (static version tersedia, video perlu dibuat)</p>
+<hr/>
+<h2 id="7-marketing-plan">7. Marketing Plan</h2>
+<h3 id="71-channel-strategy">7.1 Channel Strategy</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Channel</th>
+<th>Role</th>
+<th>Budget Share</th>
+<th>Target</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Meta Ads</strong></td>
+<td>Primary acquisition</td>
+<td>70% (Rp105K/hari)</td>
+<td>Cold traffic, 5 adset ABO</td>
+</tr>
+<tr>
+<td><strong>WA Group</strong></td>
+<td>Nurture + upsell</td>
+<td>0% (organic)</td>
+<td>10-hari follow-up sequence</td>
+</tr>
+<tr>
+<td><strong>SEO/Blog</strong></td>
+<td>Long-term organic</td>
+<td>0% (content cost only)</td>
+<td>2 articles/bulan, long-tail keywords</td>
+</tr>
+<tr>
+<td><strong>Retargeting</strong></td>
+<td>Re-engage warm</td>
+<td>20% (Rp30K/hari)</td>
+<td>Website 7d, Video 75%+, Engaged 30d</td>
+</tr>
+<tr>
+<td><strong>Creative Reserve</strong></td>
+<td>Testing new angles</td>
+<td>10% (Rp15K/hari)</td>
+<td>A/B test creative rotation</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Funnel Flow:</strong> <code> Meta Ad (Cold) --&gt; Landing Page --&gt; Checkout (Scalev) --&gt; Thank You + WA Group | Meta Ad (Retarget) --&gt; Landing Page --&gt; Checkout              v WA 10-Day Nurture | Upsell: Konsultasi Rp197K | Upsell: Bedah Bisnis Rp497K | Retainer Pabrik (by invitation) </code></p>
+<h3 id="72-budget-allocation">7.2 Budget Allocation</h3>
+<p><strong>Budget Harian: Rp150.000</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Alokasi</th>
+<th>Nominal/Hari</th>
+<th>Nominal/Bulan</th>
+<th>Keterangan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Cold Traffic (5 Adset ABO)</td>
+<td>Rp105.000</td>
+<td>Rp3.150.000</td>
+<td>5 x Rp21K per adset</td>
+</tr>
+<tr>
+<td>Warm Retarget</td>
+<td>Rp30.000</td>
+<td>Rp900.000</td>
+<td>Website + Video + Engaged</td>
+</tr>
+<tr>
+<td>Creative Reserve</td>
+<td>Rp15.000</td>
+<td>Rp450.000</td>
+<td>New angle testing</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>Rp150.000</strong></td>
+<td><strong>Rp4.500.000</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Break-Even Analysis:</strong></p>
+<ul>
+<li>Margin per unit: Rp43.000</li>
+<li>CPA target: &lt; Rp25.000</li>
+<li>ROAS target: &gt; 2x (Rp49K revenue / Rp25K CPA = 1.96x minimum)</li>
+<li>Break-even: 105 sales/bulan (Rp4.5jt budget / Rp43K margin)</li>
+<li>Target: 150-180 sales/bulan (Rp7.35-8.82jt revenue)</li>
+</ul>
+<h3 id="73-306090-day-timeline">7.3 30/60/90 Day Timeline</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Period</th>
+<th>Milestones</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Day 1-7</strong></td>
+<td>Launch ABO 5 adset. Jangan sentuh 72 jam pertama. Pasang Pixel + CAPI. Monitor CTR dan CPA harian.</td>
+</tr>
+<tr>
+<td><strong>Day 8-14</strong></td>
+<td>Evaluasi: Kill adset CPA &gt; Rp40K, Hold CPA Rp25-40K, Promote CPA &lt; Rp25K. Mulai retarget warm audience.</td>
+</tr>
+<tr>
+<td><strong>Day 15-30</strong></td>
+<td>Scale winner ke CBO (Rp100-200K/hari). Rotasi creative (pakai cadangan ad6/ad7/ad8). Publish SEO Article 1. Target: 50-60 sales.</td>
+</tr>
+<tr>
+<td><strong>Day 31-60</strong></td>
+<td>Optimize CBO. Launch Lookalike 1% dari purchasers. A/B test new angles. Publish SEO Article 2. Mulai upsell Konsultasi via WA. Target kumulatif: 120-150 sales.</td>
+</tr>
+<tr>
+<td><strong>Day 61-90</strong></td>
+<td>Full scale. Evaluate LTV (berapa yang upgrade ke Konsultasi/Bedah Bisnis). Review ROAS keseluruhan. Plan next product/bundle. Target kumulatif: 200-250 sales.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="74-kpis-and-measurement">7.4 KPIs and Measurement</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target</th>
+<th>Measurement Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CPA (Cost Per Acquisition)</td>
+<td>&lt; Rp25.000</td>
+<td>Meta Ads Manager, per adset</td>
+</tr>
+<tr>
+<td>ROAS (Return on Ad Spend)</td>
+<td>&gt; 2x</td>
+<td>Revenue / Ad Spend, weekly</td>
+</tr>
+<tr>
+<td>CTR (Click-Through Rate)</td>
+<td>&gt; 2.5%</td>
+<td>Meta Ads Manager, per creative</td>
+</tr>
+<tr>
+<td>Landing Page CVR</td>
+<td>3-5%</td>
+<td>Scalev analytics (visitors to purchase)</td>
+</tr>
+<tr>
+<td>WA Group Join Rate</td>
+<td>&gt; 80% of buyers</td>
+<td>Manual count (buyers vs WA members)</td>
+</tr>
+<tr>
+<td>Upsell Conversion (Konsultasi)</td>
+<td>5-10% of buyers</td>
+<td>WA reply MENTORING tracking</td>
+</tr>
+<tr>
+<td>LTV per Customer (90 days)</td>
+<td>&gt; Rp100.000</td>
+<td>Total revenue / total customers</td>
+</tr>
+<tr>
+<td>SEO Organic Traffic</td>
+<td>500 visits/bulan (Month 3)</td>
+<td>Google Analytics / Search Console</td>
+</tr>
+<tr>
+<td>Ad Fatigue (Frequency)</td>
+<td>&lt; 3.0 per 7 hari</td>
+<td>Meta Ads Manager</td>
+</tr>
+<tr>
+<td>Refund Rate</td>
+<td>&lt; 5%</td>
+<td>Scalev refund tracking</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="75-content-calendar-month-1">7.5 Content Calendar (Month 1)</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Paid (Meta Ads)</th>
+<th>Organic (SEO/Social)</th>
+<th>WA Group</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>W1</strong></td>
+<td>Launch 5 adset ABO. Monitor only.</td>
+<td>Prep SEO Article 1 draft</td>
+<td>Welcome message untuk early buyers</td>
+</tr>
+<tr>
+<td><strong>W2</strong></td>
+<td>Evaluasi + kill/hold/promote. Start retarget.</td>
+<td>Publish SEO Article 1</td>
+<td>Day 1-5 follow-up sequence</td>
+</tr>
+<tr>
+<td><strong>W3</strong></td>
+<td>Scale winners ke CBO. Rotasi creative.</td>
+<td>Share Article 1 di social media</td>
+<td>Day 6-10 follow-up + upsell</td>
+</tr>
+<tr>
+<td><strong>W4</strong></td>
+<td>Optimize CBO. Test Lookalike.</td>
+<td>Prep SEO Article 2 draft</td>
+<td>Review + testimoni collection</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="8-presentation-slides">8. Presentation Slides</h2>
+<h3 id="slide-1-title">Slide 1: Title</h3>
+<p><strong>CUAN HIJAB NEXT LEVEL</strong> Blueprint Bisnis Hijab dari Praktisi 20 Tahun</p>
+<ul>
+<li>Product: Rekaman Webinar + Ebook Premium</li>
+<li>Price: Rp49.000 (500 pembeli pertama)</li>
+<li>Mentor: Iman Awaludin, ST — Eks Nibras &amp; Rabbani</li>
+<li>Campaign: Meta Ads Rp150K/hari + SEO + WA Nurture</li>
+</ul>
+<p><em>Capstone Campaign Report — CAMS 2026</em></p>
+<hr/>
+<h3 id="slide-2-the-problem-and-opportunity">Slide 2: The Problem and Opportunity</h3>
+<p><strong>3 Masalah Utama Reseller Hijab di Indonesia:</strong></p>
+<ol>
+<li><strong>Supplier Zonk</strong> — Barang beda dari foto, kualitas naik-turun, customer complain</li>
+<li><strong>Margin Tipis</strong> — Dikira untung 30%, ternyata cuma 8-12% setelah hitung HPP beneran</li>
+<li><strong>DM Ghosting</strong> — Chat banyak, transfer sepi. Capek bales panjang, ujungnya cuma dibaca</li>
+</ol>
+<p><strong>Opportunity:</strong></p>
+<ul>
+<li>Market hijab Indonesia = salah satu terbesar di dunia</li>
+<li>Jutaan reseller hijab aktif, mayoritas self-taught tanpa sistem</li>
+<li>ZERO produk digital yang menawarkan blueprint operasional dari praktisi level Nibras/Rabbani</li>
+<li>Price point Rp49K = impulse buy, zero friction</li>
+</ul>
+<hr/>
+<h3 id="slide-3-the-solution">Slide 3: The Solution</h3>
+<p><strong>Cuan Hijab Next Level — Blueprint Praktisi 20 Tahun</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Deliverable</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Rekaman Webinar (full session, akses selamanya)</td>
+<td>Rp197.000</td>
+</tr>
+<tr>
+<td>Ebook Premium — 2 Jalur (Kilat + Sultan)</td>
+<td>Rp97.000</td>
+</tr>
+<tr>
+<td>Template HPP Otomatis (spreadsheet)</td>
+<td>Rp97.000</td>
+</tr>
+<tr>
+<td>WA Group Eksklusif</td>
+<td>Rp97.000</td>
+</tr>
+<tr>
+<td><strong>Total Value</strong></td>
+<td><strong>Rp488.000</strong></td>
+</tr>
+<tr>
+<td><strong>Harga 500 Pertama</strong></td>
+<td><strong>Rp49.000</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>2 Jalur dalam 1 Blueprint:</strong></p>
+<ul>
+<li>Jalur Kilat (Reseller): supplier, margin, copywriting DM</li>
+<li>Jalur Sultan (Brand Owner): konveksi, HKI, distribusi, scale up</li>
+</ul>
+<p><strong>Garansi:</strong> 7 hari uang kembali 100%</p>
+<hr/>
+<h3 id="slide-4-go-to-market-strategy">Slide 4: Go-to-Market Strategy</h3>
+<p><strong>Channel Mix:</strong></p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Channel</th>
+<th>Strategy</th>
+<th>Budget</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Meta Ads</td>
+<td>5 Adset ABO (Supplier Zonk / Margin / Authority / DM Ghosting / FOMO)</td>
+<td>Rp150K/hari</td>
+</tr>
+<tr>
+<td>SEO</td>
+<td>2 articles/bulan targeting long-tail keywords</td>
+<td>Content cost only</td>
+</tr>
+<tr>
+<td>WA Group</td>
+<td>10-day nurture sequence (edukasi/upsell alternating)</td>
+<td>Organic</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Funnel:</strong> Meta Ad --&gt; LP (Scalev) --&gt; Purchase --&gt; WA Group --&gt; Upsell Ascension</p>
+<p><strong>Key Metrics:</strong></p>
+<ul>
+<li>CPA Target: &lt; Rp25K</li>
+<li>ROAS Target: &gt; 2x</li>
+<li>Break-even: 105 sales/bulan</li>
+<li>LTV Target: &gt; Rp100K/customer (90 days)</li>
+</ul>
+<p><strong>Ascension Path:</strong> Rp49K --&gt; Konsultasi Rp197K --&gt; Bedah Bisnis Rp497K --&gt; Retainer Pabrik</p>
+<hr/>
+<h3 id="slide-5-next-steps-and-cta">Slide 5: Next Steps and CTA</h3>
+<p><strong>Immediate Actions (Week 1):</strong></p>
+<ol>
+<li>Launch Meta Ads ABO — 5 adset live</li>
+<li>Activate WA Group welcome sequence</li>
+<li>Monitor 72 jam tanpa sentuh</li>
+</ol>
+<p><strong>Month 1 Targets:</strong></p>
+<ul>
+<li>50-60 sales dari paid traffic</li>
+<li>5-10 organic leads dari SEO Article 1</li>
+<li>3-5 upsell ke Konsultasi Rp197K</li>
+</ul>
+<p><strong>Active Links:</strong></p>
+<ul>
+<li>Landing Page: https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-v2</li>
+<li>Checkout: https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-co</li>
+<li>Campaign Blueprints: https://andyaberna.github.io/cuan-hijab/</li>
+</ul>
+<p><strong>Contact:</strong> [WhatsApp / Email]</p>
+<hr/>
+<h2 id="9-brand-audit-results">9. Brand Audit Results</h2>
+<h3 id="5-check-brand-congruence-audit">5-Check Brand Congruence Audit</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>#</th>
+<th>Check</th>
+<th>Status</th>
+<th>Notes</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Voice Consistency</strong></td>
+<td>PASS</td>
+<td>Semua copy (LP, ads, WA) konsisten: kasual, praktisi, blak-blakan. Sapaan Bunda/Sister/Kakak dipakai di semua touchpoint. Zero banned words ditemukan.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Visual Consistency</strong></td>
+<td>PASS</td>
+<td>Color palette (magenta/gold/navy) konsisten di LP dan ad creatives. Typography Poppins + Inter dipakai di semua material.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Message-Market Fit</strong></td>
+<td>PASS</td>
+<td>3 pain points (supplier zonk, margin tipis, DM ghosting) match dengan ICP research. LP structure mengikuti awareness level progression.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Offer Congruence</strong></td>
+<td>PASS</td>
+<td>Harga Rp49K, value anchor Rp488K, garansi 7 hari — konsisten di semua touchpoint (LP, ads, WA). Tidak ada klaim yang bertentangan.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>CTA Alignment</strong></td>
+<td>PASS</td>
+<td>Semua CTA mengarah ke 1 URL checkout. Tidak ada CTA yang membingungkan atau bertentangan. Scarcity (500 slot) konsisten.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Overall Score: 5/5 PASS</strong></p>
+<p><strong>Minor Recommendations:</strong></p>
+<ul>
+<li>Update angka scarcity counter secara berkala (saat ini 473/500)</li>
+<li>Tambahkan UTM parameters di setiap ad creative untuk tracking yang lebih granular</li>
+<li>Siapkan creative rotation untuk minggu ke-3 (ad6/ad7/ad8 sudah tersedia)</li>
+</ul>
+<hr/>
+<h2 id="10-next-steps-and-recommendations">10. Next Steps and Recommendations</h2>
+<h3 id="immediate-week-1">Immediate (Week 1)</h3>
+<ol>
+<li>Upload 5 ad creatives ke Meta Ads Manager sesuai SOP</li>
+<li>Set up Meta Pixel + CAPI di Scalev</li>
+<li>Launch ABO campaign midnight (00:00 WIB)</li>
+<li>Activate WA Group + welcome message</li>
+</ol>
+<h3 id="short-term-month-1">Short-term (Month 1)</h3>
+<ol>
+<li>Publish SEO Article 1 (Supplier Hijab Anti Zonk)</li>
+<li>Evaluasi adset performance (Day 8) — kill/hold/promote</li>
+<li>Scale winners ke CBO (Day 15+)</li>
+<li>Collect testimoni dari early buyers</li>
+</ol>
+<h3 id="mid-term-month-2-3">Mid-term (Month 2-3)</h3>
+<ol>
+<li>Publish SEO Article 2 (HPP Hijab)</li>
+<li>Launch Lookalike 1% audience</li>
+<li>Mulai upsell Konsultasi Rp197K via WA</li>
+<li>Review LTV dan plan next product</li>
+</ol>
+<h3 id="long-term-month-4">Long-term (Month 4+)</h3>
+<ol>
+<li>Evaluate Bedah Bisnis Rp497K demand</li>
+<li>Build email list dari WA Group members</li>
+<li>Consider video course sebagai next product tier</li>
+<li>Expand ke platform lain (TikTok Ads, Google Ads)</li>
+</ol>
+<hr/>
+<h2 id="active-links">Active Links</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Asset</th>
+<th>URL</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Landing Page</td>
+<td>https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-v2</td>
+</tr>
+<tr>
+<td>Checkout</td>
+<td>https://modestloop.myscalev.com/rekaman-webinar-cuan-hijab-co</td>
+</tr>
+<tr>
+<td>Campaign Blueprints (8 Skills)</td>
+<td>https://andyaberna.github.io/cuan-hijab/</td>
+</tr>
+<tr>
+<td>Brand Context Profile</td>
+<td>JSON file (315 lines) — tersedia di project folder</td>
+</tr>
+<tr>
+<td>Ad Creatives (5 set)</td>
+<td>PNG files tersedia di project folder</td>
+</tr>
+<tr>
+<td>SOP Harian Meta Ads</td>
+<td>Markdown file tersedia di project folder</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="how-to-export-as-pdf">How to Export as PDF</h2>
+<ol>
+<li>Copy seluruh dokumen ini (kecuali section ini).</li>
+<li>Paste ke <strong>Google Docs</strong> atau <strong>Notion</strong>.</li>
+<li><strong>Google Docs:</strong> File &gt; Download &gt; PDF Document.</li>
+<li><strong>Notion:</strong> Klik menu ... &gt; Export &gt; PDF (A4, Include subpages).</li>
+<li>Untuk formatting profesional: Pakai Notion dengan cover image warna magenta/gold sesuai Brand Mini Kit.</li>
+</ol></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>
